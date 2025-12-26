@@ -741,6 +741,13 @@ nav {
     font-size: 0.95rem;
 }
 
+.checkbox-item input[type="checkbox"] {
+    width: auto;
+    padding: 0;
+    margin: 2px 0 0;
+    flex: 0 0 auto;
+}
+
 .form-consent {
     font-size: 0.85rem;
     color: var(--text-muted);
