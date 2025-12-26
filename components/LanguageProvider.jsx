@@ -99,6 +99,18 @@ const translations = {
                     }
                 ]
             },
+            liveVote: {
+                label: "Live vote status",
+                closed: "Live vote: CLOSED. Abre durante demos live.",
+                open: "Live vote: OPEN. Cierra en",
+                ended: "Votaci\u00f3n cerrada. Gan\u00f3",
+                endedPending: "Votaci\u00f3n cerrada. Resultados en breve.",
+                noDrop: "Season 0 en construcci\u00f3n.",
+                ctaClosed: "Avisame",
+                ctaOpen: "Votar ahora",
+                ctaEnded: "Ver resultados",
+                badgeOpen: "OPEN"
+            },
             memes: {
                 label: "Frases",
                 title: "Munici\u00f3n para X",
@@ -605,6 +617,18 @@ const translations = {
                         body: "2 days ago"
                     }
                 ]
+            },
+            liveVote: {
+                label: "Live vote status",
+                closed: "Live vote: CLOSED. Opens during live demos.",
+                open: "Live vote: OPEN. Closes in",
+                ended: "Vote closed. Winner",
+                endedPending: "Vote closed. Results soon.",
+                noDrop: "Season 0 in construction.",
+                ctaClosed: "Notify me",
+                ctaOpen: "Vote now",
+                ctaEnded: "See results",
+                badgeOpen: "OPEN"
             },
             memes: {
                 label: "Lines",
