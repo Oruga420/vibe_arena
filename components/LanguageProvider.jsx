@@ -824,10 +824,57 @@ const translations = {
 };
 
 const LanguageContext = createContext({
-    language: "es",
+    language: "en",
     setLanguage: () => {},
     t: () => ""
 });
+
+const LATAM_REGIONS = new Set([
+    "ar",
+    "bo",
+    "cl",
+    "co",
+    "cr",
+    "cu",
+    "do",
+    "ec",
+    "sv",
+    "gt",
+    "hn",
+    "mx",
+    "ni",
+    "pa",
+    "pe",
+    "pr",
+    "py",
+    "uy",
+    "ve",
+    "br",
+    "419"
+]);
+
+const LATAM_TIMEZONES = new Set([
+    "America/Argentina/Buenos_Aires",
+    "America/Asuncion",
+    "America/Bogota",
+    "America/Caracas",
+    "America/Costa_Rica",
+    "America/El_Salvador",
+    "America/Guatemala",
+    "America/Guayaquil",
+    "America/Havana",
+    "America/La_Paz",
+    "America/Lima",
+    "America/Managua",
+    "America/Mexico_City",
+    "America/Montevideo",
+    "America/Panama",
+    "America/Puerto_Rico",
+    "America/Santiago",
+    "America/Santo_Domingo",
+    "America/Tegucigalpa",
+    "America/Sao_Paulo"
+]);
 
 const getPathValue = (obj, path) => {
     if (!obj) {
@@ -836,14 +883,59 @@ const getPathValue = (obj, path) => {
     return path.split(".").reduce((acc, key) => (acc ? acc[key] : undefined), obj);
 };
 
+const getRegionFromLocale = (locale) => {
+    if (!locale) {
+        return null;
+    }
+    const normalized = locale.toLowerCase().replace("_", "-");
+    const parts = normalized.split("-");
+    return parts.length > 1 ? parts[1] : null;
+};
+
+const detectLanguage = () => {
+    if (typeof navigator === "undefined") {
+        return "en";
+    }
+    const locales = Array.isArray(navigator.languages) && navigator.languages.length
+        ? navigator.languages
+        : [navigator.language];
+
+    for (const locale of locales) {
+        if (!locale) {
+            continue;
+        }
+        const lower = locale.toLowerCase();
+        if (lower.startsWith("es")) {
+            return "es";
+        }
+        const region = getRegionFromLocale(lower);
+        if (region && LATAM_REGIONS.has(region)) {
+            return "es";
+        }
+    }
+
+    try {
+        const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        if (timeZone && LATAM_TIMEZONES.has(timeZone)) {
+            return "es";
+        }
+    } catch (error) {
+        return "en";
+    }
+
+    return "en";
+};
+
 export function LanguageProvider({ children }) {
-    const [language, setLanguage] = useState("es");
+    const [language, setLanguage] = useState("en");
 
     useEffect(() => {
         const stored = window.localStorage.getItem("lang");
         if (stored && translations[stored]) {
             setLanguage(stored);
+            return;
         }
+        setLanguage(detectLanguage());
     }, []);
 
     useEffect(() => {
