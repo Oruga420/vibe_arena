@@ -63,22 +63,30 @@ export default function ThemeToggle() {
         };
     }, [hasOverride]);
 
-    const nextTheme = theme === "dark" ? "light" : "dark";
-    const buttonLabel = nextTheme === "dark" ? t("theme.dark") : t("theme.light");
-
-    const handleToggle = () => {
-        setHasOverride(true);
-        setTheme(nextTheme);
-    };
-
     return (
-        <button
-            className="theme-toggle"
-            type="button"
-            aria-label={t("theme.label")}
-            onClick={handleToggle}
-        >
-            {buttonLabel}
-        </button>
+        <div className="theme-toggle" role="group" aria-label={t("theme.label")}>
+            <button
+                type="button"
+                className={theme === "light" ? "active" : ""}
+                aria-pressed={theme === "light"}
+                onClick={() => {
+                    setHasOverride(true);
+                    setTheme("light");
+                }}
+            >
+                {t("theme.light")}
+            </button>
+            <button
+                type="button"
+                className={theme === "dark" ? "active" : ""}
+                aria-pressed={theme === "dark"}
+                onClick={() => {
+                    setHasOverride(true);
+                    setTheme("dark");
+                }}
+            >
+                {t("theme.dark")}
+            </button>
+        </div>
     );
 }
