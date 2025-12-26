@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLanguage } from "./LanguageProvider";
 import LanguageToggle from "./LanguageToggle";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Nav() {
     const pathname = usePathname();
@@ -70,6 +71,7 @@ export default function Nav() {
                         </Link>
                     );
                 })}
+                <ThemeToggle />
                 <LanguageToggle />
                 <Link href="/apply" className="btn-apply-sm">
                     {t("nav.apply")}
