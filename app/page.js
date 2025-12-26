@@ -3,6 +3,7 @@
 import Link from "next/link";
 import AsciiTower from "../components/AsciiTower";
 import { useLanguage } from "../components/LanguageProvider";
+import LiveVoteStatus from "../components/LiveVoteStatus";
 import WaitlistModal from "../components/WaitlistModal";
 
 export default function HomePage() {
@@ -74,8 +75,12 @@ export default function HomePage() {
                                 <h3>{item.title}</h3>
                                 <p>{item.body}</p>
                             </div>
-                        ))}
+                        ))} 
                 </div>
+            </section>
+
+            <section className="section live-status-section">
+                <LiveVoteStatus />
             </section>
 
             <section className="section">
