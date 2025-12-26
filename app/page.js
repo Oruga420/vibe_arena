@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import AsciiTower from "../components/AsciiTower";
+import EntryStatusCard from "../components/EntryStatusCard";
 import { useLanguage } from "../components/LanguageProvider";
 import LiveVoteStatus from "../components/LiveVoteStatus";
 import WaitlistModal from "../components/WaitlistModal";
@@ -56,6 +57,10 @@ export default function HomePage() {
                         {t("home.drop.note")}
                     </div>
                 </div>
+            </section>
+
+            <section className="section entry-section">
+                <EntryStatusCard note={t("home.entry.note")} />
             </section>
 
             <section className="section section-muted">

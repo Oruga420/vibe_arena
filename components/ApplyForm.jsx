@@ -1,19 +1,38 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useLanguage } from "./LanguageProvider";
+import { buildDropTokens, formatTemplate } from "./dropFormat";
+import useDropStatus from "./useDropStatus";
 
 export default function ApplyForm() {
     const [status, setStatus] = useState(null);
     const { t } = useLanguage();
+    const { data } = useDropStatus("slow");
     const stackOptions = t("apply.form.fields.stack.options");
     const timezoneOptions = t("apply.form.fields.timezone.options");
     const demoOptions = t("apply.form.fields.demo.options");
+    const maxGladiators = data?.maxGladiators ?? 15;
+    const paidCount = data?.paidCount ?? 0;
+    const isSoldOut = paidCount >= maxGladiators;
+
+    const submitLabel = useMemo(() => {
+        const template = t("apply.form.submit");
+        const tokens = buildDropTokens(data);
+        return formatTemplate(template, tokens);
+    }, [t, data]);
+
+    const helperText = useMemo(() => {
+        const template = t("apply.form.helper");
+        const tokens = buildDropTokens(data);
+        return formatTemplate(template, tokens);
+    }, [t, data]);
 
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.currentTarget;
+        const tokens = buildDropTokens(data);
 
         if (!form.checkValidity()) {
             form.reportValidity();
@@ -26,7 +45,7 @@ export default function ApplyForm() {
 
         setStatus({
             type: "success",
-            message: t("apply.form.success")
+            message: formatTemplate(t("apply.form.success"), tokens)
         });
         form.reset();
     };
@@ -109,11 +128,13 @@ export default function ApplyForm() {
             </div>
             <div className="form-consent">{t("apply.form.consent")}</div>
             <div>
-                <button className="btn-primary" type="submit">{t("apply.form.submit")}</button>
+                <button className="btn-primary" type="submit" disabled={isSoldOut}>
+                    {isSoldOut ? t("apply.form.soldOut") : submitLabel}
+                </button>
                 {status ? (
                     <div className={`form-status ${status.type}`}>{status.message}</div>
                 ) : (
-                    <div className="form-status">{t("apply.form.helper")}</div>
+                    <div className="form-status">{helperText}</div>
                 )}
             </div>
         </form>

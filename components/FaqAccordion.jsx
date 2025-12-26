@@ -1,12 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { buildDropTokens, formatTemplate } from "./dropFormat";
 import { useLanguage } from "./LanguageProvider";
+import useDropStatus from "./useDropStatus";
 
 export default function FaqAccordion() {
     const [openIndex, setOpenIndex] = useState(null);
     const { t } = useLanguage();
     const faqs = t("faq.list.items");
+    const { data } = useDropStatus("slow");
+    const tokens = buildDropTokens(data);
 
     const toggle = (index) => {
         setOpenIndex((prev) => (prev === index ? null : index));
@@ -26,11 +30,11 @@ export default function FaqAccordion() {
                                 aria-controls={`faq-${index}`}
                                 onClick={() => toggle(index)}
                             >
-                                <span>{item.question}</span>
+                                <span>{formatTemplate(item.question, tokens)}</span>
                                 <span className="faq-icon">{isOpen ? "-" : "+"}</span>
                             </button>
                             <div className="faq-answer" id={`faq-${index}`}>
-                                <p>{item.answer}</p>
+                                <p>{formatTemplate(item.answer, tokens)}</p>
                             </div>
                         </div>
                     );

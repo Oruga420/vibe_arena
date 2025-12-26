@@ -1,6 +1,7 @@
 "use client";
 
 import ApplyForm from "../../components/ApplyForm";
+import EntryStatusCard from "../../components/EntryStatusCard";
 import { useLanguage } from "../../components/LanguageProvider";
 
 export default function ApplyPage() {
@@ -16,6 +17,10 @@ export default function ApplyPage() {
                     <h1>{t("apply.hero.title")}</h1>
                     <p>{t("apply.hero.body")}</p>
                 </div>
+            </section>
+
+            <section className="section">
+                <EntryStatusCard note={t("apply.entry.note")} />
             </section>
 
             <section className="section">

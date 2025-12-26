@@ -29,6 +29,22 @@ const translations = {
             dark: "Oscuro",
             light: "Claro"
         },
+        entry: {
+            labels: {
+                entry: "ENTRADA",
+                min: "M\u00cdNIMO PARA ARRANCAR",
+                cap: "CUPO M\u00c1XIMO",
+                payout: "PREMIO",
+                house: "ARENA",
+                spots: "Cupos reservados",
+                pot: "Pozo actual",
+                winner: "Premio del ganador (si arranca)"
+            },
+            values: {
+                payout: "El ganador se lleva {prizePct}% del pozo",
+                house: "{housePct}% para operar la arena"
+            }
+        },
         waitlist: {
             label: "Waitlist",
             title: "Enterate primero de las fechas.",
@@ -58,7 +74,7 @@ const translations = {
             hero: {
                 tag: "Toronto Vibe-coding Arena",
                 title: "Ten\u00e9s 2 horas. Shippe\u00e1 algo o sal\u00ed del ring.",
-                body: "Season 0. Los primeros gladiadores. Cupos limitados. No es hackathon: es un drop. Entr\u00e1s, shippe\u00e1s, te juzgan.",
+                body: "Season 0. Los primeros gladiadores. Cupos limitados. No es hackathon: es un drop. Entr\u00e1s, shippe\u00e1s, te votan.",
                 primary: "Entrar al ring",
                 secondary: "Las reglas del ring"
             },
@@ -95,14 +111,17 @@ const translations = {
                     }
                 ]
             },
+            entry: {
+                note: "El link de pago se habilita al llegar a {min} participantes. Antes solo confirmamos tu lugar para el pr\u00f3ximo QuickDrop."
+            },
             liveVote: {
                 label: "Live vote status",
-                closed: "Live vote: CLOSED. Abre durante demos live.",
-                open: "Live vote: OPEN. Cierra en",
-                ended: "Votaci\u00f3n cerrada. Gan\u00f3",
-                endedPending: "Votaci\u00f3n cerrada. Resultados en breve.",
+                closed: "Voto en vivo: CERRADO. Abre durante demos. Sin jueces.",
+                open: "Voto en vivo: ABIERTO. Cierra en",
+                ended: "Voto en vivo: CERRADO. Gan\u00f3",
+                endedPending: "Voto en vivo: CERRADO. Resultados en breve.",
                 noDrop: "Season 0 en construcci\u00f3n.",
-                ctaClosed: "Avisame",
+                ctaClosed: "Aplicar",
                 ctaOpen: "Votar ahora",
                 ctaEnded: "Ver resultados",
                 badgeOpen: "OPEN"
@@ -129,7 +148,7 @@ const translations = {
                     {
                         tag: "01 - El protocolo",
                         title: "El protocolo",
-                        body: "Cae el prompt, constru\u00eds, shipe\u00e1s, decide la gente."
+                        body: "Cae el tema, constru\u00eds, shipe\u00e1s, decide la gente."
                     },
                     {
                         tag: "02 - Las reglas",
@@ -151,7 +170,7 @@ const translations = {
             season: {
                 label: "Season 0",
                 title: "Esto no es un evento corporativo.",
-                body: "Entr\u00e1s, shipe\u00e1s, te juzgan en vivo. Si gan\u00e1s, te llev\u00e1s el drop.",
+                body: "Entr\u00e1s, shipe\u00e1s, te votan en vivo. Si gan\u00e1s, te llev\u00e1s el drop.",
                 primary: "Entrar al ring",
                 secondary: "Ver el plan"
             }
@@ -245,7 +264,7 @@ const translations = {
                             logo: "Logo en landing y stream",
                             booth: "Presencia en el evento",
                             talk: "Espacio para demo o charla",
-                            judge: "Seat en jurado",
+                            judge: "Seat en host",
                             mentor: "Mentor\u00eda a builders"
                         }
                     },
@@ -327,6 +346,16 @@ const translations = {
                 primary: "Entrar al ring",
                 secondary: "Ver el protocolo"
             },
+            entry: {
+                label: "REGLAS DE ENTRADA",
+                title: "Entrada {fee}",
+                items: [
+                    "M\u00ednimo {min} participantes para arrancar.",
+                    "Cupo m\u00e1ximo {max} gladiadores.",
+                    "El ganador se lleva {prizePct}% del pozo."
+                ],
+                note: "El link de pago se habilita al llegar a {min} participantes. Antes solo confirmamos tu lugar para el pr\u00f3ximo QuickDrop."
+            },
             weights: {
                 label: "C\u00d3MO SE GANA",
                 title: "Voto en vivo. Sin jueces.",
@@ -384,7 +413,7 @@ const translations = {
                     {
                         num: "02",
                         title: "Stack libre",
-                        body: "Us\u00e1 lo que mejor sab\u00e9s. La velocidad manda."
+                        body: "Us\u00e1 lo que mejor sab\u00e9s. Cualquier stack. Cualquier IA. Shipe\u00e1 r\u00e1pido."
                     },
                     {
                         num: "03",
@@ -423,10 +452,10 @@ const translations = {
                 title: "Patch notes + pr\u00f3ximo drop",
                 body: "Qu\u00e9 ya est\u00e1 shippeado, qu\u00e9 viene, y cu\u00e1ndo abre la votaci\u00f3n.",
                 items: [
-                    { label: "Build", value: "v0.1 live" },
-                    { label: "Pr\u00f3ximo drop", value: "Ventana Enero-Feb" },
-                    { label: "Votaci\u00f3n", value: "Live vote only (sin jueces)" },
-                    { label: "\u00daltimo update", value: "Hace 2 d\u00edas" }
+                    { label: "Entrada", value: "{fee}" },
+                    { label: "M\u00ednimo / Cupo", value: "Min {min} / Cupo {max}" },
+                    { label: "Premio", value: "Ganador {prizePct}% del pozo" },
+                    { label: "Pr\u00f3ximo drop", value: "Ventana Enero-Feb" }
                 ],
                 cta: "Entrar al ring"
             },
@@ -477,6 +506,10 @@ const translations = {
                         answer: "Solo durante demos. El voto abre en vivo y se cierra r\u00e1pido."
                     },
                     {
+                        question: "\u00bfCu\u00e1nto cuesta entrar?",
+                        answer: "{fee}. M\u00ednimo {min} participantes para arrancar. Cupo {max}. Confirmamos tu lugar para el pr\u00f3ximo QuickDrop y el link de pago se libera al llegar a {min}."
+                    },
+                    {
                         question: "\u00bfPuedo usar IA y librer\u00edas?",
                         answer: "S\u00ed. Us\u00e1 IA y librer\u00edas. Sin templates. Desde cero. Cont\u00e1 qu\u00e9 usaste."
                     },
@@ -490,15 +523,11 @@ const translations = {
                     },
                     {
                         question: "\u00bfC\u00f3mo sale el Top 5?",
-                        answer: "Voto en dos pasos. Voto 1 elige Top 5, hacen demo de nuevo, Voto 2 elige ganador."
-                    },
-                    {
-                        question: "\u00bfSolo o equipos?",
-                        answer: "Season 0 es individual. Medimos velocidad de shipping personal."
+                        answer: "Voto en dos pasos. Voto 1 elige Top 5, demo de nuevo, Voto 2 elige ganador."
                     },
                     {
                         question: "\u00bfAlguna trampa?",
-                        answer: "No manipules votos. Si detectamos fraude, qued\u00e1s afuera. Sin drama."
+                        answer: "No manipules votos. Season 0 es individual. Si hay fraude, qued\u00e1s afuera."
                     }
                 ],
                 footer: "Si est\u00e1s de acuerdo, aplic\u00e1. Si no, mir\u00e1 desde la tribuna."
@@ -509,6 +538,9 @@ const translations = {
                 tag: "Casting",
                 title: "Entrada al ring.",
                 body: "Esto es Season 0. No prometemos suave. Si entr\u00e1s, shipe\u00e1s. Si no, mir\u00e1s desde la tribuna."
+            },
+            entry: {
+                note: "El link de pago se habilita al llegar a {min} participantes. Antes solo confirmamos tu lugar para el pr\u00f3ximo QuickDrop."
             },
             form: {
                 label: "Entrada al ring",
@@ -572,9 +604,10 @@ const translations = {
                     }
                 },
                 consent: "Te vamos a escribir sobre el evento.",
-                submit: "Entrar al ring",
-                helper: "Si te aceptamos, te escribimos en 48hs.",
-                success: "Listo. Est\u00e1s en el radar. Te contactamos en 48hs.",
+                submit: "Reservar lugar",
+                soldOut: "Cupos completos",
+                helper: "Te confirmamos lugar para el pr\u00f3ximo QuickDrop. Link de pago cuando llegamos a {min}.",
+                success: "Listo. Tu lugar para el pr\u00f3ximo QuickDrop est\u00e1 confirmado. Link de pago al llegar a {min}.",
                 error: "Completa los campos obligatorios."
             }
         }
@@ -605,6 +638,22 @@ const translations = {
             dark: "Dark",
             light: "Light"
         },
+        entry: {
+            labels: {
+                entry: "ENTRY",
+                min: "MIN TO START",
+                cap: "CAP",
+                payout: "PAYOUT",
+                house: "HOUSE",
+                spots: "Spots reserved",
+                pot: "Current pot",
+                winner: "Winner payout (if started)"
+            },
+            values: {
+                payout: "Winner takes {prizePct}% of the pot",
+                house: "{housePct}% runs the arena"
+            }
+        },
         waitlist: {
             label: "Waitlist",
             title: "Get the upcoming dates first.",
@@ -634,7 +683,7 @@ const translations = {
             hero: {
                 tag: "Toronto Vibe-coding Arena",
                 title: "You have 2 hours. Ship or step out.",
-                body: "Season 0. First gladiators. Limited spots. Not a hackathon: it's a drop. You enter, you ship, you get judged.",
+                body: "Season 0. First gladiators. Limited spots. Not a hackathon: it's a drop. You enter, you ship, the crowd votes.",
                 primary: "Enter the ring",
                 secondary: "Ring rules"
             },
@@ -671,14 +720,17 @@ const translations = {
                     }
                 ]
             },
+            entry: {
+                note: "The payment link unlocks at {min} participants. Until then we only confirm your spot for the next QuickDrop."
+            },
             liveVote: {
                 label: "Live vote status",
-                closed: "Live vote: CLOSED. Opens during live demos.",
+                closed: "Live vote: CLOSED. Opens during demos. No judges.",
                 open: "Live vote: OPEN. Closes in",
-                ended: "Vote closed. Winner",
-                endedPending: "Vote closed. Results soon.",
+                ended: "Live vote: CLOSED. Winner",
+                endedPending: "Live vote: CLOSED. Results soon.",
                 noDrop: "Season 0 in construction.",
-                ctaClosed: "Notify me",
+                ctaClosed: "Apply for Season 0",
                 ctaOpen: "Vote now",
                 ctaEnded: "See results",
                 badgeOpen: "OPEN"
@@ -705,7 +757,7 @@ const translations = {
                     {
                         tag: "01 - The protocol",
                         title: "The protocol",
-                        body: "Prompt hits, you build, you ship, the crowd decides."
+                        body: "Theme drops, you build, you ship, the crowd decides."
                     },
                     {
                         tag: "02 - The rules",
@@ -727,7 +779,7 @@ const translations = {
             season: {
                 label: "Season 0",
                 title: "Not a corporate event.",
-                body: "You enter, you ship, you get judged live. Win and you take the drop.",
+                body: "You enter, you ship, the crowd votes live. Win and you take the drop.",
                 primary: "Enter the ring",
                 secondary: "See the plan"
             }
@@ -821,7 +873,7 @@ const translations = {
                             logo: "Logo on landing and stream",
                             booth: "On-site presence",
                             talk: "Demo or talk slot",
-                            judge: "Judge seat",
+                            judge: "Host seat",
                             mentor: "Mentor builders"
                         }
                     },
@@ -903,6 +955,16 @@ const translations = {
                 primary: "Enter the ring",
                 secondary: "See the protocol"
             },
+            entry: {
+                label: "ENTRY RULES",
+                title: "Entry is {fee}",
+                items: [
+                    "Min {min} participants to start.",
+                    "Cap {max} gladiators.",
+                    "Winner takes {prizePct}% of the pot."
+                ],
+                note: "The payment link unlocks at {min} participants. Until then we only confirm your spot for the next QuickDrop."
+            },
             weights: {
                 label: "HOW WINNING WORKS",
                 title: "Live vote. No judges.",
@@ -960,7 +1022,7 @@ const translations = {
                     {
                         num: "02",
                         title: "Open stack",
-                        body: "Use what you know best. Speed wins."
+                        body: "Use what you know best. Any stack. Any AI. Ship fast."
                     },
                     {
                         num: "03",
@@ -999,10 +1061,10 @@ const translations = {
                 title: "Patch notes + next drop",
                 body: "What is shipped, what is next, and when voting opens.",
                 items: [
-                    { label: "Build", value: "v0.1 live" },
-                    { label: "Next drop", value: "Jan-Feb window" },
-                    { label: "Voting", value: "Live vote only (no judges)" },
-                    { label: "Last update", value: "2 days ago" }
+                    { label: "Entry", value: "{fee}" },
+                    { label: "Min / Cap", value: "Min {min} / Cap {max}" },
+                    { label: "Prize", value: "Winner takes {prizePct}% of the pot" },
+                    { label: "Next drop", value: "Jan-Feb window" }
                 ],
                 cta: "Enter the ring"
             },
@@ -1053,6 +1115,10 @@ const translations = {
                         answer: "Only during demos. Voting opens live and closes fast."
                     },
                     {
+                        question: "Entry fee?",
+                        answer: "{fee}. Min {min} participants to start. Cap {max}. We confirm your spot for the next QuickDrop and send the payment link at {min}."
+                    },
+                    {
                         question: "Can I use AI and libraries?",
                         answer: "Yes. Use AI and libraries. No templates. Start from scratch. Disclose what you used."
                     },
@@ -1069,12 +1135,8 @@ const translations = {
                         answer: "Two-step vote. Vote 1 picks Top 5, Top 5 demo again, Vote 2 picks the winner."
                     },
                     {
-                        question: "Solo or teams?",
-                        answer: "Season 0 is solo. We measure individual shipping speed."
-                    },
-                    {
                         question: "Any gotchas?",
-                        answer: "Do not manipulate votes. If we detect fraud, you are out. No drama."
+                        answer: "Do not manipulate votes. Season 0 is solo. If fraud is detected, you are out."
                     }
                 ],
                 footer: "If you agree, apply. If not, watch from the stands."
@@ -1085,6 +1147,9 @@ const translations = {
                 tag: "Casting",
                 title: "Enter the ring.",
                 body: "This is Season 0. No soft promises. If you get in, you ship. If not, you watch from the stands."
+            },
+            entry: {
+                note: "The payment link unlocks at {min} participants. Until then we only confirm your spot for the next QuickDrop."
             },
             form: {
                 label: "Ring entry",
@@ -1148,9 +1213,10 @@ const translations = {
                     }
                 },
                 consent: "We will email you about the event.",
-                submit: "Enter the ring",
-                helper: "If you are in, we reach out within 48h.",
-                success: "All set. You are on the radar. We will reach out within 48h.",
+                submit: "Reserve a spot",
+                soldOut: "Sold out",
+                helper: "We confirm your spot for the next QuickDrop. Payment link unlocks at {min}.",
+                success: "All set. Your spot for the next QuickDrop is confirmed. Payment link unlocks at {min}.",
                 error: "Fill the required fields."
             }
         }
