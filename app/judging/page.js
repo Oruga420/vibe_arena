@@ -1,22 +1,29 @@
+"use client";
+
 import Link from "next/link";
 import JudgingBars from "../../components/JudgingBars";
+import { useLanguage } from "../../components/LanguageProvider";
 
 export default function JudgingPage() {
+    const { t } = useLanguage();
+    const cards = t("judging.weights.cards");
+    const checklist = t("judging.checklist.items");
+
     return (
         <main>
             <section className="page-hero">
                 <div>
                     <p className="mono" style={{ color: "var(--primary-green)", marginBottom: "12px" }}>
-                        Criterios
+                        {t("judging.hero.tag")}
                     </p>
-                    <h1>Reglas claras, rapidas y medibles.</h1>
-                    <p>AI permitido. Gana el que demuestra valor real en el menor tiempo posible. El jurado prioriza impacto y claridad.</p>
+                    <h1>{t("judging.hero.title")}</h1>
+                    <p>{t("judging.hero.body")}</p>
                     <div className="hero-ctas">
                         <Link href="/apply" className="btn-primary">
-                            Aplica para Season 0
+                            {t("judging.hero.primary")}
                         </Link>
                         <Link href="/how" className="btn-ghost">
-                            Ver el protocolo
+                            {t("judging.hero.secondary")}
                         </Link>
                     </div>
                 </div>
@@ -26,23 +33,19 @@ export default function JudgingPage() {
                 <div className="judging-grid">
                     <div>
                         <div className="section-header">
-                            <p className="mono">Pesos</p>
-                            <h2>Como evaluamos</h2>
-                            <p style={{ marginTop: "20px", color: "#444" }}>
-                                No premiamos el humo. Gana el que shipea valor con el menor tiempo posible.
-                            </p>
+                            <p className="mono">{t("judging.weights.label")}</p>
+                            <h2>{t("judging.weights.title")}</h2>
+                            <p style={{ marginTop: "20px", color: "#444" }}>{t("judging.weights.body")}</p>
                         </div>
                         <div className="cards-grid">
-                            <div className="card-link">
-                                <span>Regla base</span>
-                                <h3>Demo online</h3>
-                                <p>La URL debe estar viva. Si no carga, no hay puntaje.</p>
-                            </div>
-                            <div className="card-link">
-                                <span>AI permitido</span>
-                                <h3>Transparencia</h3>
-                                <p>Podes usar IA, templates y libs. Conta que usaste.</p>
-                            </div>
+                            {Array.isArray(cards) &&
+                                cards.map((card) => (
+                                    <div className="card-link" key={card.title}>
+                                        <span>{card.tag}</span>
+                                        <h3>{card.title}</h3>
+                                        <p>{card.body}</p>
+                                    </div>
+                                ))}
                         </div>
                     </div>
                     <div>
@@ -53,30 +56,18 @@ export default function JudgingPage() {
 
             <section className="section">
                 <div className="section-header">
-                    <p className="mono">Checklist</p>
-                    <h2>Reglas esenciales</h2>
+                    <p className="mono">{t("judging.checklist.label")}</p>
+                    <h2>{t("judging.checklist.title")}</h2>
                 </div>
                 <div className="grid-4">
-                    <div className="card">
-                        <span className="card-num">01</span>
-                        <h3>120 minutos</h3>
-                        <p>El timer corre para todos. No hay extensiones ni excepciones.</p>
-                    </div>
-                    <div className="card">
-                        <span className="card-num">02</span>
-                        <h3>Stack libre</h3>
-                        <p>Usa lo que mejor sabes. La velocidad manda.</p>
-                    </div>
-                    <div className="card">
-                        <span className="card-num">03</span>
-                        <h3>Repo publico</h3>
-                        <p>Subi el repo con README claro y setup minimal.</p>
-                    </div>
-                    <div className="card">
-                        <span className="card-num">04</span>
-                        <h3>Demo en vivo</h3>
-                        <p>Los top 5 muestran su demo frente al jurado.</p>
-                    </div>
+                    {Array.isArray(checklist) &&
+                        checklist.map((item) => (
+                            <div className="card" key={item.title}>
+                                <span className="card-num">{item.num}</span>
+                                <h3>{item.title}</h3>
+                                <p>{item.body}</p>
+                            </div>
+                        ))}
                 </div>
             </section>
         </main>

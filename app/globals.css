@@ -176,6 +176,7 @@ nav {
     display: flex;
     gap: 28px;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -192,6 +193,30 @@ nav {
 
 .nav-links a.active {
     color: var(--primary-green);
+}
+
+.lang-toggle {
+    display: inline-flex;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    overflow: hidden;
+    background: white;
+    align-items: center;
+    height: 30px;
+}
+
+.lang-toggle button {
+    background: transparent;
+    border: none;
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--deep-green);
+}
+
+.lang-toggle button.active {
+    background: var(--off-white);
 }
 
 /* Micro-bar */
@@ -532,6 +557,31 @@ nav {
 .field textarea {
     min-height: 120px;
     resize: vertical;
+}
+
+.fieldset {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px;
+}
+
+.fieldset legend {
+    font-weight: 600;
+    padding: 0 8px;
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
 }
 
 .form-status {

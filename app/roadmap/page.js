@@ -1,21 +1,27 @@
+"use client";
+
 import Link from "next/link";
+import { useLanguage } from "../../components/LanguageProvider";
 
 export default function RoadmapPage() {
+    const { t } = useLanguage();
+    const items = t("roadmap.manifesto.items");
+
     return (
         <main>
             <section className="page-hero">
                 <div>
                     <p className="mono" style={{ color: "var(--primary-green)", marginBottom: "12px" }}>
-                        Building in Public
+                        {t("roadmap.hero.tag")}
                     </p>
-                    <h1>Roadmap Season 0</h1>
-                    <p>Estamos armando la arena a la vista. Cada paso es publico y medible para que la comunidad empuje con nosotros.</p>
+                    <h1>{t("roadmap.hero.title")}</h1>
+                    <p>{t("roadmap.hero.body")}</p>
                     <div className="hero-ctas">
                         <Link href="/apply" className="btn-primary">
-                            Aplica para Season 0
+                            {t("roadmap.hero.primary")}
                         </Link>
                         <Link href="/faq" className="btn-ghost">
-                            Resolver dudas
+                            {t("roadmap.hero.secondary")}
                         </Link>
                     </div>
                 </div>
@@ -24,32 +30,23 @@ export default function RoadmapPage() {
             <section className="section">
                 <div className="manifesto">
                     <p className="mono" style={{ marginBottom: "20px", textAlign: "center" }}>
-                        Plan abierto
+                        {t("roadmap.manifesto.label")}
                     </p>
                     <h2 style={{ textAlign: "center", marginBottom: "40px", fontSize: "2rem" }}>
-                        Hitos clave
+                        {t("roadmap.manifesto.title")}
                     </h2>
 
-                    <div className="roadmap-item">
-                        <div className="check done"></div>
-                        <span>Landing Page v1.0</span>
-                    </div>
-                    <div className="roadmap-item">
-                        <div className="check"></div>
-                        <span>Primer Beta Privado (Toronto Devs)</span>
-                    </div>
-                    <div className="roadmap-item">
-                        <div className="check"></div>
-                        <span>Reglamento y Sistema de Puntos</span>
-                    </div>
-                    <div className="roadmap-item">
-                        <div className="check"></div>
-                        <span>Primer Evento Publico</span>
-                    </div>
+                    {Array.isArray(items) &&
+                        items.map((item, index) => (
+                            <div className="roadmap-item" key={item}>
+                                <div className={`check${index === 0 ? " done" : ""}`}></div>
+                                <span>{item}</span>
+                            </div>
+                        ))}
 
                     <div style={{ textAlign: "center", marginTop: "40px" }}>
                         <Link href="/apply" className="btn-primary">
-                            Sumarte al primer drop
+                            {t("roadmap.manifesto.primary")}
                         </Link>
                     </div>
                 </div>
@@ -57,18 +54,18 @@ export default function RoadmapPage() {
 
             <section className="section section-muted">
                 <div className="section-header">
-                    <p className="mono">Comunidad</p>
-                    <h2>Queres empujar el roadmap</h2>
+                    <p className="mono">{t("roadmap.community.label")}</p>
+                    <h2>{t("roadmap.community.title")}</h2>
                 </div>
                 <p style={{ maxWidth: "680px", color: "#444", marginBottom: "32px" }}>
-                    Buscamos mentores, jurados y partners locales en Toronto. Si queres construir en la primera linea, este es el momento.
+                    {t("roadmap.community.body")}
                 </p>
                 <div className="hero-ctas">
                     <Link href="/apply" className="btn-primary">
-                        Quiero participar
+                        {t("roadmap.community.primary")}
                     </Link>
                     <Link href="/faq" className="btn-ghost">
-                        Ver preguntas
+                        {t("roadmap.community.secondary")}
                     </Link>
                 </div>
             </section>

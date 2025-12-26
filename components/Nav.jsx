@@ -2,20 +2,26 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-
-const navItems = [
-    { label: "Inicio", href: "/" },
-    { label: "Como funciona", href: "/how" },
-    { label: "Reglas", href: "/judging" },
-    { label: "Plan", href: "/roadmap" },
-    { label: "FAQ", href: "/faq" }
-];
+import { useEffect, useMemo, useRef, useState } from "react";
+import { useLanguage } from "./LanguageProvider";
+import LanguageToggle from "./LanguageToggle";
 
 export default function Nav() {
     const pathname = usePathname();
     const navRef = useRef(null);
     const [isOpen, setIsOpen] = useState(false);
+    const { t } = useLanguage();
+
+    const navItems = useMemo(
+        () => [
+            { label: t("nav.home"), href: "/" },
+            { label: t("nav.how"), href: "/how" },
+            { label: t("nav.judging"), href: "/judging" },
+            { label: t("nav.roadmap"), href: "/roadmap" },
+            { label: t("nav.faq"), href: "/faq" }
+        ],
+        [t]
+    );
 
     useEffect(() => {
         setIsOpen(false);
@@ -48,7 +54,7 @@ export default function Nav() {
                 aria-controls="primary-nav"
                 onClick={() => setIsOpen((prev) => !prev)}
             >
-                Menu
+                {t("nav.menu")}
             </button>
             <div className={`nav-links${isOpen ? " open" : ""}`} id="primary-nav">
                 {navItems.map((item) => {
@@ -63,8 +69,9 @@ export default function Nav() {
                         </Link>
                     );
                 })}
+                <LanguageToggle />
                 <Link href="/apply" className="btn-apply-sm">
-                    Aplica
+                    {t("nav.apply")}
                 </Link>
             </div>
         </nav>

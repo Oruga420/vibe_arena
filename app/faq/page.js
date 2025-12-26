@@ -1,22 +1,27 @@
+"use client";
+
 import Link from "next/link";
 import FaqAccordion from "../../components/FaqAccordion";
+import { useLanguage } from "../../components/LanguageProvider";
 
 export default function FaqPage() {
+    const { t } = useLanguage();
+
     return (
         <main>
             <section className="page-hero">
                 <div>
                     <p className="mono" style={{ color: "var(--primary-green)", marginBottom: "12px" }}>
-                        FAQ
+                        {t("faq.hero.tag")}
                     </p>
-                    <h1>Respuestas directas.</h1>
-                    <p>Todo lo que te preguntas antes de aplicar. Si falta algo, escribinos.</p>
+                    <h1>{t("faq.hero.title")}</h1>
+                    <p>{t("faq.hero.body")}</p>
                     <div className="hero-ctas">
                         <Link href="/apply" className="btn-primary">
-                            Aplica para Season 0
+                            {t("faq.hero.primary")}
                         </Link>
                         <Link href="/how" className="btn-ghost">
-                            Ver protocolo
+                            {t("faq.hero.secondary")}
                         </Link>
                     </div>
                 </div>
@@ -24,8 +29,8 @@ export default function FaqPage() {
 
             <section className="section">
                 <div className="section-header">
-                    <p className="mono">Preguntas</p>
-                    <h2>Lo que mas preguntan</h2>
+                    <p className="mono">{t("faq.list.label")}</p>
+                    <h2>{t("faq.list.title")}</h2>
                 </div>
                 <FaqAccordion />
             </section>

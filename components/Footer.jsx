@@ -1,4 +1,10 @@
+"use client";
+
+import { useLanguage } from "./LanguageProvider";
+
 export default function Footer() {
+    const { t } = useLanguage();
+
     return (
         <footer>
             <div className="logo">
@@ -6,14 +12,14 @@ export default function Footer() {
                 QUICKDROP
             </div>
             <div className="mono" style={{ opacity: 0.5 }}>
-                &copy; 2024 TORONTO TECH MINIMAL
+                {t("footer.copy")}
             </div>
             <div className="nav-links">
                 <a href="https://twitter.com" target="_blank" rel="noreferrer">
-                    Twitter/X
+                    {t("footer.twitter")}
                 </a>
                 <a href="https://discord.com" target="_blank" rel="noreferrer">
-                    Discord
+                    {t("footer.discord")}
                 </a>
             </div>
         </footer>
