@@ -1,15 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import { useLanguage } from "./LanguageProvider";
 
 export default function ApplyForm() {
     const [status, setStatus] = useState(null);
+    const { t } = useLanguage();
+    const options = t("apply.form.fields.stack.options");
 
     const handleSubmit = (event) => {
         event.preventDefault();
         setStatus({
             type: "success",
-            message: "Listo. Recibimos tu aplicacion y volvemos en 48hs."
+            message: t("apply.form.success")
         });
         event.currentTarget.reset();
     };
@@ -17,43 +20,43 @@ export default function ApplyForm() {
     return (
         <form className="form-grid" onSubmit={handleSubmit}>
             <div className="field">
-                <label htmlFor="name">Nombre completo</label>
-                <input id="name" name="name" type="text" placeholder="Tu nombre" required />
+                <label htmlFor="name">{t("apply.form.fields.name.label")}</label>
+                <input id="name" name="name" type="text" placeholder={t("apply.form.fields.name.placeholder")} required />
             </div>
             <div className="field">
-                <label htmlFor="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="tu@email.com" required />
+                <label htmlFor="email">{t("apply.form.fields.email.label")}</label>
+                <input id="email" name="email" type="email" placeholder={t("apply.form.fields.email.placeholder")} required />
             </div>
             <div className="field">
-                <label htmlFor="city">Ciudad</label>
-                <input id="city" name="city" type="text" placeholder="Toronto, Buenos Aires, etc." required />
+                <label htmlFor="city">{t("apply.form.fields.city.label")}</label>
+                <input id="city" name="city" type="text" placeholder={t("apply.form.fields.city.placeholder")} required />
             </div>
             <div className="field">
-                <label htmlFor="stack">Stack principal</label>
+                <label htmlFor="stack">{t("apply.form.fields.stack.label")}</label>
                 <select id="stack" name="stack" required>
-                    <option value="">Selecciona uno</option>
-                    <option value="fullstack">Fullstack JS/TS</option>
-                    <option value="frontend">Frontend</option>
-                    <option value="backend">Backend</option>
-                    <option value="mobile">Mobile</option>
-                    <option value="data">Data/ML</option>
-                    <option value="other">Otro</option>
+                    <option value="">{t("apply.form.fields.stack.placeholder")}</option>
+                    <option value="fullstack">{options?.fullstack}</option>
+                    <option value="frontend">{options?.frontend}</option>
+                    <option value="backend">{options?.backend}</option>
+                    <option value="mobile">{options?.mobile}</option>
+                    <option value="data">{options?.data}</option>
+                    <option value="other">{options?.other}</option>
                 </select>
             </div>
             <div className="field">
-                <label htmlFor="portfolio">Portfolio o repo</label>
-                <input id="portfolio" name="portfolio" type="url" placeholder="https://github.com/tuuser" required />
+                <label htmlFor="portfolio">{t("apply.form.fields.portfolio.label")}</label>
+                <input id="portfolio" name="portfolio" type="url" placeholder={t("apply.form.fields.portfolio.placeholder")} required />
             </div>
             <div className="field">
-                <label htmlFor="why">Por que queres entrar</label>
-                <textarea id="why" name="why" placeholder="Contanos en pocas lineas..." required></textarea>
+                <label htmlFor="why">{t("apply.form.fields.why.label")}</label>
+                <textarea id="why" name="why" placeholder={t("apply.form.fields.why.placeholder")} required></textarea>
             </div>
             <div>
-                <button className="btn-primary" type="submit">Enviar aplicacion</button>
+                <button className="btn-primary" type="submit">{t("apply.form.submit")}</button>
                 {status ? (
                     <div className={`form-status ${status.type}`}>{status.message}</div>
                 ) : (
-                    <div className="form-status">Te respondemos dentro de las proximas 48 horas.</div>
+                    <div className="form-status">{t("apply.form.helper")}</div>
                 )}
             </div>
         </form>
