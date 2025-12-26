@@ -3,7 +3,6 @@
 import Link from "next/link";
 import AsciiTower from "../components/AsciiTower";
 import Countdown from "../components/Countdown";
-import SponsorForm from "../components/SponsorForm";
 import { useLanguage } from "../components/LanguageProvider";
 
 export default function HomePage() {
@@ -91,25 +90,6 @@ export default function HomePage() {
                     <Link href="/roadmap" className="btn-ghost">
                         {t("home.season.secondary")}
                     </Link>
-                    <a href="#sponsors" className="btn-ghost">
-                        {t("home.season.sponsor")}
-                    </a>
-                </div>
-            </section>
-
-            <section className="section" id="sponsors">
-                <div className="section-header">
-                    <p className="mono">{t("sponsor.label")}</p>
-                    <h2>{t("sponsor.title")}</h2>
-                </div>
-                <p style={{ maxWidth: "720px", color: "#444", marginBottom: "32px" }}>
-                    {t("sponsor.body")}
-                </p>
-                <div className="manifesto" style={{ maxWidth: "980px" }}>
-                    <p className="mono" style={{ marginBottom: "20px" }}>
-                        {t("sponsor.form.title")}
-                    </p>
-                    <SponsorForm />
                 </div>
             </section>
         </main>

@@ -11,6 +11,7 @@ const translations = {
             judging: "Reglas",
             roadmap: "Plan",
             faq: "FAQ",
+            sponsor: "Patrocinios",
             apply: "Aplica",
             languageLabel: "Idioma"
         },
@@ -72,14 +73,34 @@ const translations = {
                 title: "Primero shippeas. Despues discutimos.",
                 body: "QuickDrop es una arena de velocidad con identidad Toronto. La regla es simple: 2 horas, una app real, demo activa y repo. El resto es actitud.",
                 primary: "Aplica ahora",
-                secondary: "Ver el plan",
-                sponsor: "Quiero patrocinar"
+                secondary: "Ver el plan"
             }
         },
         sponsor: {
             label: "Patrocinios",
             title: "Patrocina el drop y dale poder real a la comunidad.",
             body: "Buscamos partners que quieran impulsar builders rapidos. Decinos en que queres ayudar y que tipo de experiencia queres habilitar.",
+            highlights: {
+                label: "Valor",
+                title: "Que se llevan los sponsors",
+                cards: [
+                    {
+                        tag: "Talento",
+                        title: "Acceso directo a builders",
+                        body: "Conectate con los top builders del ecosistema y arma tu pipeline."
+                    },
+                    {
+                        tag: "Marca",
+                        title: "Visibilidad real",
+                        body: "Logo, menciones en stream, presencia en el evento y contenido post-drop."
+                    },
+                    {
+                        tag: "Producto",
+                        title: "Feedback rapido",
+                        body: "Probamos tu producto en tiempo real y te devolvemos insights en 48 horas."
+                    }
+                ]
+            },
             form: {
                 title: "Formulario para sponsors",
                 fields: {
@@ -399,6 +420,7 @@ const translations = {
             judging: "Rules",
             roadmap: "Roadmap",
             faq: "FAQ",
+            sponsor: "Sponsorships",
             apply: "Apply",
             languageLabel: "Language"
         },
@@ -460,14 +482,34 @@ const translations = {
                 title: "Ship first. Discuss later.",
                 body: "QuickDrop is a speed arena with Toronto identity. The rule is simple: 2 hours, a real app, live demo, and repo. The rest is attitude.",
                 primary: "Apply now",
-                secondary: "See the plan",
-                sponsor: "Sponsor a drop"
+                secondary: "See the plan"
             }
         },
         sponsor: {
             label: "Sponsorships",
             title: "Sponsor a drop and power the community.",
             body: "We are looking for partners that want to back fast builders. Tell us how you want to help and the kind of experience you want to enable.",
+            highlights: {
+                label: "Value",
+                title: "What sponsors get",
+                cards: [
+                    {
+                        tag: "Talent",
+                        title: "Direct access to builders",
+                        body: "Meet top builders in the ecosystem and build your hiring pipeline."
+                    },
+                    {
+                        tag: "Brand",
+                        title: "Real visibility",
+                        body: "Logo, stream mentions, on-site presence, and post-drop content."
+                    },
+                    {
+                        tag: "Product",
+                        title: "Fast feedback",
+                        body: "We test your product live and send insights within 48 hours."
+                    }
+                ]
+            },
             form: {
                 title: "Sponsor form",
                 fields: {
