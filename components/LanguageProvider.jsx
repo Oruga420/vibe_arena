@@ -20,7 +20,7 @@ const translations = {
             link: "Ver el plan"
         },
         footer: {
-            copy: "(c) 2024 TORONTO TECH MINIMAL",
+            copy: "(c) 2025 TORONTO TECH MINIMAL",
             twitter: "Twitter/X",
             discord: "Discord"
         },
@@ -527,7 +527,7 @@ const translations = {
             link: "See the plan"
         },
         footer: {
-            copy: "(c) 2024 TORONTO TECH MINIMAL",
+            copy: "(c) 2025 TORONTO TECH MINIMAL",
             twitter: "Twitter/X",
             discord: "Discord"
         },
