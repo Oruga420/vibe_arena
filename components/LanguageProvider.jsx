@@ -267,9 +267,9 @@ const translations = {
             hero: {
                 tag: "El protocolo",
                 title: "Las reglas del ring.",
-                body: "Kickoff 18:00 ET (Toronto). Te cae un prompt y te corre el reloj. Desde cero en este drop, pero pod\u00e9s usar templates.",
+                body: "Kickoff 18:00 ET (Toronto). Tema + open build + twist opcional. Sin boilerplates. No traigas una app ya hecha.",
                 primary: "Entrar al ring",
-                secondary: "C\u00f3mo te juzgamos"
+                secondary: "C\u00f3mo se vota"
             },
             steps: {
                 label: "Pasos",
@@ -277,23 +277,23 @@ const translations = {
                 items: [
                     {
                         num: "01",
-                        title: "Te cae el prompt",
-                        body: "Kickoff 18:00 ET (Toronto). Desde cero en este drop, pero pod\u00e9s usar templates."
+                        title: "Cae el tema",
+                        body: "Kickoff 18:00 ET (Toronto). Tema + open build + twist opcional. Sin boilerplates. No traigas una app ya hecha."
                     },
                     {
                         num: "02",
                         title: "Constru\u00eds",
-                        body: "Ten\u00e9s 2 horas. IA, templates y lo que quieras. El objetivo es shippear."
+                        body: "Ten\u00e9s 2 horas. Cualquier stack. Cualquier IA. Sin templates. Objetivo: shippear."
                     },
                     {
                         num: "03",
                         title: "Entreg\u00e1s demo",
-                        body: "URL viva + repo. Si no carga, no existe."
+                        body: "URL viva + repo + README. Si no carga, no existe. Las entregas cierran 20:00 ET."
                     },
                     {
                         num: "04",
-                        title: "Te juzgamos en vivo",
-                        body: "Top 5 al ring. Un ganador se lleva el drop."
+                        title: "Voto en vivo",
+                        body: "Demos rel\u00e1mpago, luego vota la gente. Top 5 finalistas. Voto final elige ganador. Votaci\u00f3n abierta durante demos; un voto por persona."
                     }
                 ]
             },
@@ -782,9 +782,9 @@ const translations = {
             hero: {
                 tag: "The protocol",
                 title: "Ring rules. No detours.",
-                body: "Kickoff 18:00 ET (Toronto). A prompt hits and the clock starts. Clean slate for this drop, but templates are allowed.",
+                body: "Kickoff 18:00 ET (Toronto). Theme + open build + optional twist. No boilerplates. Start from scratch.",
                 primary: "Enter the ring",
-                secondary: "How we judge"
+                secondary: "How voting works"
             },
             steps: {
                 label: "Steps",
@@ -792,23 +792,23 @@ const translations = {
                 items: [
                     {
                         num: "01",
-                        title: "Prompt hits",
-                        body: "Kickoff 18:00 ET (Toronto). Clean slate for this drop, but templates are allowed."
+                        title: "Theme drops",
+                        body: "Kickoff 18:00 ET (Toronto). Theme + open build + optional twist. No boilerplates. Start from scratch."
                     },
                     {
                         num: "02",
                         title: "Build",
-                        body: "You get 2 hours. AI, templates, anything. The goal is shipping."
+                        body: "You get 2 hours. Any stack. Any AI. No templates. Goal is shipping."
                     },
                     {
                         num: "03",
                         title: "Ship the demo",
-                        body: "Live URL + repo. If it does not load, it does not exist."
+                        body: "Live URL + repo + README. If it does not load, it does not exist. Submissions close at 20:00 ET."
                     },
                     {
                         num: "04",
-                        title: "Live judgment",
-                        body: "Top 5 go live. One winner takes the drop."
+                        title: "Live vote",
+                        body: "Lightning demos, then the crowd votes. Top 5 finalists. Final vote picks the winner. Voting opens during demos. One vote per person."
                     }
                 ]
             },
