@@ -2,19 +2,24 @@
 
 import Link from "next/link";
 import AsciiTower from "../components/AsciiTower";
-import Countdown from "../components/Countdown";
 import { useLanguage } from "../components/LanguageProvider";
 
 export default function HomePage() {
     const { t } = useLanguage();
     const mapCards = t("home.map.cards");
-    const mapLinks = ["/how", "/judging", "/roadmap", "/faq"];
+    const mapLinks = ["/how", "/judging", "/roadmap", "/apply"];
+    const statusItems = t("home.status.items");
+    const memeItems = t("home.memes.items");
 
     return (
         <main>
             <section className="hero">
                 <AsciiTower />
                 <div className="scanline" aria-hidden="true"></div>
+                <div className="hero-signal">
+                    <span className="mono">{t("home.signal.label")}</span>
+                    <span className="signal-body">{t("home.signal.body")}</span>
+                </div>
 
                 <div className="hero-content">
                     <p className="mono" style={{ color: "var(--primary-green)", marginBottom: "16px" }}>
@@ -48,10 +53,26 @@ export default function HomePage() {
                         <span>{t("home.drop.stack")}</span>
                         <span>{t("home.drop.stackValue")}</span>
                     </div>
-                    <Countdown targetDate="2025-02-01T00:00:00" />
+                    <div className="countdown">{t("home.drop.window")}</div>
                     <div className="mono" style={{ marginTop: "8px", fontSize: "0.6rem", color: "var(--accent-red)" }}>
-                        {t("home.drop.spots")}
+                        {t("home.drop.note")}
                     </div>
+                </div>
+            </section>
+
+            <section className="section section-muted">
+                <div className="section-header">
+                    <p className="mono">{t("home.status.label")}</p>
+                    <h2>{t("home.status.title")}</h2>
+                </div>
+                <div className="grid-4">
+                    {Array.isArray(statusItems) &&
+                        statusItems.map((item) => (
+                            <div className="card" key={item.title}>
+                                <h3>{item.title}</h3>
+                                <p>{item.body}</p>
+                            </div>
+                        ))}
                 </div>
             </section>
 
@@ -75,12 +96,27 @@ export default function HomePage() {
                 </div>
             </section>
 
+            <section className="section">
+                <div className="section-header">
+                    <p className="mono">{t("home.memes.label")}</p>
+                    <h2>{t("home.memes.title")}</h2>
+                </div>
+                <div className="cards-grid">
+                    {Array.isArray(memeItems) &&
+                        memeItems.map((line) => (
+                            <div className="card-link static" key={line}>
+                                <h3>{line}</h3>
+                            </div>
+                        ))}
+                </div>
+            </section>
+
             <section className="section section-muted">
                 <div className="section-header">
                     <p className="mono">{t("home.season.label")}</p>
                     <h2>{t("home.season.title")}</h2>
                 </div>
-                <p style={{ maxWidth: "680px", color: "#444", marginBottom: "32px" }}>
+                <p style={{ maxWidth: "680px", color: "var(--text-muted)", marginBottom: "32px" }}>
                     {t("home.season.body")}
                 </p>
                 <div className="hero-ctas">
@@ -90,6 +126,21 @@ export default function HomePage() {
                     <Link href="/roadmap" className="btn-ghost">
                         {t("home.season.secondary")}
                     </Link>
+                </div>
+            </section>
+
+            <section className="section">
+                <div className="section-header">
+                    <p className="mono">{t("home.glory.label")}</p>
+                    <h2>{t("home.glory.title")}</h2>
+                </div>
+                <div className="glory-board">
+                    <p className="mono">{t("home.glory.body")}</p>
+                    <div className="hero-ctas" style={{ marginTop: "24px" }}>
+                        <Link href="/apply" className="btn-primary">
+                            {t("home.glory.cta")}
+                        </Link>
+                    </div>
                 </div>
             </section>
         </main>

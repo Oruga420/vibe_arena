@@ -57,7 +57,7 @@ export default function RoadmapPage() {
                     <p className="mono">{t("roadmap.community.label")}</p>
                     <h2>{t("roadmap.community.title")}</h2>
                 </div>
-                <p style={{ maxWidth: "680px", color: "#444", marginBottom: "32px" }}>
+                <p style={{ maxWidth: "680px", color: "var(--text-muted)", marginBottom: "32px" }}>
                     {t("roadmap.community.body")}
                 </p>
                 <div className="hero-ctas">
