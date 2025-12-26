@@ -3,6 +3,7 @@
 import Link from "next/link";
 import AsciiTower from "../components/AsciiTower";
 import { useLanguage } from "../components/LanguageProvider";
+import WaitlistModal from "../components/WaitlistModal";
 
 export default function HomePage() {
     const { t } = useLanguage();
@@ -13,6 +14,7 @@ export default function HomePage() {
 
     return (
         <main>
+            <WaitlistModal />
             <section className="hero">
                 <AsciiTower />
                 <div className="scanline" aria-hidden="true"></div>

@@ -29,6 +29,31 @@ const translations = {
             dark: "Oscuro",
             light: "Claro"
         },
+        waitlist: {
+            label: "Waitlist",
+            title: "Enterate primero de las fechas.",
+            body: "Dejanos tu email y te avisamos las upcoming dates. Podes entrar a la arena o mirar desde la tribuna.",
+            fields: {
+                name: "Nombre",
+                email: "Email",
+                role: "Queres entrar o mirar"
+            },
+            placeholders: {
+                name: "Tu nombre",
+                email: "tu@email.com",
+                role: "Elegi una opcion"
+            },
+            roles: {
+                arena: "Quiero entrar a la arena",
+                spectator: "Solo espectador"
+            },
+            submit: "Sumarme",
+            dismiss: "Cerrar",
+            helper: "Te escribimos cuando haya fechas nuevas.",
+            success: "Listo. Te vamos a avisar primero.",
+            error: "Completa nombre, email y opcion.",
+            close: "Cerrar modal"
+        },
         home: {
             hero: {
                 tag: "Toronto Vibe-coding Arena",
@@ -510,6 +535,31 @@ const translations = {
             label: "Theme",
             dark: "Dark",
             light: "Light"
+        },
+        waitlist: {
+            label: "Waitlist",
+            title: "Get the upcoming dates first.",
+            body: "Drop your email and we will ping you with upcoming dates. You can enter the arena or just watch.",
+            fields: {
+                name: "Name",
+                email: "Email",
+                role: "Do you want to compete or watch"
+            },
+            placeholders: {
+                name: "Your name",
+                email: "you@email.com",
+                role: "Select one"
+            },
+            roles: {
+                arena: "I want to enter the arena",
+                spectator: "Spectator only"
+            },
+            submit: "Join waitlist",
+            dismiss: "Close",
+            helper: "We will email you when new dates drop.",
+            success: "Done. We will reach out first.",
+            error: "Fill name, email, and option.",
+            close: "Close modal"
         },
         home: {
             hero: {
