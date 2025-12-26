@@ -477,12 +477,12 @@ const translations = {
                         answer: "Solo durante demos. El voto abre en vivo y se cierra r\u00e1pido."
                     },
                     {
-                        question: "\u00bfPuedo usar IA y templates?",
-                        answer: "S\u00ed. Us\u00e1 todo. IA, templates, librer\u00edas. La velocidad manda. Cont\u00e1 qu\u00e9 usaste."
+                        question: "\u00bfPuedo usar IA y librer\u00edas?",
+                        answer: "S\u00ed. Us\u00e1 IA y librer\u00edas. Sin templates. Desde cero. Cont\u00e1 qu\u00e9 usaste."
                     },
                     {
                         question: "\u00bfPuedo traer una app ya hecha?",
-                        answer: "No. Boilerplates s\u00ed. Productos terminados no."
+                        answer: "No. Sin boilerplates. Todo desde cero."
                     },
                     {
                         question: "\u00bfQu\u00e9 tengo que entregar?",
@@ -1053,12 +1053,12 @@ const translations = {
                         answer: "Only during demos. Voting opens live and closes fast."
                     },
                     {
-                        question: "Can I use AI and templates?",
-                        answer: "Yes. Use everything. AI, templates, libraries. Speed wins. Disclose what you used."
+                        question: "Can I use AI and libraries?",
+                        answer: "Yes. Use AI and libraries. No templates. Start from scratch. Disclose what you used."
                     },
                     {
                         question: "Can I bring a pre-built app?",
-                        answer: "No. Boilerplates are fine. Finished products are not."
+                        answer: "No. No boilerplates. Start from scratch."
                     },
                     {
                         question: "What must I submit?",
