@@ -9,10 +9,14 @@ export default function WaitlistModal() {
     const [status, setStatus] = useState(null);
 
     useEffect(() => {
+        if (window.__waitlistDismissed) {
+            return;
+        }
         setOpen(true);
     }, []);
 
     const handleClose = () => {
+        window.__waitlistDismissed = true;
         setOpen(false);
     };
 
