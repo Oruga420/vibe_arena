@@ -24,6 +24,11 @@ const translations = {
             twitter: "Twitter/X",
             discord: "Discord"
         },
+        theme: {
+            label: "Tema",
+            dark: "Oscuro",
+            light: "Claro"
+        },
         home: {
             hero: {
                 tag: "Toronto Vibe-coding Arena",
@@ -500,6 +505,11 @@ const translations = {
             copy: "(c) 2024 TORONTO TECH MINIMAL",
             twitter: "Twitter/X",
             discord: "Discord"
+        },
+        theme: {
+            label: "Theme",
+            dark: "Dark",
+            light: "Light"
         },
         home: {
             hero: {
