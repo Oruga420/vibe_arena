@@ -133,22 +133,22 @@ const translations = {
                     {
                         tag: "01 - El protocolo",
                         title: "El protocolo",
-                        body: "Te cae el prompt, constru\u00eds, entreg\u00e1s demo, te juzgamos."
+                        body: "Cae el prompt, constru\u00eds, shipe\u00e1s, decide la gente."
                     },
                     {
                         tag: "02 - Las reglas",
-                        title: "C\u00f3mo te juzgamos",
-                        body: "Pesos claros. Sin chamuyo."
+                        title: "C\u00f3mo se gana",
+                        body: "Votos en vivo. Una persona, un voto. Sin jurado."
                     },
                     {
                         tag: "03 - Arena status",
                         title: "Prueba de vida",
-                        body: "Patch notes del drop y fechas reales."
+                        body: "Patch notes del drop, fechas reales, ventanas de voto."
                     },
                     {
                         tag: "04 - Wall of Glory",
-                        title: "Marcador vac\u00edo",
-                        body: "Vac\u00edo por ahora. \u00bfQuer\u00e9s ser el primero?"
+                        title: "El marcador",
+                        body: "Vac\u00edo por ahora. \u00bfQuer\u00e9s el primer lugar?"
                     }
                 ]
             },
@@ -652,17 +652,17 @@ const translations = {
                     {
                         tag: "01 - The protocol",
                         title: "The protocol",
-                        body: "Prompt hits, you build, you ship, we judge."
+                        body: "Prompt hits, you build, you ship, the crowd decides."
                     },
                     {
                         tag: "02 - The rules",
-                        title: "How we judge",
-                        body: "Clear weights. No fluff."
+                        title: "How winning works",
+                        body: "Live votes only. One person, one vote. No judge panel."
                     },
                     {
                         tag: "03 - Arena status",
                         title: "Proof of life",
-                        body: "Drop patch notes and real dates."
+                        body: "Drop patch notes, real dates, voting windows."
                     },
                     {
                         tag: "04 - Wall of Glory",
