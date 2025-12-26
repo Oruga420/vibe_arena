@@ -103,21 +103,6 @@ export default function HomePage() {
                 </div>
             </section>
 
-            <section className="section">
-                <div className="section-header">
-                    <p className="mono">{t("home.memes.label")}</p>
-                    <h2>{t("home.memes.title")}</h2>
-                </div>
-                <div className="cards-grid">
-                    {Array.isArray(memeItems) &&
-                        memeItems.map((line) => (
-                            <div className="card-link static" key={line}>
-                                <h3>{line}</h3>
-                            </div>
-                        ))}
-                </div>
-            </section>
-
             <section className="section section-muted">
                 <div className="section-header">
                     <p className="mono">{t("home.season.label")}</p>
