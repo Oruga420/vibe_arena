@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { useLanguage } from "./LanguageProvider";
+import useDropStatus from "./useDropStatus";
 
 const MS_PER_SECOND = 1000;
 const MS_PER_MINUTE = 60 * MS_PER_SECOND;
@@ -27,57 +28,10 @@ const normalizeHandle = (handle) => {
     return handle.startsWith("@") ? handle : `@${handle}`;
 };
 
-const getRefreshInterval = (payload) => {
-    if (!payload) {
-        return 60000;
-    }
-    if (payload.status === "OPEN") {
-        return 3000;
-    }
-    if (payload.status === "CLOSED_UPCOMING" && payload.votingOpensAt) {
-        const diff = new Date(payload.votingOpensAt).getTime() - Date.now();
-        if (diff <= MS_PER_HOUR) {
-            return 15000;
-        }
-    }
-    return 60000;
-};
-
 export default function LiveVoteStatus() {
     const { t } = useLanguage();
-    const [payload, setPayload] = useState(null);
+    const { data: payload } = useDropStatus("live");
     const [countdown, setCountdown] = useState("");
-
-    useEffect(() => {
-        let timeoutId;
-        let cancelled = false;
-
-        const fetchStatus = async () => {
-            try {
-                const response = await fetch("/api/live-status", { cache: "no-store" });
-                const data = await response.json();
-                if (cancelled) {
-                    return;
-                }
-                setPayload(data);
-                timeoutId = window.setTimeout(fetchStatus, getRefreshInterval(data));
-            } catch (error) {
-                if (cancelled) {
-                    return;
-                }
-                timeoutId = window.setTimeout(fetchStatus, 60000);
-            }
-        };
-
-        fetchStatus();
-
-        return () => {
-            cancelled = true;
-            if (timeoutId) {
-                window.clearTimeout(timeoutId);
-            }
-        };
-    }, []);
 
     useEffect(() => {
         if (!payload || payload.status !== "OPEN" || !payload.votingClosesAt) {

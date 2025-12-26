@@ -1,13 +1,17 @@
 "use client";
 
 import Link from "next/link";
+import { buildDropTokens, formatTemplate } from "../../components/dropFormat";
 import { useLanguage } from "../../components/LanguageProvider";
+import useDropStatus from "../../components/useDropStatus";
 
 export default function RoadmapPage() {
     const { t } = useLanguage();
+    const { data } = useDropStatus("slow");
     const statusItems = t("roadmap.status.items");
     const checklistItems = t("roadmap.checklist.items");
     const waysItems = t("roadmap.ways.items");
+    const tokens = buildDropTokens(data);
     const discordUrl = "https://discord.com";
 
     return (
@@ -42,7 +46,7 @@ export default function RoadmapPage() {
                             statusItems.map((item) => (
                                 <div className="status-line" key={item.label}>
                                     <span className="status-label">{item.label}</span>
-                                    <span className="status-value">{item.value}</span>
+                                    <span className="status-value">{formatTemplate(item.value, tokens)}</span>
                                 </div>
                             ))}
                     </div>

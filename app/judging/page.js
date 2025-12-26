@@ -2,14 +2,19 @@
 
 import Link from "next/link";
 import JudgingBars from "../../components/JudgingBars";
+import { buildDropTokens, formatTemplate } from "../../components/dropFormat";
 import { useLanguage } from "../../components/LanguageProvider";
+import useDropStatus from "../../components/useDropStatus";
 
 export default function JudgingPage() {
     const { t } = useLanguage();
+    const { data } = useDropStatus("slow");
     const cards = t("judging.weights.cards");
+    const entryItems = t("judging.entry.items");
     const checklist = t("judging.checklist.items");
     const formatItems = t("judging.format.items");
     const dqItems = t("judging.autoDQ.items");
+    const tokens = buildDropTokens(data);
 
     return (
         <main>
@@ -29,6 +34,22 @@ export default function JudgingPage() {
                         </Link>
                     </div>
                 </div>
+            </section>
+
+            <section className="section">
+                <div className="section-header">
+                    <p className="mono">{t("judging.entry.label")}</p>
+                    <h2>{formatTemplate(t("judging.entry.title"), tokens)}</h2>
+                </div>
+                <div className="cards-grid">
+                    {Array.isArray(entryItems) &&
+                        entryItems.map((item) => (
+                            <div className="card-link static" key={item}>
+                                <p>{formatTemplate(item, tokens)}</p>
+                            </div>
+                        ))}
+                </div>
+                <p className="rules-note">{formatTemplate(t("judging.entry.note"), tokens)}</p>
             </section>
 
             <section className="section section-muted">
