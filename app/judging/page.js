@@ -35,7 +35,7 @@ export default function JudgingPage() {
                         <div className="section-header">
                             <p className="mono">{t("judging.weights.label")}</p>
                             <h2>{t("judging.weights.title")}</h2>
-                            <p style={{ marginTop: "20px", color: "#444" }}>{t("judging.weights.body")}</p>
+                            <p style={{ marginTop: "20px", color: "var(--text-muted)" }}>{t("judging.weights.body")}</p>
                         </div>
                         <div className="cards-grid">
                             {Array.isArray(cards) &&
