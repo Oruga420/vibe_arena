@@ -11,7 +11,6 @@ export default function HomePage() {
     const mapCards = t("home.map.cards");
     const mapLinks = ["/how", "/judging", "/roadmap", "/apply"];
     const statusItems = t("home.status.items");
-    const memeItems = t("home.memes.items");
 
     return (
         <main>
@@ -19,10 +18,6 @@ export default function HomePage() {
             <section className="hero">
                 <AsciiTower />
                 <div className="scanline" aria-hidden="true"></div>
-                <div className="hero-signal">
-                    <span className="mono">{t("home.signal.label")}</span>
-                    <span className="signal-body">{t("home.signal.body")}</span>
-                </div>
 
                 <div className="hero-content">
                     <p className="mono" style={{ color: "var(--primary-green)", marginBottom: "16px" }}>

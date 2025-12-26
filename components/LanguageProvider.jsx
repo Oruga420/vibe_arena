@@ -62,10 +62,6 @@ const translations = {
                 primary: "Entrar al ring",
                 secondary: "Las reglas del ring"
             },
-            signal: {
-                label: "Toronto signal locked",
-                body: "Arena online. Torre al fondo. Reloj arriba."
-            },
             drop: {
                 title: "Pr\u00f3ximo drop",
                 format: "Formato",
@@ -580,10 +576,6 @@ const translations = {
                 body: "Season 0. First gladiators. Limited spots. Not a hackathon: it's a drop. You enter, you ship, you get judged.",
                 primary: "Enter the ring",
                 secondary: "Ring rules"
-            },
-            signal: {
-                label: "Toronto signal locked",
-                body: "Arena online. Tower in the back. Clock up top."
             },
             drop: {
                 title: "Next drop",
