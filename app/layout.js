@@ -6,8 +6,8 @@ import { LanguageProvider } from "../components/LanguageProvider";
 import BottomToggles from "../components/BottomToggles";
 
 export const metadata = {
-    title: "QuickDrop | Ultimate Vibe-coding Arena",
-    description: "The Toronto vibe-coding arena. Ship a real app in 2 hours."
+    title: "Vibe Arena | QuickDrop",
+    description: "QuickDrop by Vibe Arena. Ship a real app in 2 hours."
 };
 
 export default function RootLayout({ children }) {
