@@ -8,6 +8,8 @@ export default function JudgingPage() {
     const { t } = useLanguage();
     const cards = t("judging.weights.cards");
     const checklist = t("judging.checklist.items");
+    const formatItems = t("judging.format.items");
+    const dqItems = t("judging.autoDQ.items");
 
     return (
         <main>
@@ -49,9 +51,28 @@ export default function JudgingPage() {
                         </div>
                     </div>
                     <div>
+                        <div className="bars-header">
+                            <p className="mono">{t("judging.barsLabel")}</p>
+                        </div>
                         <JudgingBars />
                     </div>
                 </div>
+            </section>
+
+            <section className="section">
+                <div className="section-header">
+                    <p className="mono">{t("judging.format.label")}</p>
+                    <h2>{t("judging.format.title")}</h2>
+                </div>
+                <div className="cards-grid">
+                    {Array.isArray(formatItems) &&
+                        formatItems.map((item) => (
+                            <div className="card-link static" key={item}>
+                                <p>{item}</p>
+                            </div>
+                        ))}
+                </div>
+                <p className="rules-note">{t("judging.format.note")}</p>
             </section>
 
             <section className="section">
@@ -69,6 +90,22 @@ export default function JudgingPage() {
                             </div>
                         ))}
                 </div>
+            </section>
+
+            <section className="section section-muted">
+                <div className="section-header">
+                    <p className="mono">{t("judging.autoDQ.label")}</p>
+                    <h2>{t("judging.autoDQ.title")}</h2>
+                </div>
+                <div className="cards-grid">
+                    {Array.isArray(dqItems) &&
+                        dqItems.map((item) => (
+                            <div className="card-link static" key={item}>
+                                <p>{item}</p>
+                            </div>
+                        ))}
+                </div>
+                <p className="rules-note">{t("judging.autoDQ.note")}</p>
             </section>
         </main>
     );

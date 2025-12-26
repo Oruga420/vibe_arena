@@ -321,38 +321,60 @@ const translations = {
         },
         judging: {
             hero: {
-                tag: "El juicio",
-                title: "Ac\u00e1 te rompemos el ego.",
-                body: "Si funciona, si se entiende, si vende. Si no, afuera. AI permitido.",
+                tag: "REGLAS DE VOTO",
+                title: "La gente te rompe el ego r\u00e1pido.",
+                body: "Tiene que funcionar. Tiene que ser claro. Tiene que vender. Sin jueces: decide el voto en vivo. IA permitida.",
                 primary: "Entrar al ring",
-                secondary: "El protocolo"
+                secondary: "Ver el protocolo"
             },
             weights: {
-                label: "Pesos",
-                title: "C\u00f3mo te juzgamos",
-                body: "Ac\u00e1 no hay humo. Mostr\u00e1 valor en minutos.",
+                label: "C\u00d3MO SE GANA",
+                title: "Voto en vivo. Sin jueces.",
+                body: "Votaci\u00f3n abierta durante demos y se cierra r\u00e1pido. Un voto por persona. El ganador es el voto.",
                 cards: [
                     {
                         tag: "Regla base",
-                        title: "Demo online",
-                        body: "La URL debe estar viva. Si no carga, no hay puntaje."
+                        title: "Ventana de voto",
+                        body: "El voto abre durante demos y se cierra r\u00e1pido. Si te lo perd\u00e9s, te lo perd\u00e9s."
                     },
                     {
-                        tag: "AI permitido",
+                        tag: "Anti-trampa",
+                        title: "Chequeo de presencia",
+                        body: "Solo pod\u00e9s votar si est\u00e1s en vivo. Tokens rotan."
+                    },
+                    {
+                        tag: "IA permitida",
                         title: "Transparencia",
-                        body: "Pod\u00e9s usar IA, templates y libs. Cont\u00e1 qu\u00e9 usaste."
+                        body: "Us\u00e1 IA y libs. Solo cont\u00e1 qu\u00e9 usaste."
+                    },
+                    {
+                        tag: "Filtro duro",
+                        title: "Demo funcional",
+                        body: "Si la URL no carga, no existe. No entra a votaci\u00f3n."
                     }
                 ]
             },
             bars: [
-                { label: "Funciona de verdad? (40%)", value: 90 },
-                { label: "Se entiende en 30 segundos? (30%)", value: 70 },
-                { label: "Tu demo vende sola? (20%)", value: 50 },
-                { label: "Shipeaste o chamuyaste? (10%)", value: 30 }
+                { label: "Funciona de verdad?", value: 90 },
+                { label: "Se entiende en 30 segundos?", value: 70 },
+                { label: "Tu demo vende sola?", value: 50 },
+                { label: "Shipeaste o chamuyaste?", value: 30 }
             ],
+            barsLabel: "QU\u00c9 CONSIGUE VOTOS",
+            format: {
+                label: "FORMATO",
+                title: "C\u00f3mo sale el Top 5",
+                items: [
+                    "Ronda 1: demos rel\u00e1mpago (60-90s cada una).",
+                    "Voto 1: la gente elige el Top 5.",
+                    "Ronda 2: demos rel\u00e1mpago del Top 5.",
+                    "Voto 2: el ganador se lleva el drop."
+                ],
+                note: "Si te perd\u00e9s la ventana de voto, te lo perd\u00e9s. Sin drama."
+            },
             checklist: {
                 label: "Checklist",
-                title: "Reglas esenciales",
+                title: "Reglas base",
                 items: [
                     {
                         num: "01",
@@ -371,10 +393,21 @@ const translations = {
                     },
                     {
                         num: "04",
-                        title: "Demo en vivo",
-                        body: "Los top 5 muestran su demo frente al jurado."
+                        title: "Voto en vivo",
+                        body: "Demos rel\u00e1mpago y voto de la gente. Un ganador."
                     }
                 ]
+            },
+            autoDQ: {
+                label: "NO DRAMA",
+                title: "Auto-DQ",
+                items: [
+                    "Demo ca\u00edda durante la votaci\u00f3n.",
+                    "Sin repo o sin README.",
+                    "Producto pre-armado (sin boilerplates, no apps hechas).",
+                    "Intentos de manipulaci\u00f3n de votos."
+                ],
+                note: "Lo mantenemos justo para que la gente elija al ganador real."
             }
         },
         roadmap: {
@@ -836,35 +869,57 @@ const translations = {
         },
         judging: {
             hero: {
-                tag: "Judgment",
-                title: "We break your ego fast.",
-                body: "Does it work, is it clear, does it sell. If not, you are out. AI allowed.",
+                tag: "VOTING RULES",
+                title: "The crowd breaks your ego fast.",
+                body: "It must work. It must be clear. It must sell. No judges: live vote decides. AI allowed.",
                 primary: "Enter the ring",
-                secondary: "The protocol"
+                secondary: "See the protocol"
             },
             weights: {
-                label: "Weights",
-                title: "How we judge",
-                body: "No smoke. Show value in minutes.",
+                label: "HOW WINNING WORKS",
+                title: "Live vote. No judges.",
+                body: "Voting opens during demos and closes fast. One vote per person. Winner is the vote.",
                 cards: [
                     {
                         tag: "Base rule",
-                        title: "Live demo",
-                        body: "The URL must be live. If it fails to load, no points."
+                        title: "Live vote window",
+                        body: "Voting opens during demos and closes fast. Miss it, you miss it."
+                    },
+                    {
+                        tag: "Anti-cheat",
+                        title: "Presence check",
+                        body: "You can only vote if you are watching live. Tokens rotate."
                     },
                     {
                         tag: "AI allowed",
                         title: "Transparency",
-                        body: "Use AI, templates, and libs. Tell us what you used."
+                        body: "Use AI and libs. Just disclose what you used."
+                    },
+                    {
+                        tag: "Hard filter",
+                        title: "Working demo",
+                        body: "If the URL does not load, it does not exist. Not eligible for votes."
                     }
                 ]
             },
             bars: [
-                { label: "Does it actually work? (40%)", value: 90 },
-                { label: "Clear in 30 seconds? (30%)", value: 70 },
-                { label: "Does your demo sell itself? (20%)", value: 50 },
-                { label: "Did you ship or BS? (10%)", value: 30 }
+                { label: "Does it actually work?", value: 90 },
+                { label: "Clear in 30 seconds?", value: 70 },
+                { label: "Does the demo sell itself?", value: 50 },
+                { label: "Did you ship or BS?", value: 30 }
             ],
+            barsLabel: "WHAT GETS VOTES",
+            format: {
+                label: "FORMAT",
+                title: "How the Top 5 happens",
+                items: [
+                    "Round 1: lightning demos (60-90s each).",
+                    "Vote 1: the crowd picks the Top 5.",
+                    "Round 2: Top 5 lightning demos.",
+                    "Vote 2: winner takes the drop."
+                ],
+                note: "If you miss the vote window, you miss the vote. No drama."
+            },
             checklist: {
                 label: "Checklist",
                 title: "Core rules",
@@ -886,10 +941,21 @@ const translations = {
                     },
                     {
                         num: "04",
-                        title: "Live demo",
-                        body: "Top 5 show their demo in front of the jury."
+                        title: "Live vote",
+                        body: "Lightning demos, then the crowd votes. One winner."
                     }
                 ]
+            },
+            autoDQ: {
+                label: "NO DRAMA",
+                title: "Auto-DQ",
+                items: [
+                    "Demo link is down during voting.",
+                    "No repo or no README.",
+                    "Pre-built product (no boilerplates, no finished apps).",
+                    "Vote manipulation attempts."
+                ],
+                note: "We keep it fair so the crowd decides the real winner."
             }
         },
         roadmap: {

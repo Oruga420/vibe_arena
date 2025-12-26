@@ -175,6 +175,15 @@ h1, h2, h3 {
     font-size: clamp(2rem, 5vw, 3rem);
 }
 
+.bars-header {
+    margin-bottom: 16px;
+}
+
+.rules-note {
+    margin-top: 20px;
+    color: var(--text-muted);
+}
+
 .btn-primary,
 .btn-ghost,
 .btn-apply-sm {
