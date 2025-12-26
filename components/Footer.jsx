@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useLanguage } from "./LanguageProvider";
 
 export default function Footer() {
@@ -10,6 +11,11 @@ export default function Footer() {
             <div className="logo">
                 <div className="dot"></div>
                 QUICKDROP
+            </div>
+            <div className="footer-links">
+                <Link href="/roadmap">{t("nav.roadmap")}</Link>
+                <Link href="/faq">{t("nav.faq")}</Link>
+                <Link href="/sponsor">{t("nav.sponsor")}</Link>
             </div>
             <div className="mono" style={{ opacity: 0.5 }}>
                 {t("footer.copy")}

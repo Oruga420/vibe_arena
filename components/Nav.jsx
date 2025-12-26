@@ -15,10 +15,7 @@ export default function Nav() {
         () => [
             { label: t("nav.home"), href: "/" },
             { label: t("nav.how"), href: "/how" },
-            { label: t("nav.judging"), href: "/judging" },
-            { label: t("nav.roadmap"), href: "/roadmap" },
-            { label: t("nav.faq"), href: "/faq" },
-            { label: t("nav.sponsor"), href: "/sponsor" }
+            { label: t("nav.judging"), href: "/judging" }
         ],
         [t]
     );
