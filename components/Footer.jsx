@@ -10,7 +10,7 @@ export default function Footer() {
         <footer>
             <div className="logo">
                 <div className="dot"></div>
-                QUICKDROP
+                VIBE ARENA
             </div>
             <div className="footer-links">
                 <Link href="/roadmap">{t("nav.roadmap")}</Link>

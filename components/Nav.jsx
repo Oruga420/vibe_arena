@@ -42,7 +42,7 @@ export default function Nav() {
         <nav ref={navRef}>
             <div className="logo">
                 <div className="dot"></div>
-                QUICKDROP
+                VIBE ARENA
             </div>
             <button
                 className="nav-toggle"
