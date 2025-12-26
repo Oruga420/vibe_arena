@@ -720,6 +720,12 @@ nav {
     padding: 0 24px 20px;
 }
 
+.faq-footer {
+    margin-top: 24px;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
 /* Forms */
 .form-grid {
     display: grid;

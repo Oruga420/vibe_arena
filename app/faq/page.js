@@ -33,6 +33,7 @@ export default function FaqPage() {
                     <h2>{t("faq.list.title")}</h2>
                 </div>
                 <FaqAccordion />
+                <p className="faq-footer">{t("faq.list.footer")}</p>
             </section>
         </main>
     );
