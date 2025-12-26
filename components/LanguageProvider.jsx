@@ -458,41 +458,50 @@ const translations = {
         },
         faq: {
             hero: {
-                tag: "FAQ",
-                title: "Respuestas directas.",
-                body: "Todo lo que te pregunt\u00e1s antes de aplicar. Si falta algo, escribinos.",
+                tag: "CONTRATO DEL RING",
+                title: "Le\u00e9 esto. Despu\u00e9s entr\u00e1.",
+                body: "Season 0 es simple: 2 horas, demo en vivo, la gente decide.",
                 primary: "Aplic\u00e1 para Season 0",
                 secondary: "Ver protocolo"
             },
             list: {
-                label: "Preguntas",
-                title: "Lo que m\u00e1s preguntan",
+                label: "CONTRATO DEL RING",
+                title: "Lo que de verdad preguntan",
                 items: [
                     {
-                        question: "\u00bfPuedo usar IA y templates?",
-                        answer: "S\u00ed. La IA est\u00e1 permitida y recomendada. Queremos velocidad real, no purismo."
+                        question: "\u00bfC\u00f3mo gano?",
+                        answer: "Con votos en vivo. Sin jueces. La gente decide."
                     },
                     {
-                        question: "\u00bfQu\u00e9 pasa si la demo no carga?",
-                        answer: "Sin demo online no hay puntaje. La URL debe estar viva al momento de la revisi\u00f3n."
+                        question: "\u00bfCu\u00e1ndo se puede votar?",
+                        answer: "Solo durante demos. El voto abre en vivo y se cierra r\u00e1pido."
                     },
                     {
-                        question: "\u00bfSe puede competir en equipo?",
-                        answer: "Season 0 es individual. Queremos medir velocidad de shipping persona a persona."
+                        question: "\u00bfPuedo usar IA y librer\u00edas?",
+                        answer: "S\u00ed. Us\u00e1 IA y librer\u00edas. Sin templates. Desde cero. Cont\u00e1 qu\u00e9 usaste."
                     },
                     {
-                        question: "\u00bfCu\u00e1l es el stack permitido?",
-                        answer: "Stack libre. Eleg\u00ed lo que puedas construir en 2 horas sin perder foco."
+                        question: "\u00bfPuedo traer una app ya hecha?",
+                        answer: "No. Sin boilerplates. Todo desde cero."
                     },
                     {
-                        question: "\u00bfHay premio monetario?",
-                        answer: "El drop incluye visibilidad, acceso directo a la comunidad y rewards definidos por sponsors locales."
+                        question: "\u00bfQu\u00e9 tengo que entregar?",
+                        answer: "URL viva + repo + README + demo de 2 minutos. Si la URL no carga, no existe."
                     },
                     {
-                        question: "\u00bfC\u00f3mo me entero del prompt?",
-                        answer: "El prompt se revela en el kickoff del drop. Te llega por mail y en la sala en vivo."
+                        question: "\u00bfC\u00f3mo sale el Top 5?",
+                        answer: "Voto en dos pasos. Voto 1 elige Top 5, hacen demo de nuevo, Voto 2 elige ganador."
+                    },
+                    {
+                        question: "\u00bfSolo o equipos?",
+                        answer: "Season 0 es individual. Medimos velocidad de shipping personal."
+                    },
+                    {
+                        question: "\u00bfAlguna trampa?",
+                        answer: "No manipules votos. Si detectamos fraude, qued\u00e1s afuera. Sin drama."
                     }
-                ]
+                ],
+                footer: "Si est\u00e1s de acuerdo, aplic\u00e1. Si no, mir\u00e1 desde la tribuna."
             }
         },
         apply: {
@@ -1025,41 +1034,50 @@ const translations = {
         },
         faq: {
             hero: {
-                tag: "FAQ",
-                title: "Straight answers.",
-                body: "Everything you want to know before applying. If something is missing, reach out.",
+                tag: "RING CONTRACT",
+                title: "Read this. Then enter.",
+                body: "Season 0 is simple: 2 hours, demo live, the crowd decides.",
                 primary: "Apply for Season 0",
                 secondary: "See protocol"
             },
             list: {
-                label: "Questions",
-                title: "Most asked",
+                label: "RING CONTRACT",
+                title: "The stuff people actually ask",
                 items: [
                     {
-                        question: "Can I use AI and templates?",
-                        answer: "Yes. AI is allowed and recommended. We want real speed, not purity."
+                        question: "How do I win?",
+                        answer: "By live votes. No judges. The crowd decides."
                     },
                     {
-                        question: "What if the demo does not load?",
-                        answer: "No live demo means no score. The URL must be up during review."
+                        question: "When can people vote?",
+                        answer: "Only during demos. Voting opens live and closes fast."
                     },
                     {
-                        question: "Can I compete as a team?",
-                        answer: "Season 0 is solo. We want to measure individual shipping speed."
+                        question: "Can I use AI and libraries?",
+                        answer: "Yes. Use AI and libraries. No templates. Start from scratch. Disclose what you used."
                     },
                     {
-                        question: "What stack is allowed?",
-                        answer: "Any stack. Choose what you can ship in 2 hours without losing focus."
+                        question: "Can I bring a pre-built app?",
+                        answer: "No. No boilerplates. Start from scratch."
                     },
                     {
-                        question: "Is there a cash prize?",
-                        answer: "The drop includes visibility, direct community access, and rewards from local sponsors."
+                        question: "What must I submit?",
+                        answer: "Working URL + repo + README + 2-minute demo. If the URL does not load, it does not exist."
                     },
                     {
-                        question: "How do I get the prompt?",
-                        answer: "The prompt is revealed at kickoff. You get it by email and in the live room."
+                        question: "How does Top 5 happen?",
+                        answer: "Two-step vote. Vote 1 picks Top 5, Top 5 demo again, Vote 2 picks the winner."
+                    },
+                    {
+                        question: "Solo or teams?",
+                        answer: "Season 0 is solo. We measure individual shipping speed."
+                    },
+                    {
+                        question: "Any gotchas?",
+                        answer: "Do not manipulate votes. If we detect fraud, you are out. No drama."
                     }
-                ]
+                ],
+                footer: "If you agree, apply. If not, watch from the stands."
             }
         },
         apply: {
