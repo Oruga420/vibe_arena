@@ -737,14 +737,14 @@ nav {
 .checkbox-item {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     font-size: 0.95rem;
 }
 
 .checkbox-item input[type="checkbox"] {
     width: auto;
     padding: 0;
-    margin: 2px 0 0;
+    margin: 2px 6px 0 0;
     flex: 0 0 auto;
 }
 
