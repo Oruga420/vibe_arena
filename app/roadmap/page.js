@@ -5,7 +5,10 @@ import { useLanguage } from "../../components/LanguageProvider";
 
 export default function RoadmapPage() {
     const { t } = useLanguage();
-    const items = t("roadmap.manifesto.items");
+    const statusItems = t("roadmap.status.items");
+    const checklistItems = t("roadmap.checklist.items");
+    const waysItems = t("roadmap.ways.items");
+    const discordUrl = "https://discord.com";
 
     return (
         <main>
@@ -20,33 +23,32 @@ export default function RoadmapPage() {
                         <Link href="/apply" className="btn-primary">
                             {t("roadmap.hero.primary")}
                         </Link>
-                        <Link href="/faq" className="btn-ghost">
+                        <a href={discordUrl} className="btn-ghost" target="_blank" rel="noreferrer">
                             {t("roadmap.hero.secondary")}
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </section>
 
             <section className="section">
-                <div className="manifesto">
-                    <p className="mono" style={{ marginBottom: "20px", textAlign: "center" }}>
-                        {t("roadmap.manifesto.label")}
-                    </p>
-                    <h2 style={{ textAlign: "center", marginBottom: "40px", fontSize: "2rem" }}>
-                        {t("roadmap.manifesto.title")}
-                    </h2>
-
-                    {Array.isArray(items) &&
-                        items.map((item, index) => (
-                            <div className="roadmap-item" key={item}>
-                                <div className={`check${index === 0 ? " done" : ""}`}></div>
-                                <span>{item}</span>
-                            </div>
-                        ))}
-
-                    <div style={{ textAlign: "center", marginTop: "40px" }}>
+                <div className="section-header">
+                    <p className="mono">{t("roadmap.status.label")}</p>
+                    <h2>{t("roadmap.status.title")}</h2>
+                    <p style={{ marginTop: "20px", color: "var(--text-muted)" }}>{t("roadmap.status.body")}</p>
+                </div>
+                <div className="status-card">
+                    <div className="status-lines">
+                        {Array.isArray(statusItems) &&
+                            statusItems.map((item) => (
+                                <div className="status-line" key={item.label}>
+                                    <span className="status-label">{item.label}</span>
+                                    <span className="status-value">{item.value}</span>
+                                </div>
+                            ))}
+                    </div>
+                    <div className="hero-ctas" style={{ marginTop: "24px" }}>
                         <Link href="/apply" className="btn-primary">
-                            {t("roadmap.manifesto.primary")}
+                            {t("roadmap.status.cta")}
                         </Link>
                     </div>
                 </div>
@@ -54,20 +56,53 @@ export default function RoadmapPage() {
 
             <section className="section section-muted">
                 <div className="section-header">
-                    <p className="mono">{t("roadmap.community.label")}</p>
-                    <h2>{t("roadmap.community.title")}</h2>
+                    <p className="mono">{t("roadmap.checklist.label")}</p>
+                    <h2>{t("roadmap.checklist.title")}</h2>
                 </div>
-                <p style={{ maxWidth: "680px", color: "var(--text-muted)", marginBottom: "32px" }}>
-                    {t("roadmap.community.body")}
-                </p>
-                <div className="hero-ctas">
+                <div className="cards-grid">
+                    {Array.isArray(checklistItems) &&
+                        checklistItems.map((item) => (
+                            <div className="card-link static" key={item.title}>
+                                <span>{item.status}</span>
+                                <h3>{item.title}</h3>
+                            </div>
+                        ))}
+                </div>
+                <div className="hero-ctas" style={{ marginTop: "32px" }}>
+                    <a href={discordUrl} className="btn-ghost" target="_blank" rel="noreferrer">
+                        {t("roadmap.checklist.cta")}
+                    </a>
+                </div>
+            </section>
+
+            <section className="section">
+                <div className="section-header">
+                    <p className="mono">{t("roadmap.ways.label")}</p>
+                    <h2>{t("roadmap.ways.title")}</h2>
+                </div>
+                <div className="cards-grid">
+                    {Array.isArray(waysItems) &&
+                        waysItems.map((item) => (
+                            <div className="card-link static" key={item.title}>
+                                <h3>{item.title}</h3>
+                                <p>{item.body}</p>
+                            </div>
+                        ))}
+                </div>
+                <div className="hero-ctas" style={{ marginTop: "32px" }}>
                     <Link href="/apply" className="btn-primary">
-                        {t("roadmap.community.primary")}
+                        {t("roadmap.ways.primary")}
                     </Link>
-                    <Link href="/faq" className="btn-ghost">
-                        {t("roadmap.community.secondary")}
+                    <Link href="/" className="btn-ghost">
+                        {t("roadmap.ways.secondary")}
                     </Link>
+                    <a href={discordUrl} className="btn-ghost" target="_blank" rel="noreferrer">
+                        {t("roadmap.ways.tertiary")}
+                    </a>
                 </div>
+                <Link href="/sponsor" className="roadmap-sponsor">
+                    {t("roadmap.ways.sponsor")}
+                </Link>
             </section>
         </main>
     );

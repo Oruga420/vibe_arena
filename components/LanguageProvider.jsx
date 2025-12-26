@@ -412,29 +412,48 @@ const translations = {
         },
         roadmap: {
             hero: {
-                tag: "Building in Public",
-                title: "Roadmap Season 0",
-                body: "Estamos armando la arena a la vista. Cada paso es p\u00fablico y medible para que la comunidad empuje con nosotros.",
+                tag: "BUILDING IN PUBLIC",
+                title: "Season 0 Patch Notes",
+                body: "Estamos armando la arena a la vista. Cada update es real.",
                 primary: "Aplic\u00e1 para Season 0",
-                secondary: "Resolver dudas"
+                secondary: "Unirme al Discord"
             },
-            manifesto: {
-                label: "Plan abierto",
-                title: "Hitos clave",
+            status: {
+                label: "STATUS",
+                title: "Patch notes + pr\u00f3ximo drop",
+                body: "Qu\u00e9 ya est\u00e1 shippeado, qu\u00e9 viene, y cu\u00e1ndo abre la votaci\u00f3n.",
                 items: [
-                    "Landing Page v1.0",
-                    "Primer Beta Privado (Toronto Devs)",
-                    "Reglamento y Sistema de Puntos",
-                    "Primer Evento Publico"
+                    { label: "Build", value: "v0.1 live" },
+                    { label: "Pr\u00f3ximo drop", value: "Ventana Enero-Feb" },
+                    { label: "Votaci\u00f3n", value: "Live vote only (sin jueces)" },
+                    { label: "\u00daltimo update", value: "Hace 2 d\u00edas" }
                 ],
-                primary: "Sumarte al primer drop"
+                cta: "Entrar al ring"
             },
-            community: {
-                label: "Comunidad",
-                title: "Quer\u00e9s empujar el roadmap",
-                body: "Buscamos mentores, jurados y partners locales en Toronto. Si quer\u00e9s construir en la primera l\u00ednea, este es el momento.",
-                primary: "Quiero participar",
-                secondary: "Ver preguntas"
+            checklist: {
+                label: "NEXT DROP CHECKLIST",
+                title: "Para shippear el primer drop",
+                items: [
+                    { status: "DONE", title: "Landing + Apply" },
+                    { status: "EN PROGRESO", title: "Template de brief (Tema + Twist)" },
+                    { status: "EN PROGRESO", title: "Pipeline de entregas (URL + repo)" },
+                    { status: "EN PROGRESO", title: "Sistema de voto en vivo (open/close)" },
+                    { status: "EN PROGRESO", title: "Automatizaci\u00f3n del scoreboard" }
+                ],
+                cta: "Ayudar a shippear"
+            },
+            ways: {
+                label: "WAYS TO JOIN",
+                title: "Sumate al ring",
+                items: [
+                    { title: "Competir", body: "Aplic\u00e1 y shipe\u00e1." },
+                    { title: "Votar", body: "Solo durante la ventana en vivo." },
+                    { title: "Construir", body: "Ayudanos a shippear Season 0." }
+                ],
+                primary: "Aplicar",
+                secondary: "Avisame para votar",
+                tertiary: "Unirme al Discord",
+                sponsor: "Quer\u00e9s sponsorear un premio? Hablemos."
             }
         },
         faq: {
@@ -960,29 +979,48 @@ const translations = {
         },
         roadmap: {
             hero: {
-                tag: "Building in Public",
-                title: "Season 0 Roadmap",
-                body: "We are building the arena in public. Each step is visible and measurable so the community can push with us.",
+                tag: "BUILDING IN PUBLIC",
+                title: "Season 0 Patch Notes",
+                body: "We are building the arena in public. Every update is real.",
                 primary: "Apply for Season 0",
-                secondary: "Clear doubts"
+                secondary: "Join the Discord"
             },
-            manifesto: {
-                label: "Open plan",
-                title: "Key milestones",
+            status: {
+                label: "STATUS",
+                title: "Patch notes + next drop",
+                body: "What is shipped, what is next, and when voting opens.",
                 items: [
-                    "Landing Page v1.0",
-                    "First Private Beta (Toronto Devs)",
-                    "Rulebook and Points System",
-                    "First Public Event"
+                    { label: "Build", value: "v0.1 live" },
+                    { label: "Next drop", value: "Jan-Feb window" },
+                    { label: "Voting", value: "Live vote only (no judges)" },
+                    { label: "Last update", value: "2 days ago" }
                 ],
-                primary: "Join the first drop"
+                cta: "Enter the ring"
             },
-            community: {
-                label: "Community",
-                title: "Want to push the roadmap",
-                body: "We are looking for mentors, judges, and local partners in Toronto. If you want to build on the front line, now is the time.",
-                primary: "I want in",
-                secondary: "See questions"
+            checklist: {
+                label: "NEXT DROP CHECKLIST",
+                title: "To ship the first drop",
+                items: [
+                    { status: "DONE", title: "Landing + Apply" },
+                    { status: "IN PROGRESS", title: "Theme + Twist brief template" },
+                    { status: "IN PROGRESS", title: "Submission pipeline (URL + repo)" },
+                    { status: "IN PROGRESS", title: "Live vote system (open/close)" },
+                    { status: "IN PROGRESS", title: "Scoreboard automation" }
+                ],
+                cta: "Help ship this"
+            },
+            ways: {
+                label: "WAYS TO JOIN",
+                title: "Ways to join",
+                items: [
+                    { title: "Compete", body: "Apply and ship." },
+                    { title: "Vote", body: "Live window only." },
+                    { title: "Build", body: "Help us ship Season 0." }
+                ],
+                primary: "Compete",
+                secondary: "Notify me",
+                tertiary: "Join the Discord",
+                sponsor: "Want to sponsor a prize? Talk."
             }
         },
         faq: {
