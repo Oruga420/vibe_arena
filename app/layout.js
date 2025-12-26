@@ -3,6 +3,7 @@ import MicroBar from "../components/MicroBar";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { LanguageProvider } from "../components/LanguageProvider";
+import BottomToggles from "../components/BottomToggles";
 
 export const metadata = {
     title: "QuickDrop | Ultimate Vibe-coding Arena",
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
                     <MicroBar />
                     <Nav />
                     {children}
+                    <BottomToggles />
                     <Footer />
                 </LanguageProvider>
             </body>
