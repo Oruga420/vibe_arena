@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { createSponsorApplication } from '@/lib/sponsors';
+import { createSponsorApplication } from '../../../lib/sponsors';
 
 export async function POST(request) {
     try {
