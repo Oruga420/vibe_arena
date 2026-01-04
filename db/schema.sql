@@ -111,6 +111,32 @@ CREATE INDEX idx_waitlist_email ON waitlist_entries(email);
 CREATE INDEX idx_waitlist_created_at ON waitlist_entries(created_at DESC);
 
 -- =============================================
+-- Sponsor Applications Table
+-- =============================================
+
+CREATE TABLE sponsor_applications (
+    id                  SERIAL PRIMARY KEY,
+    company_name        VARCHAR(255) NOT NULL,
+    contact_name        VARCHAR(255) NOT NULL,
+    email               VARCHAR(255) NOT NULL,
+    website             VARCHAR(255),
+    areas_of_interest   TEXT, -- Stored as comma separated or JSON if needed, but simple text for now
+    suggested_theme     TEXT,
+    pain_point          TEXT,
+    sponsor_type        VARCHAR(100),
+    budget_range        VARCHAR(100),
+    desired_visibility  VARCHAR(100),
+    timeline            VARCHAR(255),
+    notes               TEXT,
+    status              VARCHAR(50) DEFAULT 'pending',
+    created_at          TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX idx_sponsor_email ON sponsor_applications(email);
+CREATE INDEX idx_sponsor_company ON sponsor_applications(company_name);
+CREATE INDEX idx_sponsor_created_at ON sponsor_applications(created_at DESC);
+
+-- =============================================
 -- Useful queries for reference
 -- =============================================
 

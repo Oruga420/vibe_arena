@@ -103,3 +103,38 @@ SELECT * FROM waitlist_entries
 WHERE email = 'user@example.com'
    OR name ILIKE '%name%';
 ```
+
+## 🤝 Sponsor Applications
+
+### View latest 10 sponsor applications
+
+```sql
+SELECT company_name, contact_name, email, status, created_at
+FROM sponsor_applications
+ORDER BY created_at DESC
+LIMIT 10;
+```
+
+### Count sponsors by status
+
+```sql
+SELECT status, COUNT(*)
+FROM sponsor_applications
+GROUP BY status;
+```
+
+### Approve a sponsor
+
+```sql
+UPDATE sponsor_applications
+SET status = 'approved'
+WHERE email = 'sponsor@example.com';
+```
+
+### Export all sponsor details for contact
+
+```sql
+SELECT company_name, contact_name, email, website, timeline, notes
+FROM sponsor_applications
+WHERE status = 'pending';
+```
