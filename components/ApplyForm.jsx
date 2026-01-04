@@ -29,7 +29,7 @@ export default function ApplyForm() {
         return formatTemplate(template, tokens);
     }, [t, data]);
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         const form = event.currentTarget;
         const tokens = buildDropTokens(data);
@@ -43,11 +43,55 @@ export default function ApplyForm() {
             return;
         }
 
-        setStatus({
-            type: "success",
-            message: formatTemplate(t("apply.form.success"), tokens)
-        });
-        form.reset();
+        setStatus({ type: "loading", message: "Enviando registro..." });
+
+        try {
+            const formData = new FormData(form);
+            const body = {
+                name: formData.get("name"),
+                email: formData.get("email"),
+                timezone: formData.get("timezone"),
+                stack: formData.get("stack"),
+                github: formData.get("github"),
+                x: formData.get("x"),
+                linkedin: formData.get("linkedin"),
+                demo: formData.get("demo"),
+                fairplay: formData.get("fairplay") === "on"
+            };
+
+            const response = await fetch("/api/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(body)
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                const errorMessage = result.errors 
+                    ? result.errors.map(e => e.message).join(", ") 
+                    : result.message || "Ocurrió un error inesperado.";
+                
+                setStatus({
+                    type: "error",
+                    message: errorMessage
+                });
+                return;
+            }
+
+            setStatus({
+                type: "success",
+                message: formatTemplate(t("apply.form.success"), tokens)
+            });
+            form.reset();
+
+        } catch (error) {
+            console.error("Form submission error:", error);
+            setStatus({
+                type: "error",
+                message: "Error de red. Por favor intenta de nuevo."
+            });
+        }
     };
 
     return (
