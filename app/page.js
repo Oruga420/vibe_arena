@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import AsciiTower from "../components/AsciiTower";
 import EntryStatusCard from "../components/EntryStatusCard";
 import { useLanguage } from "../components/LanguageProvider";
 import LiveVoteStatus from "../components/LiveVoteStatus";
@@ -16,6 +17,7 @@ export default function HomePage() {
         <main>
             <WaitlistModal />
             <section className="hero">
+                <AsciiTower />
                 <div className="scanline" aria-hidden="true"></div>
 
                 <div className="hero-content">
