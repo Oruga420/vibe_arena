@@ -138,3 +138,47 @@ SELECT company_name, contact_name, email, website, timeline, notes
 FROM sponsor_applications
 WHERE status = 'pending';
 ```
+
+## 🧪 Testing Queries (Direct Inserts)
+
+### Insert a test waitlist entry
+
+```sql
+INSERT INTO waitlist_entries (name, email, role)
+VALUES ('Test User', 'test@example.com', 'arena');
+```
+
+### Insert a test sponsor application
+
+```sql
+INSERT INTO sponsor_applications (
+    company_name,
+    contact_name,
+    email,
+    website,
+    areas_of_interest,
+    sponsor_type,
+    budget_range
+)
+VALUES (
+    'Vibe Corp',
+    'Alex Vibe',
+    'sponsors@vibecorp.com',
+    'https://vibecorp.com',
+    'Prizes, Marketing',
+    'cash',
+    'mid'
+);
+```
+
+### Delete test data (Waitlist)
+
+```sql
+DELETE FROM waitlist_entries WHERE email = 'test@example.com';
+```
+
+### Delete test data (Sponsors)
+
+```sql
+DELETE FROM sponsor_applications WHERE email = 'sponsors@vibecorp.com';
+```
