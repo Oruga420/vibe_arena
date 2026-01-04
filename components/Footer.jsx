@@ -9,7 +9,7 @@ export default function Footer() {
     return (
         <footer>
             <div className="logo">
-                <img src="/logo.png" alt="Logo" style={{ height: "32px", width: "auto" }} />
+                <img src="/logo.png" alt="Logo" style={{ height: "96px", width: "auto" }} />
                 VIBE CODING COLOSSEUM
             </div>
             <div className="footer-links">
