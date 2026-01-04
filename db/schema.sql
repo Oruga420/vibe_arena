@@ -60,6 +60,10 @@ CREATE TABLE quickdrop_registrations (
     -- Status tracking
     status          registration_status NOT NULL DEFAULT 'pending',
     
+    -- Stats tracking
+    wins            INTEGER NOT NULL DEFAULT 0,
+    losses          INTEGER NOT NULL DEFAULT 0,
+    
     -- Timestamps
     created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updated_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),

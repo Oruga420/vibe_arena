@@ -41,8 +41,8 @@ export default function Nav() {
     return (
         <nav ref={navRef}>
             <div className="logo">
-                <div className="dot"></div>
-                VIBE ARENA
+                <img src="/logo.png" alt="Logo" style={{ height: "32px", width: "auto" }} />
+                VIBE CODING COLOSSEUM
             </div>
             <button
                 className="nav-toggle"

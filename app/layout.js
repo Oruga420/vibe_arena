@@ -6,14 +6,15 @@ import { LanguageProvider } from "../components/LanguageProvider";
 import BottomToggles from "../components/BottomToggles";
 
 export const metadata = {
-    title: "Vibe Arena | QuickDrop",
-    description: "QuickDrop by Vibe Arena. Ship a real app in 2 hours."
+    title: "Vibe Coding Colosseum | Any role. Same shot.",
+    description: "Ship a real app in 2 hours. Competetive platform for gladiators."
 };
 
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <head>
+                <link rel="icon" href="/favicon.png" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
                 <link

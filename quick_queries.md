@@ -63,6 +63,19 @@ SET status = 'paid'
 WHERE email = 'user@example.com';
 ```
 
+### Update Gladiator Stats (Wins/Losses)
+
+```sql
+-- Update by email
+UPDATE quickdrop_registrations
+SET wins = wins + 1
+WHERE email = 'gladiator@example.com';
+
+UPDATE quickdrop_registrations
+SET losses = losses + 1
+WHERE email = 'gladiator@example.com';
+```
+
 ### Find duplicate emails
 
 ```sql

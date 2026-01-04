@@ -21,6 +21,7 @@ export default function HomePage() {
                 <div className="scanline" aria-hidden="true"></div>
 
                 <div className="hero-content">
+                    <img src="/logo.png" alt="Vibe Coding Colosseum" style={{ width: "180px", height: "auto", marginBottom: "32px" }} />
                     <p className="mono" style={{ color: "var(--primary-green)", marginBottom: "16px" }}>
                         {t("home.hero.tag")}
                     </p>

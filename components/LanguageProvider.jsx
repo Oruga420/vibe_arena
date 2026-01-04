@@ -72,9 +72,9 @@ const translations = {
         },
         home: {
             hero: {
-                tag: "Toronto Vibe-coding Arena",
+                tag: "Vibe Coding Colosseum",
                 title: "Ten\u00e9s 2 horas. Shippe\u00e1 algo o sal\u00ed del ring.",
-                body: "Season 0. Los primeros gladiadores. Cupos limitados. No es hackathon: es un drop. Entr\u00e1s, shippe\u00e1s, te votan.",
+                body: "Any role. Same shot. Season 0. Los primeros gladiadores. Cupos limitados. No es hackathon: es un drop. Entr\u00e1s, shippe\u00e1s, te votan.",
                 primary: "Entrar al ring",
                 secondary: "Las reglas del ring"
             },
@@ -681,9 +681,9 @@ const translations = {
         },
         home: {
             hero: {
-                tag: "Toronto Vibe-coding Arena",
+                tag: "Vibe Coding Colosseum",
                 title: "You have 2 hours. Ship or step out.",
-                body: "Season 0. First gladiators. Limited spots. Not a hackathon: it's a drop. You enter, you ship, the crowd votes.",
+                body: "Any role. Same shot. Season 0. First gladiators. Limited spots. Not a hackathon: it's a drop. You enter, you ship, the crowd votes.",
                 primary: "Enter the ring",
                 secondary: "Ring rules"
             },
