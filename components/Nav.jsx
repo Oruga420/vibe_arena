@@ -41,7 +41,7 @@ export default function Nav() {
     return (
         <nav ref={navRef}>
             <div className="logo">
-                <img src="/logo.png" alt="Logo" style={{ height: "32px", width: "auto" }} />
+                <img src="/logo.png" alt="Logo" style={{ height: "96px", width: "auto" }} />
                 VIBE CODING COLOSSEUM
             </div>
             <button

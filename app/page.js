@@ -17,15 +17,12 @@ export default function HomePage() {
         <main>
             <WaitlistModal />
             <section className="hero">
-                <AsciiTower />
                 <div className="scanline" aria-hidden="true"></div>
 
                 <div className="hero-content">
-                    <img src="/logo.png" alt="Vibe Coding Colosseum" style={{ width: "180px", height: "auto", marginBottom: "32px" }} />
                     <p className="mono" style={{ color: "var(--primary-green)", marginBottom: "16px" }}>
                         {t("home.hero.tag")}
                     </p>
-                    <h1>{t("home.hero.title")}</h1>
                     <p>{t("home.hero.body")}</p>
                     <div className="hero-ctas">
                         <Link href="/apply" className="btn-primary">
