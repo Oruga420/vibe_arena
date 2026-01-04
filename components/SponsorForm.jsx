@@ -11,13 +11,59 @@ export default function SponsorForm() {
     const budgetOptions = t("sponsor.form.fields.budget.options");
     const visibilityOptions = t("sponsor.form.fields.visibility.options");
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        setStatus({
-            type: "success",
-            message: t("sponsor.form.success")
-        });
-        event.currentTarget.reset();
+        const form = event.currentTarget;
+        const formData = new FormData(form);
+        
+        // Handle multiple checkboxes for 'areas'
+        const areas = formData.getAll("areas");
+        
+        const data = {
+            company: formData.get("company"),
+            contact: formData.get("contact"),
+            email: formData.get("email"),
+            website: formData.get("website"),
+            areas: areas,
+            theme: formData.get("theme"),
+            pain: formData.get("pain"),
+            sponsorType: formData.get("sponsorType"),
+            budget: formData.get("budget"),
+            visibility: formData.get("visibility"),
+            timeline: formData.get("timeline"),
+            notes: formData.get("notes"),
+        };
+
+        try {
+            const response = await fetch('/api/sponsors', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                setStatus({
+                    type: "error",
+                    message: result.message || t("sponsor.form.error") || "Error submitting proposal"
+                });
+                return;
+            }
+
+            setStatus({
+                type: "success",
+                message: t("sponsor.form.success")
+            });
+            form.reset();
+
+        } catch (error) {
+            console.error('Sponsor submit error:', error);
+            setStatus({
+                type: "error",
+                message: "Error connecting to server"
+            });
+        }
     };
 
     return (
