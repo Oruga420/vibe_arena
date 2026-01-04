@@ -104,6 +104,15 @@ WHERE email = 'user@example.com'
    OR name ILIKE '%name%';
 ```
 
+### Find duplicate emails in waitlist
+
+```sql
+SELECT email, COUNT(*)
+FROM waitlist_entries
+GROUP BY email
+HAVING COUNT(*) > 1;
+```
+
 ## 🤝 Sponsor Applications
 
 ### View latest 10 sponsor applications
@@ -137,6 +146,22 @@ WHERE email = 'sponsor@example.com';
 SELECT company_name, contact_name, email, website, timeline, notes
 FROM sponsor_applications
 WHERE status = 'pending';
+```
+
+### Find duplicate emails in sponsors
+
+```sql
+SELECT email, COUNT(*)
+FROM sponsor_applications
+GROUP BY email
+HAVING COUNT(*) > 1;
+```
+
+### Search sponsor by company name
+
+```sql
+SELECT * FROM sponsor_applications
+WHERE company_name ILIKE '%vibe%';
 ```
 
 ## 🧪 Testing Queries (Direct Inserts)
@@ -181,4 +206,23 @@ DELETE FROM waitlist_entries WHERE email = 'test@example.com';
 
 ```sql
 DELETE FROM sponsor_applications WHERE email = 'sponsors@vibecorp.com';
+```
+
+## 🧹 General Maintenance (All tables)
+
+### Delete all records containing 'test' in email
+
+```sql
+DELETE FROM quickdrop_registrations WHERE email LIKE '%test%';
+DELETE FROM waitlist_entries WHERE email LIKE '%test%';
+DELETE FROM sponsor_applications WHERE email LIKE '%test%';
+```
+
+### Check daily signup volume (Waitlist)
+
+```sql
+SELECT DATE(created_at) as day, COUNT(*)
+FROM waitlist_entries
+GROUP BY day
+ORDER BY day DESC;
 ```
