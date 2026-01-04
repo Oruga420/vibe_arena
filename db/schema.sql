@@ -96,6 +96,21 @@ CREATE TRIGGER update_quickdrop_registrations_updated_at
     EXECUTE FUNCTION update_updated_at_column();
 
 -- =============================================
+-- Waitlist Table
+-- =============================================
+
+CREATE TABLE waitlist_entries (
+    id          SERIAL PRIMARY KEY,
+    name        VARCHAR(255) NOT NULL,
+    email       VARCHAR(255) NOT NULL,
+    role        VARCHAR(50) NOT NULL,
+    created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX idx_waitlist_email ON waitlist_entries(email);
+CREATE INDEX idx_waitlist_created_at ON waitlist_entries(created_at DESC);
+
+-- =============================================
 -- Useful queries for reference
 -- =============================================
 

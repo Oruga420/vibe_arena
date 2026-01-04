@@ -20,9 +20,15 @@ export default function WaitlistModal() {
         setOpen(false);
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         const form = event.currentTarget;
+        const formData = new FormData(form);
+        const data = {
+            name: formData.get("name"),
+            email: formData.get("email"),
+            role: formData.get("role"),
+        };
 
         if (!form.checkValidity()) {
             form.reportValidity();
@@ -33,17 +39,42 @@ export default function WaitlistModal() {
             return;
         }
 
-        setStatus({
-            type: "success",
-            message: t("waitlist.success")
-        });
-        
-        form.reset();
-        
-        // Auto-close after success
-        setTimeout(() => {
-            handleClose();
-        }, 2000);
+        try {
+            const response = await fetch('/api/waitlist', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                setStatus({
+                    type: "error",
+                    message: result.message || t("waitlist.error")
+                });
+                return;
+            }
+
+            setStatus({
+                type: "success",
+                message: t("waitlist.success")
+            });
+            
+            form.reset();
+            
+            // Auto-close after success
+            setTimeout(() => {
+                handleClose();
+            }, 2000);
+
+        } catch (error) {
+            console.error('Waitlist submit error:', error);
+            setStatus({
+                type: "error",
+                message: t("waitlist.error")
+            });
+        }
     };
 
     if (!open) {
