@@ -47,6 +47,22 @@ SET status = 'waitlist'
 WHERE email = 'user@example.com';
 ```
 
+### Mark as link sent (invited)
+
+```sql
+UPDATE quickdrop_registrations
+SET status = 'invited'
+WHERE email = 'user@example.com';
+```
+
+### Mark as paid
+
+```sql
+UPDATE quickdrop_registrations
+SET status = 'paid'
+WHERE email = 'user@example.com';
+```
+
 ### Find duplicate emails
 
 ```sql
