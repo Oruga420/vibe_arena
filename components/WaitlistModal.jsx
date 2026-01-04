@@ -37,7 +37,13 @@ export default function WaitlistModal() {
             type: "success",
             message: t("waitlist.success")
         });
+        
         form.reset();
+        
+        // Auto-close after success
+        setTimeout(() => {
+            handleClose();
+        }, 2000);
     };
 
     if (!open) {
@@ -45,8 +51,14 @@ export default function WaitlistModal() {
     }
 
     return (
-        <div className="modal-backdrop" role="dialog" aria-modal="true" aria-label={t("waitlist.label")}>
-            <div className="modal">
+        <div 
+            className="modal-backdrop" 
+            role="dialog" 
+            aria-modal="true" 
+            aria-label={t("waitlist.label")}
+            onClick={handleClose}
+        >
+            <div className="modal" onClick={(e) => e.stopPropagation()}>
                 <button type="button" className="modal-close" onClick={handleClose} aria-label={t("waitlist.close")}>
                     x
                 </button>
