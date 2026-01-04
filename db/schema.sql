@@ -31,6 +31,8 @@ CREATE TYPE demo_type AS ENUM (
 CREATE TYPE registration_status AS ENUM (
     'pending',
     'approved',
+    'invited',
+    'paid',
     'rejected',
     'waitlist'
 );
