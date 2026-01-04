@@ -70,3 +70,36 @@ WHERE email LIKE '%test%';
 ```sql
 -- TRUNCATE quickdrop_registrations;
 ```
+
+## 🕒 Waitlist Monitoring
+
+### Count total waitlist entries
+
+```sql
+SELECT COUNT(*) FROM waitlist_entries;
+```
+
+### Count by role (arena vs spectator)
+
+```sql
+SELECT role, COUNT(*)
+FROM waitlist_entries
+GROUP BY role;
+```
+
+### View latest 20 waitlist signups
+
+```sql
+SELECT name, email, role, created_at
+FROM waitlist_entries
+ORDER BY created_at DESC
+LIMIT 20;
+```
+
+### Search for someone in the waitlist
+
+```sql
+SELECT * FROM waitlist_entries
+WHERE email = 'user@example.com'
+   OR name ILIKE '%name%';
+```
