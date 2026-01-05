@@ -643,14 +643,14 @@ const translations = {
                 entry: "ENTRY",
                 min: "MIN TO START",
                 cap: "CAP",
-                payout: "PAYOUT",
+                payout: "GRAND PRIZE",
                 house: "HOUSE",
                 spots: "Spots reserved",
-                pot: "Current pot",
-                winner: "Winner payout (if started)"
+                pot: "Current Prize Pool",
+                winner: "Grand Prize (if started)"
             },
             values: {
-                payout: "Winner takes {prizePct}% of the pot",
+                payout: "Winner takes {prizePct}% of the Prize Pool",
                 house: "{housePct}% runs the arena"
             }
         },
@@ -961,7 +961,7 @@ const translations = {
                 items: [
                     "Min {min} participants to start.",
                     "Cap {max} gladiators.",
-                    "Winner takes {prizePct}% of the pot."
+                    "Winner takes {prizePct}% of the Prize Pool."
                 ],
                 note: "The payment link unlocks at {min} participants. Until then we only confirm your spot for the next QuickDrop."
             },
@@ -1063,7 +1063,7 @@ const translations = {
                 items: [
                     { label: "Entry", value: "{fee}" },
                     { label: "Min / Cap", value: "Min {min} / Cap {max}" },
-                    { label: "Prize", value: "Winner takes {prizePct}% of the pot" },
+                    { label: "Prize", value: "Winner takes {prizePct}% of the Prize Pool" },
                     { label: "Next drop", value: "Jan-Feb window" }
                 ],
                 cta: "Enter the ring"
