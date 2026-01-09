@@ -1,11 +1,17 @@
 "use client";
 
+import { useRef } from "react";
 import ApplyForm from "../../components/ApplyForm";
 import EntryStatusCard from "../../components/EntryStatusCard";
 import { useLanguage } from "../../components/LanguageProvider";
 
 export default function ApplyPage() {
     const { t } = useLanguage();
+    const formRef = useRef(null);
+
+    const scrollToForm = () => {
+        formRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
 
     return (
         <main>
@@ -21,9 +27,16 @@ export default function ApplyPage() {
 
             <section className="section">
                 <EntryStatusCard note={t("apply.entry.note")} />
+                
+                <div className="scroll-indicator" onClick={scrollToForm}>
+                    <div className="scroll-arrow">↓</div>
+                    <div className="scroll-banner">
+                        SUBSCRIBE BELOW
+                    </div>
+                </div>
             </section>
 
-            <section className="section">
+            <section className="section" ref={formRef}>
                 <div className="section-header">
                     <p className="mono">{t("apply.form.label")}</p>
                     <h2>{t("apply.form.title")}</h2>
