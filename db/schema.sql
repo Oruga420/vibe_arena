@@ -102,6 +102,31 @@ CREATE TRIGGER update_quickdrop_registrations_updated_at
     EXECUTE FUNCTION update_updated_at_column();
 
 -- =============================================
+-- Competitors Table (Global history)
+-- =============================================
+CREATE TABLE competitors (
+    id                SERIAL PRIMARY KEY,
+    name              VARCHAR(255) NOT NULL,
+    email             VARCHAR(255) NOT NULL UNIQUE,
+    last_tournament   VARCHAR(255),
+    last_payment      VARCHAR(255),
+    last_project_name VARCHAR(255),
+    last_team_name    VARCHAR(255),
+    competitor_story  TEXT,
+    other_details     TEXT,
+    added_to_drop     BOOLEAN DEFAULT FALSE,
+    created_at        TIMESTAMPTZ DEFAULT NOW(),
+    updated_at        TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX idx_competitors_email ON competitors(email);
+
+CREATE TRIGGER update_competitors_updated_at
+    BEFORE UPDATE ON competitors
+    FOR EACH ROW
+    EXECUTE FUNCTION update_updated_at_column();
+
+-- =============================================
 -- Waitlist Table
 -- =============================================
 
@@ -141,16 +166,3 @@ CREATE TABLE sponsor_applications (
 CREATE INDEX idx_sponsor_email ON sponsor_applications(email);
 CREATE INDEX idx_sponsor_company ON sponsor_applications(company_name);
 CREATE INDEX idx_sponsor_created_at ON sponsor_applications(created_at DESC);
-
--- =============================================
--- Useful queries for reference
--- =============================================
-
--- Count registrations by status
--- SELECT status, COUNT(*) FROM quickdrop_registrations GROUP BY status;
-
--- Get all approved gladiators for a specific drop
--- SELECT * FROM quickdrop_registrations WHERE drop_id = 'drop_001' AND status = 'approved';
-
--- Check if email already registered
--- SELECT EXISTS(SELECT 1 FROM quickdrop_registrations WHERE email = 'test@example.com');
