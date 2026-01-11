@@ -1224,7 +1224,7 @@ const translations = {
 };
 
 const LanguageContext = createContext({
-    language: "es",
+    language: "en",
     setLanguage: () => {},
     t: () => ""
 });
@@ -1237,7 +1237,7 @@ const getPathValue = (obj, path) => {
 };
 
 export function LanguageProvider({ children }) {
-    const [language, setLanguage] = useState("es");
+    const [language, setLanguage] = useState("en");
 
     useEffect(() => {
         const stored = window.localStorage.getItem("lang");
@@ -1257,7 +1257,7 @@ export function LanguageProvider({ children }) {
             if (message !== undefined) {
                 return message;
             }
-            const fallback = getPathValue(translations.es, key);
+            const fallback = getPathValue(translations.en, key);
             return fallback !== undefined ? fallback : key;
         };
     }, [language]);
