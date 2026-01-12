@@ -17,7 +17,28 @@ La base de datos consta principalmente de cuatro tablas clave:
 
 ### 1. `quickdrop_registrations`
 
-... (Sin cambios, ver schema)
+Almacena la información de los participantes (gladiadores) registrados.
+
+| Columna           | Tipo                       | Requerido | Descripción                                          |
+| :---------------- | :------------------------- | :-------: | :--------------------------------------------------- |
+| `id`              | SERIAL                     |    ✅     | Identificador único (Primary Key).                   |
+| `name`            | VARCHAR(255)               |    ✅     | Nombre completo del gladiador.                       |
+| `colosseum_name`  | VARCHAR(255)               |    ❌     | Nombre de batalla / apodo (Visible en leaderboards). |
+| `email`           | VARCHAR(255)               |    ✅     | Correo electrónico (Debe ser único).                 |
+| `timezone`        | ENUM `timezone_type`       |    ✅     | Zona horaria del participante.                       |
+| `stack`           | ENUM `stack_type`          |    ✅     | Especialidad técnica (fullstack, frontend, etc.).    |
+| `github_url`      | VARCHAR(500)               |    ✅     | Enlace al perfil de GitHub.                          |
+| `demo_interest`   | ENUM `demo_type`           |    ✅     | Interés en demostrar el proyecto (`yes`/`no`).       |
+| `fairplay_agreed` | BOOLEAN                    |    ✅     | Aceptación de las reglas de juego limpio.            |
+| `x_url`           | VARCHAR(500)               |    ❌     | Enlace a perfil de X/Twitter (Opcional).             |
+| `linkedin_url`    | VARCHAR(500)               |    ❌     | Enlace a perfil de LinkedIn (Opcional).              |
+| `drop_id`         | VARCHAR(100)               |    ❌     | Identificador del evento al que se inscribe.         |
+| `status`          | ENUM `registration_status` |    ✅     | Estado de la inscripción (Default: `pending`).       |
+| `wins`            | INTEGER                    |    ✅     | Número de victorias (Default: 0).                    |
+| `losses`          | INTEGER                    |    ✅     | Número de derrotas (Default: 0).                     |
+| `payment_status`  | VARCHAR(50)                |    ❌     | Estado del pago (e.g., 'unpaid', 'paid').            |
+| `created_at`      | TIMESTAMPTZ                |    ✅     | Fecha de creación.                                   |
+| `updated_at`      | TIMESTAMPTZ                |    ✅     | Fecha de última actualización.                       |
 
 ### 2. `competitors`
 

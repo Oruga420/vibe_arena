@@ -49,6 +49,7 @@ export default function ApplyForm() {
             const formData = new FormData(form);
             const body = {
                 name: formData.get("name"),
+                colosseum_name: formData.get("colosseum_name"),
                 email: formData.get("email"),
                 timezone: formData.get("timezone"),
                 stack: formData.get("stack"),
@@ -101,6 +102,12 @@ export default function ApplyForm() {
                     {t("apply.form.fields.name.label")} <span className="field-required">*</span>
                 </label>
                 <input id="name" name="name" type="text" placeholder={t("apply.form.fields.name.placeholder")} required />
+            </div>
+            <div className="field">
+                <label htmlFor="colosseum_name">
+                    {t("apply.form.fields.colosseumName.label")}
+                </label>
+                <input id="colosseum_name" name="colosseum_name" type="text" placeholder={t("apply.form.fields.colosseumName.placeholder")} />
             </div>
             <div className="field">
                 <label htmlFor="email">

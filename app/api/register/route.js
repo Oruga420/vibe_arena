@@ -42,6 +42,7 @@ export async function POST(request) {
         // Extract and sanitize fields
         const {
             name,
+            colosseum_name,
             email,
             timezone,
             stack,
@@ -119,6 +120,7 @@ export async function POST(request) {
         // Create the registration
         const registration = await createRegistration({
             name: name.trim(),
+            colosseum_name: colosseum_name?.trim() || null,
             email: email.toLowerCase().trim(),
             timezone,
             stack,

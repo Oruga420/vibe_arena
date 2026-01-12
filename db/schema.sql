@@ -43,6 +43,7 @@ CREATE TABLE quickdrop_registrations (
     
     -- Core information (required fields)
     name            VARCHAR(255) NOT NULL,
+    colosseum_name  VARCHAR(255),
     email           VARCHAR(255) NOT NULL UNIQUE,
     timezone        timezone_type NOT NULL,
     stack           stack_type NOT NULL,

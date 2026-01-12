@@ -550,6 +550,10 @@ const translations = {
                         label: "Nombre completo",
                         placeholder: "Tu nombre"
                     },
+                    colosseumName: {
+                        label: "Nombre de Coliseo (Apodo)",
+                        placeholder: "Ej: CyberGladiator"
+                    },
                     email: {
                         label: "Email",
                         placeholder: "tu@email.com"
@@ -1158,6 +1162,10 @@ const translations = {
                     name: {
                         label: "Full name",
                         placeholder: "Your name"
+                    },
+                    colosseumName: {
+                        label: "Colosseum Name (Nickname)",
+                        placeholder: "Ex: CyberGladiator"
                     },
                     email: {
                         label: "Email",
