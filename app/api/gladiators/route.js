@@ -6,12 +6,7 @@ export async function GET(request) {
     const query = searchParams.get('query');
 
     try {
-        // Combine data from all 3 sources:
-        // 1. quickdrop_registrations (full data)
-        // 2. waitlist_entries where role = 'arena'
-        // 3. competitors (historical)
-        
-        // Use UNION to merge unique gladiators by email
+        // Combine data from all 3 sources with avatar_url
         const results = await sql`
             WITH all_gladiators AS (
                 -- Source 1: quickdrop_registrations (most complete data)
@@ -23,6 +18,7 @@ export async function GET(request) {
                     qr.stack::text as stack,
                     COALESCE(qr.wins, 0) as wins,
                     COALESCE(qr.losses, 0) as losses,
+                    qr.avatar_url,
                     qr.created_at,
                     qr.updated_at,
                     'registration' as source
@@ -39,6 +35,7 @@ export async function GET(request) {
                     NULL as stack,
                     0 as wins,
                     0 as losses,
+                    NULL as avatar_url,
                     we.created_at,
                     we.created_at as updated_at,
                     'waitlist' as source
@@ -56,6 +53,7 @@ export async function GET(request) {
                     NULL as stack,
                     0 as wins,
                     0 as losses,
+                    c.avatar_url,
                     c.created_at,
                     c.updated_at,
                     'competitor' as source
@@ -71,6 +69,7 @@ export async function GET(request) {
                     stack,
                     wins,
                     losses,
+                    avatar_url,
                     created_at,
                     updated_at,
                     source
@@ -83,17 +82,22 @@ export async function GET(request) {
                     END,
                     updated_at DESC
             )
-            SELECT * FROM deduplicated
+            SELECT 
+                d.*,
+                -- Also check avatar_tokens for avatar_url as fallback
+                COALESCE(d.avatar_url, at.avatar_url) as avatar_url
+            FROM deduplicated d
+            LEFT JOIN avatar_tokens at ON LOWER(d.email) = LOWER(at.email)
             WHERE 
                 ${query ? sql`
-                    LOWER(name) LIKE LOWER(${'%' + query + '%'}) 
-                    OR LOWER(COALESCE(colosseum_name, '')) LIKE LOWER(${'%' + query + '%'})
-                    OR LOWER(email) LIKE LOWER(${'%' + query + '%'})
+                    LOWER(d.name) LIKE LOWER(${'%' + query + '%'}) 
+                    OR LOWER(COALESCE(d.colosseum_name, '')) LIKE LOWER(${'%' + query + '%'})
+                    OR LOWER(d.email) LIKE LOWER(${'%' + query + '%'})
                 ` : sql`TRUE`}
             ORDER BY 
-                wins DESC,
-                (wins + losses) DESC,
-                updated_at DESC
+                d.wins DESC,
+                (d.wins + d.losses) DESC,
+                d.updated_at DESC
             LIMIT 50;
         `;
 
