@@ -128,21 +128,36 @@ function GladiatorCard({ data }) {
             {/* Header */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
                 {/* Avatar */}
-                <div style={{
-                    width: '56px',
-                    height: '56px',
-                    borderRadius: '50%',
-                    background: 'var(--primary-green)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'white',
-                    fontWeight: '800',
-                    fontSize: '1.2rem',
-                    flexShrink: 0
-                }}>
-                    {data.name ? data.name.substring(0, 2).toUpperCase() : '??'}
-                </div>
+                {data.avatar_url ? (
+                    <img 
+                        src={data.avatar_url} 
+                        alt={data.colosseum_name || data.name}
+                        style={{
+                            width: '56px',
+                            height: '56px',
+                            borderRadius: '50%',
+                            objectFit: 'cover',
+                            border: '2px solid var(--primary-green)',
+                            flexShrink: 0
+                        }}
+                    />
+                ) : (
+                    <div style={{
+                        width: '56px',
+                        height: '56px',
+                        borderRadius: '50%',
+                        background: 'var(--primary-green)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: 'white',
+                        fontWeight: '800',
+                        fontSize: '1.2rem',
+                        flexShrink: 0
+                    }}>
+                        {data.name ? data.name.substring(0, 2).toUpperCase() : '??'}
+                    </div>
+                )}
                 <div style={{ flex: 1, minWidth: 0 }}>
                     <h3 style={{ 
                         fontSize: '1.25rem', 
