@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { getNextDrop } from '../../../../lib/dropsDb';
 import { generateEmailContent } from '../../../../lib/emails/generator';
 import { sendWelcomeEmail } from '../../../../lib/emails/sender';
-import { getPool } from '../../../../lib/db';
+import { sql } from '../../../../lib/db'; // Correct import
 
 // Force dynamic to ensure it runs actually anew each time
 export const dynamic = 'force-dynamic';
@@ -17,25 +17,18 @@ export async function GET(request) {
         }
     }
 
-    const pool = getPool();
-    let client;
-    
     try {
         // 1. Get subscribers who haven't received a welcome email yet
-        client = await pool.connect();
-        const pendingUsersQuery = `
+        // Using Neon serverless client syntax
+        const pendingUsers = await sql`
             SELECT id, name, email, role 
             FROM waitlist_entries 
             WHERE welcome_email_sent IS FALSE 
             ORDER BY created_at ASC 
-            LIMIT 50 
-        `; 
-        // Limit 50 per run to avoid timeout/rate limits. 
-        // Verify Cron runs often enough or increase limit if volume is high.
+            LIMIT 50
+        `;
         
-        const { rows: pendingUsers } = await client.query(pendingUsersQuery);
-        
-        if (pendingUsers.length === 0) {
+        if (!pendingUsers || pendingUsers.length === 0) {
             return NextResponse.json({ success: true, message: 'No pending emails' });
         }
 
@@ -59,11 +52,11 @@ export async function GET(request) {
 
                 if (sendResult.success) {
                     // Mark as sent in DB
-                    await client.query(`
+                    await sql`
                         UPDATE waitlist_entries 
                         SET welcome_email_sent = TRUE, welcome_email_sent_at = NOW() 
-                        WHERE id = $1
-                    `, [user.id]);
+                        WHERE id = ${user.id}
+                    `;
                     results.sent++;
                 } else {
                     console.error(`Failed to send to ${user.email}`, sendResult.error);
@@ -85,7 +78,5 @@ export async function GET(request) {
     } catch (error) {
         console.error('Cron job error:', error);
         return NextResponse.json({ success: false, error: error.message }, { status: 500 });
-    } finally {
-        if (client) client.release();
     }
 }
