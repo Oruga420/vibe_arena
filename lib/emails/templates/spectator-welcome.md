@@ -1,6 +1,8 @@
+Esto es un template pero no por eso un dogma donde veas estos <> sientete libre de reescribir siempre pensando en una tematica de coliseo y gladiadores enfocados en vibecoding
+
 # ¡Bienvenido a las Gradas, {{name}}! 🍿
 
-Gracias por unirte a **Vibe Arena**. Prepárate para presenciar batallas de código épicas en tiempo real.
+<Gracias por unirte a **Vibe Coding Colosseum**. Prepárate para presenciar batallas de código épicas en tiempo real.>
 
 ## Próximo Evento: {{dropName}}
 
@@ -9,7 +11,7 @@ Gracias por unirte a **Vibe Arena**. Prepárate para presenciar batallas de cód
 
 ### Tu Rol: {{role}} (Espectador)
 
-Como espectador, tu voz cuenta. Podrás ver el código en vivo, votar por tus gladiadores favoritos e influir en el destino de la arena.
+<Como espectador, tu voz cuenta. Podrás ver el código en vivo, votar por tus gladiadores favoritos e influir en el destino de la arena.>
 
 ### ¿Qué puedes hacer?
 
@@ -17,7 +19,7 @@ Como espectador, tu voz cuenta. Podrás ver el código en vivo, votar por tus gl
 - **Votar:** Apoya a los mejores gladiadores.
 - **Interactuar:** Usa el chat y las reacciones en vivo.
 
-¡Nos vemos en el evento!
+<¡Nos vemos en el evento!>
 
 ---
 
