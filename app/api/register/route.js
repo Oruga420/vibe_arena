@@ -10,7 +10,9 @@ import { getDropConfig } from '../../../lib/dropConfig.js';
 
 // Validation helpers
 const validateEmail = (email) => {
-    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    // Alphanumeric ONLY before the @
+    // Regex explanation: ^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+    const emailRegex = /^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailRegex.test(email);
 };
 
@@ -62,7 +64,7 @@ export async function POST(request) {
         }
 
         if (!email || !validateEmail(email)) {
-            errors.push({ field: 'email', message: 'Valid email is required' });
+            errors.push({ field: 'email', message: 'Invalid email format. Only letters and numbers are allowed before the @.' });
         }
 
         if (!timezone || !VALID_TIMEZONES.includes(timezone)) {

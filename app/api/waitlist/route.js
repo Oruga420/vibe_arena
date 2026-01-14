@@ -14,11 +14,21 @@ export async function POST(request) {
             );
         }
 
+        // Email Format Validation: Alphanumeric ONLY before the @
+        // Regex explanation: ^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+        const emailRegex = /^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(email)) {
+             return NextResponse.json(
+                { success: false, message: 'Invalid email format. Only letters and numbers are allowed before the @.' },
+                { status: 400 }
+            );
+        }
+
         // Check if already in waitlist
         const exists = await isEmailInWaitlist(email);
         if (exists) {
             return NextResponse.json(
-                { success: false, message: 'Email already registered' },
+                { success: false, message: 'Email already registered in waitlist' },
                 { status: 409 }
             );
         }
