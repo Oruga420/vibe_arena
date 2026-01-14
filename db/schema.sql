@@ -136,11 +136,14 @@ CREATE TABLE waitlist_entries (
     name        VARCHAR(255) NOT NULL,
     email       VARCHAR(255) NOT NULL,
     role        VARCHAR(50) NOT NULL,
-    created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    welcome_email_sent BOOLEAN DEFAULT FALSE,
+    welcome_email_sent_at TIMESTAMPTZ
 );
 
 CREATE INDEX idx_waitlist_email ON waitlist_entries(email);
 CREATE INDEX idx_waitlist_created_at ON waitlist_entries(created_at DESC);
+CREATE INDEX idx_waitlist_email_sent ON waitlist_entries(welcome_email_sent);
 
 -- =============================================
 -- Sponsor Applications Table
