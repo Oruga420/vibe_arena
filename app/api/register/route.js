@@ -54,7 +54,8 @@ export async function POST(request) {
             x,
             linkedin,
             demo,
-            fairplay
+            fairplay,
+            language
         } = body;
 
         // Validation errors collector
@@ -144,7 +145,8 @@ export async function POST(request) {
                 email: registration.email,
                 colosseum_name: registration.colosseum_name,
                 stack: registration.stack,
-                github_url: registration.github_url
+                github_url: registration.github_url,
+                language: language || 'es'
             }, dropInfo);
             
             if (!emailResult.success) {
