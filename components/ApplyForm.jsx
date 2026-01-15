@@ -47,6 +47,10 @@ export default function ApplyForm() {
 
         try {
             const formData = new FormData(form);
+            
+            // Get browser language for email localization
+            const browserLang = navigator.language || navigator.userLanguage || 'es';
+            
             const body = {
                 name: formData.get("name"),
                 colosseum_name: formData.get("colosseum_name"),
@@ -57,7 +61,8 @@ export default function ApplyForm() {
                 x: formData.get("x"),
                 linkedin: formData.get("linkedin"),
                 demo: formData.get("demo"),
-                fairplay: formData.get("fairplay") === "on"
+                fairplay: formData.get("fairplay") === "on",
+                language: browserLang.startsWith('es') ? 'es' : 'en'
             };
 
             const response = await fetch("/api/register", {
