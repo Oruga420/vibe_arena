@@ -610,8 +610,8 @@ const translations = {
                 consent: "Te vamos a escribir sobre el evento.",
                 submit: "Reservar lugar",
                 soldOut: "Cupos completos",
-                helper: "Te confirmamos lugar para el pr\u00f3ximo QuickDrop. Link de pago cuando llegamos a {min}.",
-                success: "Listo. Tu lugar para el pr\u00f3ximo QuickDrop est\u00e1 confirmado. Link de pago al llegar a {min}.",
+                helper: "Te confirmamos lugar para el pr\u00f3ximo QuickDrop. El link de pago se desbloquea cuando hay {min} gladiadores listos.",
+                success: "Listo. Tu lugar para el pr\u00f3ximo QuickDrop est\u00e1 confirmado. El link de pago se desbloquea cuando lleguemos a {min} gladiadores.",
                 error: "Completa los campos obligatorios."
             }
         }
@@ -1223,8 +1223,8 @@ const translations = {
                 consent: "We will email you about the event.",
                 submit: "Reserve a spot",
                 soldOut: "Sold out",
-                helper: "We confirm your spot for the next QuickDrop. Payment link unlocks at {min}.",
-                success: "All set. Your spot for the next QuickDrop is confirmed. Payment link unlocks at {min}.",
+                helper: "We confirm your spot for the next QuickDrop. Payment link unlocks when {min} gladiators are ready.",
+                success: "All set. Your spot for the next QuickDrop is confirmed. Payment link unlocks when we reach {min} gladiators.",
                 error: "Fill the required fields."
             }
         }

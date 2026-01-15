@@ -7,6 +7,8 @@
 import { NextResponse } from 'next/server';
 import { createRegistration, isEmailRegistered } from '../../../lib/registrations.js';
 import { getDropConfig } from '../../../lib/dropConfig.js';
+import { sendRegistrationConfirmation } from '../../../lib/emails/registrationEmail.js';
+import { getNextDrop } from '../../../lib/dropsDb.js';
 
 // Validation helpers
 const validateEmail = (email) => {
@@ -133,6 +135,25 @@ export async function POST(request) {
             linkedin_url: linkedin?.trim() || null,
             drop_id: dropConfig.id || null
         });
+
+        // Send confirmation email immediately (non-blocking)
+        try {
+            const dropInfo = await getNextDrop();
+            const emailResult = await sendRegistrationConfirmation({
+                name: registration.name,
+                email: registration.email,
+                colosseum_name: registration.colosseum_name,
+                stack: registration.stack,
+                github_url: registration.github_url
+            }, dropInfo);
+            
+            if (!emailResult.success) {
+                console.warn('[Register] Email failed but registration succeeded:', emailResult.error);
+            }
+        } catch (emailError) {
+            // Don't fail registration if email fails
+            console.error('[Register] Email error (non-blocking):', emailError);
+        }
 
         return NextResponse.json({
             success: true,
