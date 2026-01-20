@@ -7,7 +7,7 @@ import BottomToggles from "../components/BottomToggles";
 
 export const metadata = {
     title: "Vibe Coding Colosseum | Any role. Same shot.",
-    description: "Ship a real app in 2 hours. Competetive platform for gladiators."
+    description: "Ship a real app in 1 hour. Competetive platform for gladiators."
 };
 
 export default function RootLayout({ children }) {
