@@ -627,34 +627,34 @@ const translations = {
         },
         votingGuide: {
             hero: {
-                tag: "GUÍA DE VOTO",
-                title: "Tu voto es la ley.",
-                subtitle: "Sin jueces. Sin piedad. Solo la arena decide.",
-                cta: "Ver el stream"
+                tag: "EL PROTOCOLO DE SEDA",
+                title: "Presenci\u00e1 la carnicer\u00eda.",
+                subtitle: "En el Coliseo, el c\u00f3digo no tiene sentimientos. Tu voto es el que decide qui\u00e9n vive y qui\u00e9n muere en la arena.",
+                cta: "ENTRAR AL RING"
             },
             steps: {
-                label: "CÓMO FUNCIONA",
+                label: "C\u00d3MO SE GANA",
                 items: [
                     {
                         num: "01",
-                        title: "Mirá el Stream",
-                        body: "Cuando se abran las votaciones, aparecerá un QR en pantalla."
+                        title: "Busc\u00e1 el QR",
+                        body: "El stream proyecta el artefacto de acceso. Sin el QR, sos solo un fantasma en la tribuna."
                     },
                     {
                         num: "02",
-                        title: "Escaneá rápido",
-                        body: "El QR es dinámico: cambia cada pocos segundos. Si parpadeás, te lo perdés."
+                        title: "Sincroniz\u00e1 tu pulso",
+                        body: "El QR es un organismo vivo: cambia cada 10s. Escanealo antes de que el token muera."
                     },
                     {
                         num: "03",
-                        title: "Elegí a tu campeón",
-                        body: "Tocá su tarjeta. Confirmá. Su destino está sellado."
+                        title: "Eleg\u00ed el destino",
+                        body: "Vot\u00e1 por el gladiador que mejor shippe\u00f3. El top 5 vuelve a pelear. Tu pulso es su gloria."
                     }
                 ]
             },
             security: {
-                title: "¿Por qué QR dinámicos?",
-                body: "Para matar bots. Solo humanos reales viendo en tiempo real pueden generar un token válido."
+                title: "\u00bfPor qu\u00e9 QR din\u00e1micos?",
+                body: "Para matar bots. Solo humanos reales viendo en tiempo real pueden generar un token v\u00e1lido."
             }
         }
     },
@@ -1282,34 +1282,34 @@ const translations = {
         },
         votingGuide: {
             hero: {
-                tag: "VOTING GUIDE",
-                title: "Your vote is law.",
-                subtitle: "No judges. No mercy. Only the arena decides.",
-                cta: "Watch the stream"
+                tag: "THE SILK PROTOCOL",
+                title: "Witness the carnage.",
+                subtitle: "In the Colosseum, code has no feelings. Your vote decides who lives and who dies in the arena.",
+                cta: "ENTER THE RING"
             },
             steps: {
-                label: "HOW IT WORKS",
+                label: "HOW WINNING WORKS",
                 items: [
                     {
                         num: "01",
-                        title: "Watch the Stream",
-                        body: "When voting opens, a QR drops on screen."
+                        title: "Seek the QR",
+                        body: "The stream projects the access artifact. Without the QR, you're just a ghost in the stands."
                     },
                     {
                         num: "02",
-                        title: "Scan fast",
-                        body: "The QR is dynamic: rotates every few seconds. Blink and you miss it."
+                        title: "Sync your pulse",
+                        body: "The QR is a living organism: it rotates every 10s. Scan it before the token expires."
                     },
                     {
                         num: "03",
-                        title: "Pick your champion",
-                        body: "Tap their card. Confirm. Their fate is sealed."
+                        title: "Forge their fate",
+                        body: "Vote for the gladiator who shipped best. The top 5 fight again. Your pulse is their glory."
                     }
                 ]
             },
             security: {
                 title: "Why dynamic QRs?",
-                body: "To kill bots. Only real humans watching in real-time can mint a valid token."
+                body: "To kill bots. Only real humans watching in real-time can generate a valid token."
             }
         }
     }
