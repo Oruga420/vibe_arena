@@ -4,7 +4,7 @@ const { neon } = require('@neondatabase/serverless');
 const sql = neon(process.env.DATABASE_URL);
 
 async function resetUser() {
-    const email = 'pam@seshwithfriends.org';
+    const email = 'tools@seshwithfriends.org';
     
     try {
         await sql`DELETE FROM quickdrop_registrations WHERE email = ${email}`;
