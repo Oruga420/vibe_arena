@@ -10,7 +10,7 @@ import WaitlistModal from "../components/WaitlistModal";
 export default function HomePage() {
     const { t } = useLanguage();
     const mapCards = t("home.map.cards");
-    const mapLinks = ["/how", "/judging", "/roadmap", "/apply"];
+    const mapLinks = ["/how", "/judging", "/roadmap", "/gladiators", "/voting-guide"];
     const statusItems = t("home.status.items");
 
     return (

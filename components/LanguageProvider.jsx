@@ -13,6 +13,7 @@ const translations = {
             faq: "FAQ",
             sponsor: "Patrocinios",
             apply: "Aplic\u00e1",
+            voteGuide: "C\u00f3mo votar",
             languageLabel: "Idioma"
         },
         micro: {
@@ -164,6 +165,11 @@ const translations = {
                         tag: "04 - Wall of Glory",
                         title: "El marcador",
                         body: "Vac\u00edo por ahora. \u00bfQuer\u00e9s el primer lugar?"
+                    },
+                    {
+                        tag: "05 - Votaci\u00f3n",
+                        title: "C\u00f3mo votar",
+                        body: "Gu\u00eda r\u00e1pida: QR din\u00e1micos, seguridad y d\u00f3nde dar click."
                     }
                 ]
             },
@@ -528,6 +534,10 @@ const translations = {
                     {
                         question: "\u00bfAlguna trampa?",
                         answer: "No manipules votos. Season 0 es individual. Si hay fraude, qued\u00e1s afuera."
+                    },
+                    {
+                        question: "¿Cómo se vota?",
+                        answer: "QR din\u00e1mico en el stream. Te lleva a la app. Eleg\u00eds tu gladiador. Listo. El QR cambia cada 10s para que solo voten los reales. [Ver gu\u00eda completa aqu\u00ed](/voting-guide)."
                     }
                 ],
                 footer: "Si est\u00e1s de acuerdo, aplic\u00e1. Si no, mir\u00e1 desde la tribuna."
@@ -614,6 +624,38 @@ const translations = {
                 success: "Listo. Tu lugar para el pr\u00f3ximo QuickDrop est\u00e1 confirmado. El link de pago se desbloquea cuando lleguemos a {min} gladiadores.",
                 error: "Completa los campos obligatorios."
             }
+        },
+        votingGuide: {
+            hero: {
+                tag: "GUÍA DE VOTO",
+                title: "Tu voto es la ley.",
+                subtitle: "Sin jueces. Sin piedad. Solo la arena decide.",
+                cta: "Ver el stream"
+            },
+            steps: {
+                label: "CÓMO FUNCIONA",
+                items: [
+                    {
+                        num: "01",
+                        title: "Mirá el Stream",
+                        body: "Cuando se abran las votaciones, aparecerá un QR en pantalla."
+                    },
+                    {
+                        num: "02",
+                        title: "Escaneá rápido",
+                        body: "El QR es dinámico: cambia cada pocos segundos. Si parpadeás, te lo perdés."
+                    },
+                    {
+                        num: "03",
+                        title: "Elegí a tu campeón",
+                        body: "Tocá su tarjeta. Confirmá. Su destino está sellado."
+                    }
+                ]
+            },
+            security: {
+                title: "¿Por qué QR dinámicos?",
+                body: "Para matar bots. Solo humanos reales viendo en tiempo real pueden generar un token válido."
+            }
         }
     },
     en: {
@@ -626,6 +668,7 @@ const translations = {
             faq: "FAQ",
             sponsor: "Sponsorships",
             apply: "Apply",
+            voteGuide: "How to vote",
             languageLabel: "Language"
         },
         micro: {
@@ -777,6 +820,11 @@ const translations = {
                         tag: "04 - Wall of Glory",
                         title: "The scoreboard",
                         body: "Empty for now. Want the first slot?"
+                    },
+                    {
+                        tag: "05 - Voting",
+                        title: "How to vote",
+                        body: "Quick guide: dynamic QRs, security, and where to click."
                     }
                 ]
             },
@@ -1141,6 +1189,10 @@ const translations = {
                     {
                         question: "Any gotchas?",
                         answer: "Do not manipulate votes. Season 0 is solo. If fraud is detected, you are out."
+                    },
+                    {
+                        question: "How do I vote?",
+                        answer: "Scan dynamic QR on stream. Takes you to app. Pick gladiator. Done. QR rotates every 10s so only real viewers vote. [See full guide here](/voting-guide)."
                     }
                 ],
                 footer: "If you agree, apply. If not, watch from the stands."
@@ -1226,6 +1278,38 @@ const translations = {
                 helper: "We confirm your spot for the next QuickDrop. Payment link unlocks when {min} gladiators are ready.",
                 success: "All set. Your spot for the next QuickDrop is confirmed. Payment link unlocks when we reach {min} gladiators.",
                 error: "Fill the required fields."
+            }
+        },
+        votingGuide: {
+            hero: {
+                tag: "VOTING GUIDE",
+                title: "Your vote is law.",
+                subtitle: "No judges. No mercy. Only the arena decides.",
+                cta: "Watch the stream"
+            },
+            steps: {
+                label: "HOW IT WORKS",
+                items: [
+                    {
+                        num: "01",
+                        title: "Watch the Stream",
+                        body: "When voting opens, a QR drops on screen."
+                    },
+                    {
+                        num: "02",
+                        title: "Scan fast",
+                        body: "The QR is dynamic: rotates every few seconds. Blink and you miss it."
+                    },
+                    {
+                        num: "03",
+                        title: "Pick your champion",
+                        body: "Tap their card. Confirm. Their fate is sealed."
+                    }
+                ]
+            },
+            security: {
+                title: "Why dynamic QRs?",
+                body: "To kill bots. Only real humans watching in real-time can mint a valid token."
             }
         }
     }
