@@ -26,9 +26,9 @@ export default function VotingGuide() {
                     --emerald: #00FF85;
                     --emerald-dark: #004d28;
                     --text-main: #ffffff;
-                    --text-secondary: rgba(255, 255, 255, 0.6);
+                    --text-secondary: rgba(255, 255, 255, 0.5);
                     --glass: rgba(255, 255, 255, 0.02);
-                    --glass-border: rgba(255, 255, 255, 0.1);
+                    --glass-border: rgba(255, 255, 255, 0.08);
                     
                     background-color: var(--obsidian);
                     color: var(--text-main);
@@ -41,40 +41,39 @@ export default function VotingGuide() {
                 .serif { font-family: 'Playfair Display', serif; }
                 .mono { font-family: 'JetBrains Mono', monospace; }
 
-                /* LUXURY HERO */
+                /* HERO SECTION */
                 .vg-hero {
                     position: relative;
-                    min-height: 110vh;
+                    min-height: 100vh;
                     display: flex;
                     align-items: center;
-                    padding: 0 8%;
+                    padding: 0 10%;
                     overflow: hidden;
-                    background: radial-gradient(circle at 70% 30%, rgba(197, 160, 89, 0.03) 0%, transparent 60%);
                 }
 
                 .vg-hero-content {
-                    flex: 1;
-                    max-width: 800px;
-                    z-index: 10;
-                    padding-bottom: 50px;
+                    position: relative;
+                    z-index: 20;
+                    max-width: 900px;
                 }
 
                 .vg-tag {
                     font-family: 'JetBrains Mono', monospace;
                     color: var(--gold);
-                    letter-spacing: 0.6em;
+                    letter-spacing: 0.8em;
                     font-size: 11px;
                     text-transform: uppercase;
                     display: block;
-                    margin-bottom: 2.5rem;
+                    margin-bottom: 3rem;
                     font-weight: 800;
+                    opacity: 0.8;
                 }
 
                 .vg-title {
-                    font-size: clamp(3.5rem, 9vw, 120px);
-                    line-height: 0.9;
+                    font-size: clamp(3.5rem, 10vw, 120px);
+                    line-height: 0.85;
                     letter-spacing: -0.05em;
-                    margin-bottom: 3rem;
+                    margin-bottom: 3.5rem;
                     font-weight: 900;
                 }
 
@@ -82,126 +81,113 @@ export default function VotingGuide() {
                     color: var(--gold);
                     font-style: italic;
                     display: block;
-                    text-shadow: 0 0 40px var(--gold-glow);
-                    margin-top: 0.5rem;
+                    text-shadow: 0 0 50px var(--gold-glow);
                 }
 
                 .vg-subtitle {
-                    font-size: clamp(18px, 2vw, 22px);
+                    font-size: clamp(20px, 2vw, 24px);
                     color: var(--text-secondary);
-                    max-width: 550px;
-                    margin-bottom: 4rem;
+                    max-width: 600px;
+                    margin-bottom: 5rem;
                     font-weight: 300;
-                    line-height: 1.6;
+                    line-height: 1.5;
                 }
 
-                /* Visual Centerpiece */
                 .vg-hero-visual {
                     position: absolute;
-                    right: -10%;
-                    top: 0;
-                    width: 60%;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                    right: -15%;
+                    top: 10%;
+                    width: 70%;
+                    height: 80%;
+                    opacity: 0.4;
                     pointer-events: none;
-                    opacity: 0.5;
                 }
 
-                .colosseum-svg {
-                    width: 100%;
-                    height: auto;
-                    color: var(--gold);
-                    filter: drop-shadow(0 0 50px var(--gold-glow));
-                }
-
-                /* BENTO GRID PROTOCOL */
+                /* BENTO GRID - THE HEART OF THE PROBLEM */
                 .vg-protocol-section {
-                    padding: 180px 8%;
-                    background: var(--obsidian-alt);
+                    padding: 200px 10%;
+                    background-color: var(--obsidian-alt);
                     border-top: 1px solid var(--glass-border);
                 }
 
                 .vg-section-header {
-                    margin-bottom: 120px;
+                    margin-bottom: 150px;
                 }
 
                 .vg-protocol-grid {
                     display: grid;
-                    grid-template-columns: repeat(12, 1fr);
-                    grid-auto-rows: minmax(450px, auto);
-                    gap: 32px;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 60px;
+                }
+
+                @media (max-width: 1024px) {
+                    .vg-protocol-grid { grid-template-columns: 1fr; gap: 40px; }
                 }
 
                 .bento-card {
                     background: var(--glass);
                     border: 1px solid var(--glass-border);
-                    padding: 4.5rem;
+                    padding: 80px;
                     position: relative;
                     overflow: hidden;
-                    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+                    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+                    min-height: 550px;
                     display: flex;
                     flex-direction: column;
                     justify-content: flex-end;
                 }
 
                 .bento-card:hover {
-                    background: rgba(255, 255, 255, 0.04);
                     border-color: var(--gold);
-                    transform: translateY(-12px);
-                    box-shadow: 0 50px 100px -20px rgba(0,0,0,0.9);
+                    background: rgba(255, 255, 255, 0.04);
+                    transform: translateY(-20px);
                 }
 
-                .bento-card.wide { grid-column: span 8; }
-                .bento-card.tall { grid-column: span 4; }
-                .bento-card.full { grid-column: span 12; min-height: 400px; padding: 5rem 6rem; }
+                .bento-card.full {
+                    grid-column: span 2;
+                    min-height: 480px;
+                }
 
-                @media (max-width: 1100px) {
-                    .bento-card.wide, .bento-card.tall, .bento-card.full { 
-                        grid-column: span 12; 
-                        padding: 3.5rem;
-                        min-height: 350px;
-                    }
-                    .vg-protocol-grid { gap: 24px; }
+                @media (max-width: 1024px) {
+                    .bento-card.full { grid-column: span 1; }
                 }
 
                 .bento-num {
-                    font-size: 15rem;
+                    font-family: 'Playfair Display', serif;
+                    font-size: 20rem;
+                    font-weight: 900;
                     position: absolute;
                     top: -60px;
-                    right: -30px;
-                    color: white;
-                    opacity: 0.015;
-                    font-weight: 900;
+                    right: -40px;
+                    opacity: 0.03;
                     line-height: 1;
-                    transition: opacity 0.5s, color 0.5s;
-                }
-
-                .bento-card:hover .bento-num {
-                    opacity: 0.04;
-                    color: var(--gold);
+                    pointer-events: none;
                 }
 
                 .bento-title {
-                    font-size: clamp(2rem, 4vw, 3.2rem);
-                    margin-bottom: 2rem;
-                    color: var(--gold);
+                    font-size: clamp(2.5rem, 5vw, 4rem);
                     font-weight: 900;
+                    color: var(--gold);
+                    margin-bottom: 2.5rem;
+                    line-height: 1;
+                    font-style: italic;
                     letter-spacing: -0.02em;
-                    line-height: 1.1;
                 }
 
                 .bento-body {
-                    font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+                    font-size: clamp(1.2rem, 2vw, 1.6rem);
                     color: var(--text-secondary);
-                    max-width: 520px;
+                    max-width: 650px;
                     font-weight: 300;
+                    line-height: 1.4;
                 }
 
                 /* SECURITY SECTION */
                 .vg-security-section {
-                    padding: 200px 8%;
+                    padding: 200px 10%;
+                }
+
+                .security-container {
                     display: grid;
                     grid-template-columns: 1.2fr 0.8fr;
                     gap: 120px;
@@ -209,31 +195,24 @@ export default function VotingGuide() {
                 }
 
                 @media (max-width: 1100px) {
-                    .vg-security-section { grid-template-columns: 1fr; gap: 80px; }
+                    .security-container { grid-template-columns: 1fr; gap: 80px; }
                 }
 
                 .security-box {
-                    background: #020202;
-                    border: 4px solid var(--gold);
-                    padding: 5rem;
-                    box-shadow: 32px 32px 0px var(--gold-deep);
+                    background: #010101;
+                    border: 5px solid var(--gold);
+                    padding: 80px;
+                    box-shadow: 40px 40px 0px var(--gold-deep);
                     position: relative;
                 }
 
-                @media (max-width: 640px) {
-                    .security-box { padding: 3rem; box-shadow: 16px 16px 0px var(--gold-deep); }
-                }
-
-                .security-scanline {
+                .security-scan {
                     position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 3px;
+                    top: 0; left: 0; width: 100%; height: 4px;
                     background: var(--emerald);
-                    box-shadow: 0 0 30px var(--emerald);
-                    animation: scan 5s linear infinite;
-                    opacity: 0.4;
+                    box-shadow: 0 0 40px var(--emerald);
+                    animation: scan 6s linear infinite;
+                    opacity: 0.6;
                 }
 
                 @keyframes scan {
@@ -241,46 +220,46 @@ export default function VotingGuide() {
                     100% { top: 100%; }
                 }
 
-                /* CTA SECTION */
-                .vg-cta-section {
-                    padding: 250px 8%;
-                    text-align: center;
-                    background: radial-gradient(circle at center 100%, rgba(197, 160, 89, 0.12) 0%, transparent 60%);
-                }
-
-                .luxury-button {
+                /* CTA BUTTON */
+                .luxury-cta {
                     display: inline-block;
-                    padding: 1.8rem 5rem;
+                    padding: 2rem 6rem;
                     background: white;
-                    color: var(--obsidian);
-                    text-decoration: none;
-                    font-weight: 900;
+                    color: #000;
                     font-family: 'JetBrains Mono', monospace;
-                    text-transform: uppercase;
+                    font-weight: 900;
+                    font-size: 1.4rem;
                     letter-spacing: 0.5em;
-                    font-size: 1.3rem;
-                    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+                    text-transform: uppercase;
+                    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
                     position: relative;
                 }
 
-                .luxury-button:hover {
+                .luxury-cta:hover {
                     background: var(--gold);
                     color: white;
-                    transform: scale(1.08);
-                    box-shadow: 0 30px 60px -10px var(--gold-glow);
+                    transform: scale(1.05);
+                    box-shadow: 0 40px 80px -15px var(--gold-glow);
                 }
 
-                .luxury-button::after {
+                .luxury-cta::after {
                     content: '';
                     position: absolute;
-                    inset: -12px;
-                    border: 1px solid rgba(255,255,255,0.15);
+                    inset: -15px;
+                    border: 1px solid rgba(255,255,255,0.2);
                     transition: all 0.5s;
                 }
 
-                .luxury-button:hover::after {
-                    inset: -25px;
+                .luxury-cta:hover::after {
+                    inset: -30px;
                     opacity: 0;
+                }
+
+                /* FINAL SECTION */
+                .vg-final {
+                    padding: 250px 10%;
+                    text-align: center;
+                    background: radial-gradient(circle at center bottom, rgba(197, 160, 89, 0.15) 0%, transparent 70%);
                 }
             `}</style>
 
@@ -288,45 +267,46 @@ export default function VotingGuide() {
             <section className="vg-hero">
                 <div className="vg-hero-content">
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
+                        initial={{ opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, ease: [0.19, 1, 0.22, 1] }}
+                        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                     >
                         <span className="vg-tag">{content.hero.tag}</span>
                         <h1 className="vg-title serif">
                             {language === "es" ? "Presenciá la" : "Witness the"}
                             <span className="gold-accent uppercase">Carnicería.</span>
-                            {content.hero.title}
+                            {/* We remove potential duplicate titles here */}
+                            {language === "es" ? "Tu voz es la ley." : "Your pulse is power."}
                         </h1>
                         <p className="vg-subtitle">{content.hero.subtitle}</p>
-                        <Link href="/apply" className="luxury-button">
+                        <Link href="/apply" className="luxury-cta">
                             {content.hero.cta}
                         </Link>
                     </motion.div>
                 </div>
 
                 <div className="vg-hero-visual">
-                    <svg className="colosseum-svg" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="250" cy="250" r="220" stroke="currentColor" strokeWidth="0.5" strokeDasharray="5 5" opacity="0.1"/>
-                        <circle cx="250" cy="250" r="180" stroke="currentColor" strokeWidth="1" strokeDasharray="12 12" opacity="0.2"/>
-                        <circle cx="250" cy="250" r="140" stroke="currentColor" strokeWidth="0.5" opacity="0.4"/>
-                        <motion.path 
-                            animate={{ rotate: 360, opacity: [0.3, 0.6, 0.3] }}
-                            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                            d="M250 80 A170 170 0 0 1 420 250" 
-                            stroke="currentColor" 
-                            strokeWidth="3"
+                    <svg viewBox="0 0 500 500" className="w-full h-full text-[var(--gold)]">
+                        <circle cx="250" cy="250" r="230" stroke="currentColor" strokeWidth="0.5" strokeDasharray="10 10" opacity="0.1" />
+                        <circle cx="250" cy="250" r="180" stroke="currentColor" strokeWidth="1" strokeDasharray="20 20" opacity="0.2" />
+                        <motion.circle 
+                            animate={{ r: [140, 160, 140], opacity: [0.1, 0.3, 0.1] }}
+                            transition={{ duration: 10, repeat: Infinity }}
+                            cx="250" cy="250" r="140" stroke="currentColor" strokeWidth="0.5"
                         />
-                        <rect x="246" y="246" width="8" height="8" fill="currentColor"/>
+                        <motion.path 
+                            animate={{ rotate: 360 }}
+                            transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
+                            d="M 250,250 m -200,0 a 200,200 0 1,0 400,0 a 200,200 0 1,0 -400,0"
+                            stroke="currentColor" strokeWidth="0.2" fill="none" opacity="0.3"
+                        />
                         {[...Array(12)].map((_, i) => (
                             <line 
                                 key={i}
-                                x1="250" y1="250" 
-                                x2={250 + Math.cos(i * 30 * Math.PI / 180) * 250} 
-                                y2={250 + Math.sin(i * 30 * Math.PI / 180) * 250} 
-                                stroke="currentColor" 
-                                strokeWidth="0.2"
-                                opacity="0.15"
+                                x1="250" y1="250"
+                                x2={250 + Math.cos(i * 30 * (Math.PI / 180)) * 250}
+                                y2={250 + Math.sin(i * 30 * (Math.PI / 180)) * 250}
+                                stroke="currentColor" strokeWidth="0.2" opacity="0.1"
                             />
                         ))}
                     </svg>
@@ -336,115 +316,115 @@ export default function VotingGuide() {
             {/* BENTO GRID PROTOCOL */}
             <section className="vg-protocol-section">
                 <div className="vg-section-header">
-                    <h2 className="serif italic" style={{ fontSize: 'clamp(3rem, 6vw, 5.5rem)', fontWeight: 900, marginBottom: '2rem', letterSpacing: '-0.03em' }}>
+                    <h2 className="serif italic" style={{ fontSize: 'clamp(3rem, 7vw, 6rem)', fontWeight: 900, letterSpacing: '-0.04em' }}>
                         {content.steps.label}
                     </h2>
-                    <div style={{ height: '3px', width: '120px', background: 'var(--gold)', boxShadow: '0 0 20px var(--gold-glow)' }}></div>
+                    <div style={{ height: '4px', width: '150px', background: 'var(--gold)', marginTop: '20px', boxShadow: '0 0 30px var(--gold-glow)' }}></div>
                 </div>
 
                 <div className="vg-protocol-grid">
                     <motion.div 
                         whileInView={{ opacity: 1, y: 0 }} 
-                        initial={{ opacity: 0, y: 60 }}
+                        initial={{ opacity: 0, y: 80 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        className="bento-card wide"
+                        className="bento-card"
                     >
-                        <span className="serif bento-num">01</span>
-                        <h3 className="serif bento-title italic uppercase">{content.steps.items[0].title}</h3>
+                        <span className="bento-num">01</span>
+                        <h3 className="serif bento-title uppercase">{content.steps.items[0].title}</h3>
                         <p className="bento-body">{content.steps.items[0].body}</p>
                     </motion.div>
 
                     <motion.div 
                         whileInView={{ opacity: 1, y: 0 }} 
-                        initial={{ opacity: 0, y: 60 }}
+                        initial={{ opacity: 0, y: 80 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ delay: 0.2 }}
-                        className="bento-card tall"
+                        className="bento-card"
                     >
-                        <span className="serif bento-num">02</span>
-                        <h3 className="serif bento-title italic uppercase">{content.steps.items[1].title}</h3>
+                        <span className="bento-num">02</span>
+                        <h3 className="serif bento-title uppercase">{content.steps.items[1].title}</h3>
                         <p className="bento-body">{content.steps.items[1].body}</p>
                     </motion.div>
 
                     <motion.div 
                         whileInView={{ opacity: 1, y: 0 }} 
-                        initial={{ opacity: 0, y: 60 }}
+                        initial={{ opacity: 0, y: 80 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ delay: 0.4 }}
                         className="bento-card full"
                     >
-                        <span className="serif bento-num">03</span>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '3rem', width: '100%' }}>
-                            <div style={{ flex: 1, minWidth: '300px' }}>
-                                <h3 className="serif bento-title italic uppercase" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', marginBottom: '1.5rem' }}>
+                        <span className="bento-num">03</span>
+                        <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '4rem' }}>
+                            <div style={{ flex: '1 1 500px' }}>
+                                <h3 className="serif bento-title uppercase" style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)' }}>
                                     {content.steps.items[2].title}
                                 </h3>
-                                <p className="bento-body" style={{ fontSize: 'clamp(1.3rem, 2vw, 1.8rem)', maxWidth: '700px', lineHeight: 1.4 }}>
+                                <p className="bento-body" style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', maxWidth: 'none' }}>
                                     {content.steps.items[2].body}
                                 </p>
                             </div>
-                            <div className="mono" style={{ fontSize: '11px', color: 'var(--gold)', opacity: 0.6, letterSpacing: '0.6em', fontWeight: 800 }}>
-                                FINAL VERDICT PROTOCOL
+                            <div className="mono font-bold" style={{ fontSize: '12px', color: 'var(--gold)', letterSpacing: '0.8em', opacity: 0.8 }}>
+                                VERDICT PROTOCOL
                             </div>
                         </div>
                     </motion.div>
                 </div>
             </section>
 
-            {/* SECURITY BOX */}
+            {/* SECURITY ARTIFACT */}
             <section className="vg-security-section">
-                <motion.div 
-                    whileInView={{ opacity: 1, x: 0 }} 
-                    initial={{ opacity: 0, x: -70 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    className="security-box"
-                >
-                    <div className="security-scanline"></div>
-                    <h3 className="serif" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 900, marginBottom: '2.5rem', fontStyle: 'italic', textTransform: 'uppercase', letterSpacing: '-0.04em' }}>
-                        {content.security.title}
-                    </h3>
-                    <p className="mono font-bold" style={{ fontSize: 'clamp(1rem, 1.5vw, 1.4rem)', opacity: 0.8, lineHeight: 1.5, color: 'var(--emerald)' }}>
-                        {content.security.body}
-                    </p>
-                    <div style={{ marginTop: '4rem', display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
-                        {['ENCRYPTION: AES-256', 'LATENCY: 40MS', 'AUTH: DYNAMIC-QR', 'STATUS: SECURE'].map(tag => (
-                            <span key={tag} className="mono" style={{ fontSize: '10px', border: '1px solid rgba(255,255,255,0.15)', padding: '6px 14px', borderRadius: '2px', background: 'rgba(255,255,255,0.02)', fontWeight: 700 }}>
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
-                </motion.div>
+                <div className="security-container">
+                    <motion.div 
+                        whileInView={{ opacity: 1, x: 0 }} 
+                        initial={{ opacity: 0, x: -80 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        className="security-box"
+                    >
+                        <div className="security-scan"></div>
+                        <h3 className="serif" style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', fontWeight: 900, fontStyle: 'italic', marginBottom: '3rem', textTransform: 'uppercase' }}>
+                            {content.security.title}
+                        </h3>
+                        <p className="mono font-bold" style={{ fontSize: '1.4rem', color: 'var(--emerald)', opacity: 0.9, lineHeight: 1.4 }}>
+                            {content.security.body}
+                        </p>
+                        <div style={{ marginTop: '5rem', display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
+                            {['ENCRYPTION: AES-256', 'LATENCY: 40MS', 'STATUS: VERIFIED ELITE', 'AUTH: DYNAMIC-QR'].map(tag => (
+                                <span key={tag} className="mono" style={{ fontSize: '11px', background: 'rgba(255,255,255,0.05)', padding: '10px 20px', border: '1px solid rgba(255,255,255,0.1)', fontWeight: 700 }}>
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    </motion.div>
 
-                <div className="security-info" style={{ paddingLeft: '20px' }}>
-                    <h4 className="serif italic" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', marginBottom: '2.5rem', fontWeight: 800 }}>
-                        {language === "es" ? "¿Por qué nos importa?" : "Why it matters?"}
-                    </h4>
-                    <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', fontWeight: 300, maxWidth: '450px', lineHeight: 1.8 }}>
-                        {language === "es" 
-                            ? "El caos es bienvenido, el fraude no. Nuestros artefactos digitales aseguran que cada voto sea el reflejo de un alma presente en el ring. Sin bots, sin intermediarios, solo la verdad del código."
-                            : "Chaos is welcome, fraud is not. Our digital artifacts ensure every vote reflects a soul present at the ring. No bots, no middlemen, just the cold truth of the code."
-                        }
-                    </p>
-                    <div style={{ marginTop: '3rem', width: '60px', height: '2px', background: 'var(--gold)' }}></div>
+                    <div style={{ paddingLeft: '40px' }}>
+                        <h4 className="serif italic" style={{ fontSize: '3rem', fontWeight: 800, marginBottom: '3rem' }}>
+                            {language === "es" ? "¿Por qué importa?" : "Why it matters?"}
+                        </h4>
+                        <p style={{ fontSize: '1.4rem', color: 'var(--text-secondary)', fontWeight: 300, lineHeight: 1.7 }}>
+                            {language === "es" 
+                                ? "El Coliseo no admite títeres. Cada voto capturado mediante el artefacto QR es una prueba de vida, una firma digital de que estuviste ahí, presenciando la gloria o la caída de los gladiadores."
+                                : "The Colosseum accepts no puppets. Every vote captured through the QR artifact is proof of life, a digital signature that you were there, witnessing the glory or the fall of the gladiators."
+                            }
+                        </p>
+                    </div>
                 </div>
             </section>
 
             {/* FINAL CTA */}
-            <section className="vg-cta-section">
+            <section className="vg-final">
                 <motion.div
                     whileInView={{ scale: 1, opacity: 1 }}
-                    initial={{ scale: 0.92, opacity: 0 }}
+                    initial={{ scale: 0.9, opacity: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
                 >
-                    <h2 className="serif italic" style={{ fontSize: 'clamp(2.5rem, 8vw, 110px)', fontWeight: 900, marginBottom: '5rem', letterSpacing: '-0.05em' }}>
+                    <h2 className="serif italic" style={{ fontSize: 'clamp(3rem, 9vw, 120px)', fontWeight: 900, marginBottom: '6rem', letterSpacing: '-0.06em' }}>
                         {language === "es" ? "¿VAS A REINAR O A MIRAR?" : "REIGN OR WATCH?"}
                     </h2>
-                    <Link href="/apply" className="luxury-button">
+                    <Link href="/apply" className="luxury-cta">
                         {content.hero.cta}
                     </Link>
-                    <div style={{ marginTop: '3rem' }} className="mono text-[10px] text-white/20 tracking-[1em] uppercase">
-                        No Second Chances
+                    <div style={{ marginTop: '5rem' }} className="mono text-[11px] text-white/20 tracking-[1.2em] uppercase font-bold">
+                        NO SECOND CHANCES
                     </div>
                 </motion.div>
             </section>
