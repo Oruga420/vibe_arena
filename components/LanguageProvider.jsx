@@ -73,7 +73,7 @@ const translations = {
         home: {
             hero: {
                 tag: "Vibe Coding Colosseum",
-                title: "Ten\u00e9s 2 horas. Shippe\u00e1 algo o sal\u00ed del ring.",
+                title: "Ten\u00e9s 1 hora. Shippe\u00e1 algo o sal\u00ed del ring.",
                 body: "Any role. Same shot. Season 0. Los primeros gladiadores. Cupos limitados. No es hackathon: es un drop. Entr\u00e1s, shippe\u00e1s, te votan.",
                 primary: "Entrar al ring",
                 secondary: "Las reglas del ring"
@@ -83,7 +83,7 @@ const translations = {
                 format: "Formato",
                 formatValue: "Online global + meetup opcional en Toronto",
                 duration: "Duraci\u00f3n",
-                durationValue: "120 minutos",
+                durationValue: "60 minutos",
                 stack: "Stack",
                 stackValue: "Libre",
                 window: "Ventana Enero-Feb",
@@ -302,7 +302,7 @@ const translations = {
                     {
                         num: "02",
                         title: "Constru\u00eds",
-                        body: "Ten\u00e9s 2 horas. Cualquier stack. Cualquier IA. Sin templates. Objetivo: shippear."
+                        body: "Ten\u00e9s 1 hora. Cualquier stack. Cualquier IA. Sin templates. Objetivo: shippear."
                     },
                     {
                         num: "03",
@@ -407,7 +407,7 @@ const translations = {
                 items: [
                     {
                         num: "01",
-                        title: "120 minutos",
+                        title: "60 minutos",
                         body: "El timer corre para todos. No hay extensiones ni excepciones."
                     },
                     {
@@ -489,7 +489,7 @@ const translations = {
             hero: {
                 tag: "CONTRATO DEL RING",
                 title: "Le\u00e9 esto. Despu\u00e9s entr\u00e1.",
-                body: "Season 0 es simple: 2 horas, demo en vivo, la gente decide.",
+                body: "Season 0 es simple: 1 hora, demo en vivo, la gente decide.",
                 primary: "Aplic\u00e1 para Season 0",
                 secondary: "Ver protocolo"
             },
@@ -686,7 +686,7 @@ const translations = {
         home: {
             hero: {
                 tag: "Vibe Coding Colosseum",
-                title: "You have 2 hours. Ship or step out.",
+                title: "You have 1 hour. Ship or step out.",
                 body: "Any role. Same shot. Season 0. First gladiators. Limited spots. Not a hackathon: it's a drop. You enter, you ship, the crowd votes.",
                 primary: "Enter the ring",
                 secondary: "Ring rules"
@@ -696,7 +696,7 @@ const translations = {
                 format: "Format",
                 formatValue: "Global online + optional Toronto meetup",
                 duration: "Duration",
-                durationValue: "120 minutes",
+                durationValue: "60 minutes",
                 stack: "Stack",
                 stackValue: "Open stack",
                 window: "Jan-Feb window",
@@ -915,7 +915,7 @@ const translations = {
                     {
                         num: "02",
                         title: "Build",
-                        body: "You get 2 hours. Any stack. Any AI. No templates. Goal is shipping."
+                        body: "You get 1 hour. Any stack. Any AI. No templates. Goal is shipping."
                     },
                     {
                         num: "03",
@@ -1020,7 +1020,7 @@ const translations = {
                 items: [
                     {
                         num: "01",
-                        title: "120 minutes",
+                        title: "60 minutes",
                         body: "The timer runs for everyone. No extensions."
                     },
                     {
@@ -1102,7 +1102,7 @@ const translations = {
             hero: {
                 tag: "RING CONTRACT",
                 title: "Read this. Then enter.",
-                body: "Season 0 is simple: 2 hours, demo live, the crowd decides.",
+                body: "Season 0 is simple: 1 hour, demo live, the crowd decides.",
                 primary: "Apply for Season 0",
                 secondary: "See protocol"
             },
