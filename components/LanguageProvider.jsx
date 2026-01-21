@@ -643,12 +643,12 @@ const translations = {
                     {
                         num: "02",
                         title: "Sincroniz\u00e1 tu pulso",
-                        body: "El QR es un organismo vivo: cambia cada 10s. Escanealo antes de que el token muera."
+                        body: "El QR es un organismo vivo: cambia cada 30s. Escanealo antes de que el token muera."
                     },
                     {
                         num: "03",
                         title: "Eleg\u00ed el destino",
-                        body: "Vot\u00e1 por el gladiador que mejor shippe\u00f3. El top 5 vuelve a pelear. Tu pulso es su gloria."
+                        body: "Vot\u00e1 por el gladiador que mejor shippe\u00f3. El que sume m\u00e1s votos al final de la hora se corona campe\u00f3n. Tu pulso es su gloria."
                     }
                 ]
             },
@@ -1298,12 +1298,12 @@ const translations = {
                     {
                         num: "02",
                         title: "Sync your pulse",
-                        body: "The QR is a living organism: it rotates every 10s. Scan it before the token expires."
+                        body: "The QR is a living organism: it rotates every 30s. Scan it before the token expires."
                     },
                     {
                         num: "03",
                         title: "Forge their fate",
-                        body: "Vote for the gladiator who shipped best. The top 5 fight again. Your pulse is their glory."
+                        body: "Vote for the gladiator who shipped best. The one with most votes at the end of the hour wins. Your pulse is their glory."
                     }
                 ]
             },
