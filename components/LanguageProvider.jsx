@@ -165,6 +165,11 @@ const translations = {
                         tag: "04 - Wall of Glory",
                         title: "El marcador",
                         body: "Vac\u00edo por ahora. \u00bfQuer\u00e9s el primer lugar?"
+                    },
+                    {
+                        tag: "05 - Votaci\u00f3n",
+                        title: "C\u00f3mo votar",
+                        body: "Gu\u00eda r\u00e1pida: QR din\u00e1micos, seguridad y d\u00f3nde dar click."
                     }
                 ]
             },
@@ -532,7 +537,7 @@ const translations = {
                     },
                     {
                         question: "¿Cómo se vota?",
-                        answer: "QR dinámico en el stream. Te lleva a la app. Elegís tu gladiador. Listo. El QR cambia cada 10s para que solo voten los reales."
+                        answer: "QR din\u00e1mico en el stream. Te lleva a la app. Eleg\u00eds tu gladiador. Listo. El QR cambia cada 10s para que solo voten los reales. [Ver gu\u00eda completa aqu\u00ed](/voting-guide)."
                     }
                 ],
                 footer: "Si est\u00e1s de acuerdo, aplic\u00e1. Si no, mir\u00e1 desde la tribuna."
@@ -815,6 +820,11 @@ const translations = {
                         tag: "04 - Wall of Glory",
                         title: "The scoreboard",
                         body: "Empty for now. Want the first slot?"
+                    },
+                    {
+                        tag: "05 - Voting",
+                        title: "How to vote",
+                        body: "Quick guide: dynamic QRs, security, and where to click."
                     }
                 ]
             },
@@ -1182,7 +1192,7 @@ const translations = {
                     },
                     {
                         question: "How do I vote?",
-                        answer: "Scan dynamic QR on stream. Takes you to app. Pick gladiator. Done. QR rotates every 10s so only real viewers vote."
+                        answer: "Scan dynamic QR on stream. Takes you to app. Pick gladiator. Done. QR rotates every 10s so only real viewers vote. [See full guide here](/voting-guide)."
                     }
                 ],
                 footer: "If you agree, apply. If not, watch from the stands."

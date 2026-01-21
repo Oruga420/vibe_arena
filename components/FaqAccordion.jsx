@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { buildDropTokens, formatTemplate } from "./dropFormat";
 import { useLanguage } from "./LanguageProvider";
@@ -14,6 +15,24 @@ export default function FaqAccordion() {
 
     const toggle = (index) => {
         setOpenIndex((prev) => (prev === index ? null : index));
+    };
+
+    const renderAnswer = (text) => {
+        const parts = text.split(/\[(.*?)\]\((.*?)\)/g);
+        if (parts.length === 1) return text;
+
+        return parts.map((part, i) => {
+            if (i % 3 === 1) {
+                const href = parts[i + 1];
+                return (
+                    <Link key={i} href={href} className="faq-link" style={{ color: "var(--accent)", textDecoration: "underline" }}>
+                        {part}
+                    </Link>
+                );
+            }
+            if (i % 3 === 2) return null;
+            return part;
+        });
     };
 
     return (
@@ -34,7 +53,7 @@ export default function FaqAccordion() {
                                 <span className="faq-icon">{isOpen ? "-" : "+"}</span>
                             </button>
                             <div className="faq-answer" id={`faq-${index}`}>
-                                <p>{formatTemplate(item.answer, tokens)}</p>
+                                <p>{renderAnswer(formatTemplate(item.answer, tokens))}</p>
                             </div>
                         </div>
                     );
