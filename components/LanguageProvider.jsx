@@ -13,6 +13,7 @@ const translations = {
             faq: "FAQ",
             sponsor: "Patrocinios",
             apply: "Aplic\u00e1",
+            voteGuide: "C\u00f3mo votar",
             languageLabel: "Idioma"
         },
         micro: {
@@ -164,6 +165,11 @@ const translations = {
                         tag: "04 - Wall of Glory",
                         title: "El marcador",
                         body: "Vac\u00edo por ahora. \u00bfQuer\u00e9s el primer lugar?"
+                    },
+                    {
+                        tag: "05 - Votaci\u00f3n",
+                        title: "C\u00f3mo votar",
+                        body: "Gu\u00eda r\u00e1pida: QR din\u00e1micos, seguridad y d\u00f3nde dar click."
                     }
                 ]
             },
@@ -528,6 +534,10 @@ const translations = {
                     {
                         question: "\u00bfAlguna trampa?",
                         answer: "No manipules votos. Season 0 es individual. Si hay fraude, qued\u00e1s afuera."
+                    },
+                    {
+                        question: "¿Cómo se vota?",
+                        answer: "QR din\u00e1mico en el stream. Te lleva a la app. Eleg\u00eds tu gladiador. Listo. El QR cambia cada 10s para que solo voten los reales. [Ver gu\u00eda completa aqu\u00ed](/voting-guide)."
                     }
                 ],
                 footer: "Si est\u00e1s de acuerdo, aplic\u00e1. Si no, mir\u00e1 desde la tribuna."
@@ -614,6 +624,38 @@ const translations = {
                 success: "Listo. Tu lugar para el pr\u00f3ximo QuickDrop est\u00e1 confirmado. El link de pago se desbloquea cuando lleguemos a {min} gladiadores.",
                 error: "Completa los campos obligatorios."
             }
+        },
+        votingGuide: {
+            hero: {
+                tag: "EL PROTOCOLO DE SEDA",
+                title: "Presenci\u00e1 la carnicer\u00eda.",
+                subtitle: "En el Coliseo, el c\u00f3digo no tiene sentimientos. Tu voto es el que decide qui\u00e9n vive y qui\u00e9n muere en la arena.",
+                cta: "ENTRAR AL RING"
+            },
+            steps: {
+                label: "C\u00d3MO SE GANA",
+                items: [
+                    {
+                        num: "01",
+                        title: "Busc\u00e1 el QR",
+                        body: "El stream proyecta el artefacto de acceso. Sin el QR, sos solo un fantasma en la tribuna."
+                    },
+                    {
+                        num: "02",
+                        title: "Sincroniz\u00e1 tu pulso",
+                        body: "El QR es un organismo vivo: cambia cada 30s. Escanealo antes de que el token muera."
+                    },
+                    {
+                        num: "03",
+                        title: "Eleg\u00ed el destino",
+                        body: "Vot\u00e1 por el gladiador que mejor shippe\u00f3. El que sume m\u00e1s votos al final de la hora se corona campe\u00f3n. Tu pulso es su gloria."
+                    }
+                ]
+            },
+            security: {
+                title: "\u00bfPor qu\u00e9 QR din\u00e1micos?",
+                body: "Para matar bots. Solo humanos reales viendo en tiempo real pueden generar un token v\u00e1lido."
+            }
         }
     },
     en: {
@@ -626,6 +668,7 @@ const translations = {
             faq: "FAQ",
             sponsor: "Sponsorships",
             apply: "Apply",
+            voteGuide: "How to vote",
             languageLabel: "Language"
         },
         micro: {
@@ -777,6 +820,11 @@ const translations = {
                         tag: "04 - Wall of Glory",
                         title: "The scoreboard",
                         body: "Empty for now. Want the first slot?"
+                    },
+                    {
+                        tag: "05 - Voting",
+                        title: "How to vote",
+                        body: "Quick guide: dynamic QRs, security, and where to click."
                     }
                 ]
             },
@@ -1141,6 +1189,10 @@ const translations = {
                     {
                         question: "Any gotchas?",
                         answer: "Do not manipulate votes. Season 0 is solo. If fraud is detected, you are out."
+                    },
+                    {
+                        question: "How do I vote?",
+                        answer: "Scan dynamic QR on stream. Takes you to app. Pick gladiator. Done. QR rotates every 10s so only real viewers vote. [See full guide here](/voting-guide)."
                     }
                 ],
                 footer: "If you agree, apply. If not, watch from the stands."
@@ -1226,6 +1278,38 @@ const translations = {
                 helper: "We confirm your spot for the next QuickDrop. Payment link unlocks when {min} gladiators are ready.",
                 success: "All set. Your spot for the next QuickDrop is confirmed. Payment link unlocks when we reach {min} gladiators.",
                 error: "Fill the required fields."
+            }
+        },
+        votingGuide: {
+            hero: {
+                tag: "THE SILK PROTOCOL",
+                title: "Witness the carnage.",
+                subtitle: "In the Colosseum, code has no feelings. Your vote decides who lives and who dies in the arena.",
+                cta: "ENTER THE RING"
+            },
+            steps: {
+                label: "HOW WINNING WORKS",
+                items: [
+                    {
+                        num: "01",
+                        title: "Seek the QR",
+                        body: "The stream projects the access artifact. Without the QR, you're just a ghost in the stands."
+                    },
+                    {
+                        num: "02",
+                        title: "Sync your pulse",
+                        body: "The QR is a living organism: it rotates every 30s. Scan it before the token expires."
+                    },
+                    {
+                        num: "03",
+                        title: "Forge their fate",
+                        body: "Vote for the gladiator who shipped best. The one with most votes at the end of the hour wins. Your pulse is their glory."
+                    }
+                ]
+            },
+            security: {
+                title: "Why dynamic QRs?",
+                body: "To kill bots. Only real humans watching in real-time can generate a valid token."
             }
         }
     }

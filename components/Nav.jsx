@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLanguage } from "./LanguageProvider";
 import LanguageToggle from "./LanguageToggle";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Nav() {
     const pathname = usePathname();
@@ -17,6 +18,7 @@ export default function Nav() {
             { label: t("nav.home"), href: "/" },
             { label: t("nav.how"), href: "/how" },
             { label: t("nav.judging"), href: "/judging" },
+            { label: t("nav.voteGuide"), href: "/voting-guide" },
             { label: "Dex", href: "/gladiators" }
         ],
         [t]
@@ -69,6 +71,7 @@ export default function Nav() {
                     );
                 })}
                 <LanguageToggle />
+                <ThemeToggle />
                 <Link href="/apply" className="btn-apply-sm">
                     {t("nav.apply")}
                 </Link>
