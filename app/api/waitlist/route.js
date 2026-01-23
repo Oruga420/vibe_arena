@@ -14,12 +14,12 @@ export async function POST(request) {
             );
         }
 
-        // Email Format Validation: Alphanumeric ONLY before the @
-        // Regex explanation: ^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
-        const emailRegex = /^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        // Email Format Validation: Alphanumeric, dots, underscores, pluses, and hyphens allowed before the @
+        // Regex explanation: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!emailRegex.test(email)) {
              return NextResponse.json(
-                { success: false, message: 'Invalid email format. Only letters and numbers are allowed before the @.' },
+                { success: false, message: 'Invalid email format.' },
                 { status: 400 }
             );
         }

@@ -12,9 +12,9 @@ import { getNextDrop } from '../../../lib/dropsDb.js';
 
 // Validation helpers
 const validateEmail = (email) => {
-    // Alphanumeric ONLY before the @
-    // Regex explanation: ^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
-    const emailRegex = /^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    // Alphanumeric, dots, underscores, pluses, and hyphens allowed before the @
+    // Regex explanation: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailRegex.test(email);
 };
 
@@ -67,7 +67,7 @@ export async function POST(request) {
         }
 
         if (!email || !validateEmail(email)) {
-            errors.push({ field: 'email', message: 'Invalid email format. Only letters and numbers are allowed before the @.' });
+            errors.push({ field: 'email', message: 'Invalid email format.' });
         }
 
         if (!timezone || !VALID_TIMEZONES.includes(timezone)) {
