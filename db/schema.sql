@@ -169,4 +169,18 @@ CREATE TABLE sponsor_applications (
 
 CREATE INDEX idx_sponsor_email ON sponsor_applications(email);
 CREATE INDEX idx_sponsor_company ON sponsor_applications(company_name);
-CREATE INDEX idx_sponsor_created_at ON sponsor_applications(created_at DESC);
+
+-- =============================================
+-- Spectators Table
+-- =============================================
+
+CREATE TABLE spectators (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    role VARCHAR(50) DEFAULT 'spectator',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX idx_spectators_email ON spectators(email);
+

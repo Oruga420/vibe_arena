@@ -25,7 +25,7 @@ export async function POST(request) {
         }
 
         // Check if already in waitlist
-        const exists = await isEmailInWaitlist(email);
+        const exists = await isEmailInWaitlist(email, role);
         if (exists) {
             return NextResponse.json(
                 { success: false, message: 'Email already registered in waitlist' },
