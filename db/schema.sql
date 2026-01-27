@@ -134,7 +134,7 @@ CREATE TRIGGER update_competitors_updated_at
 CREATE TABLE waitlist_entries (
     id          SERIAL PRIMARY KEY,
     name        VARCHAR(255) NOT NULL,
-    email       VARCHAR(255) NOT NULL,
+    email       VARCHAR(255) NOT NULL UNIQUE,
     role        VARCHAR(50) NOT NULL,
     created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     welcome_email_sent BOOLEAN DEFAULT FALSE,
