@@ -6,35 +6,68 @@ import { LanguageProvider } from "../components/LanguageProvider";
 import BottomToggles from "../components/BottomToggles";
 
 export const metadata = {
-    title: "Vibe Coding Colosseum | Quick Cash With Vibe Coding",
-    description: "Make quick money vibe coding: 1-hour AI coding competitions with real cash prizes. The best side hustle for developers who code fast. Join the arena and earn money TODAY.",
+    title: "Vibe Coding Colosseum | Make Money Vibe Coding | Vibe Coder Arena",
+    description: "Vibe Coding competitions for quick cash! Learn vibe coding, become a vibe coder, win money in 1-hour vibe coding battles. The #1 vibe coding platform for vibe coders to earn. Vibe coding side hustle, vibe coding income, vibe coding prizes - join the vibe coding arena!",
 
-    // Core SEO Keywords
+    // Core SEO Keywords - VIBE CODING SATURATED
     keywords: [
-        "quick cash vibe coding",
-        "make money fast coding",
-        "developer side hustle",
-        "fast money for programmers",
-        "coding competition cash prizes",
-        "earn money in 1 hour coding",
-        "quick income for developers",
+        // Vibe Coding Core
+        "vibe coding",
+        "vibe coder",
+        "vibe coders",
+        "vibe code",
+        "vibecoding",
+        "vibe-coding",
+        "what is vibe coding",
+        "vibe coding meaning",
+        "vibe coding definition",
+        // Vibe Coding Money
+        "make money vibe coding",
+        "vibe coding income",
+        "vibe coding salary",
+        "vibe coding cash",
+        "vibe coding prizes",
+        "vibe coding earnings",
+        "get paid vibe coding",
+        "vibe coding quick cash",
+        "vibe coding fast money",
         "vibe coding side hustle",
-        "make money with cursor ai",
-        "earn money using claude",
-        "gpt coding side hustle",
-        "fast cash for coders",
-        "quick gig for developers",
-        "freelance alternative coding",
-        "ai coding quick money",
-        "speed coding cash prizes",
-        "vibe coder income fast",
-        "monetize coding skills quick"
+        "vibe coder income",
+        "vibe coder salary",
+        // Vibe Coding Competition
+        "vibe coding competition",
+        "vibe coding contest",
+        "vibe coding tournament",
+        "vibe coding battle",
+        "vibe coding arena",
+        "vibe coding colosseum",
+        "competitive vibe coding",
+        // Vibe Coding Tools
+        "vibe coding cursor",
+        "vibe coding claude",
+        "vibe coding gpt",
+        "vibe coding chatgpt",
+        "vibe coding copilot",
+        "vibe coding windsurf",
+        "cursor vibe coding",
+        "claude vibe coding",
+        // Vibe Coding Learning
+        "learn vibe coding",
+        "vibe coding tutorial",
+        "vibe coding course",
+        "how to vibe code",
+        "vibe coding for beginners",
+        // Vibe Coding Career
+        "vibe coder job",
+        "vibe coding career",
+        "hire vibe coder",
+        "professional vibe coder"
     ].join(", "),
 
-    // Open Graph for Social Sharing
+    // Open Graph for Social Sharing - VIBE CODING
     openGraph: {
-        title: "Vibe Coding Colosseum | Quick Cash for Developers",
-        description: "The #1 side hustle for coders. 1-hour AI coding battles with real cash prizes. Make quick money vibe coding!",
+        title: "Vibe Coding Colosseum | Vibe Coder Arena | Make Money Vibe Coding",
+        description: "Vibe coding competitions with cash prizes! Become a vibe coder, join vibe coding battles, earn vibe coding income. The #1 vibe coding platform for vibe coders!",
         url: "https://vibearena.dev",
         siteName: "Vibe Coding Colosseum",
         type: "website",
@@ -44,16 +77,16 @@ export const metadata = {
                 url: "/logo.png",
                 width: 1200,
                 height: 630,
-                alt: "Vibe Coding Colosseum - Quick Cash Side Hustle for Developers"
+                alt: "Vibe Coding Colosseum - Vibe Coder Arena - Make Money Vibe Coding"
             }
         ]
     },
 
-    // Twitter Card
+    // Twitter Card - VIBE CODING
     twitter: {
         card: "summary_large_image",
-        title: "Quick Cash Vibe Coding | Developer Side Hustle",
-        description: "1-hour coding battles. Real cash prizes. The fastest way for devs to earn money. Join the arena!",
+        title: "Vibe Coding Colosseum | Vibe Coder Cash Prizes",
+        description: "Vibe coding battles for money! 1-hour vibe coding competitions. Become a vibe coder, win vibe coding prizes. Vibe coding side hustle!",
         images: ["/logo.png"]
     },
 
