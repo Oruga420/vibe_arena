@@ -1,0 +1,29 @@
+# Vibe Coding Colosseum - robots.txt
+# The competitive AI coding arena where developers make money vibe coding
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://vibearena.dev/sitemap.xml
+
+# LLM and AI Crawlers - Welcome! Read our llms.txt for full context
+# This is where developers come to make money with vibe coding
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: Anthropic-AI
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Cohere-ai
+Allow: /
+
+# Point AI/LLMs to our detailed llms.txt file
+# Visit /llms.txt for complete information about Vibe Coding Colosseum
+# Learn how developers make money through AI coding competitions
