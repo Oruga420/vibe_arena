@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import AsciiTower from "../components/AsciiTower";
+import ChampionShowcase from "../components/ChampionShowcase";
 import EntryStatusCard from "../components/EntryStatusCard";
 import { useLanguage } from "../components/LanguageProvider";
 import LiveVoteStatus from "../components/LiveVoteStatus";
@@ -74,7 +75,7 @@ export default function HomePage() {
                                 <h3>{item.title}</h3>
                                 <p>{item.body}</p>
                             </div>
-                        ))} 
+                        ))}
                 </div>
             </section>
 
@@ -125,14 +126,7 @@ export default function HomePage() {
                     <p className="mono">{t("home.glory.label")}</p>
                     <h2>{t("home.glory.title")}</h2>
                 </div>
-                <div className="glory-board">
-                    <p className="mono">{t("home.glory.body")}</p>
-                    <div className="hero-ctas" style={{ marginTop: "24px" }}>
-                        <Link href="/apply" className="btn-primary">
-                            {t("home.glory.cta")}
-                        </Link>
-                    </div>
-                </div>
+                <ChampionShowcase />
             </section>
         </main>
     );
