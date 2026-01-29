@@ -383,22 +383,31 @@ nav {
 }
 
 @keyframes pulse-red {
+
   0%,
   100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.7;
   }
 }
 
 @keyframes bounce-arrow {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
+
   40% {
     transform: translateY(-10px);
   }
+
   60% {
     transform: translateY(-5px);
   }
@@ -542,16 +551,12 @@ nav {
   z-index: 1;
   pointer-events: none;
   opacity: 0.6;
-  mask-image: linear-gradient(
-    to bottom,
-    var(--mask-color) 40%,
-    transparent 95%
-  );
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    var(--mask-color) 40%,
-    transparent 95%
-  );
+  mask-image: linear-gradient(to bottom,
+      var(--mask-color) 40%,
+      transparent 95%);
+  -webkit-mask-image: linear-gradient(to bottom,
+      var(--mask-color) 40%,
+      transparent 95%);
 }
 
 .scanline {
@@ -571,16 +576,20 @@ nav {
     transform: translateY(-30%);
     opacity: 0;
   }
+
   20% {
     opacity: 0.6;
   }
+
   50% {
     transform: translateY(60%);
     opacity: 0.4;
   }
+
   80% {
     opacity: 0.6;
   }
+
   100% {
     transform: translateY(120%);
     opacity: 0;
@@ -1171,8 +1180,13 @@ footer {
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 .champion-loading {
@@ -1194,7 +1208,9 @@ footer {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .champion-empty {
@@ -1222,9 +1238,19 @@ footer {
 }
 
 @keyframes trophy-bounce {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  25% { transform: translateY(-8px) rotate(-5deg); }
-  75% { transform: translateY(-8px) rotate(5deg); }
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-8px) rotate(-5deg);
+  }
+
+  75% {
+    transform: translateY(-8px) rotate(5deg);
+  }
 }
 
 .champion-header .drop-name {
@@ -1268,7 +1294,10 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 4rem;
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
 }
 
@@ -1282,8 +1311,15 @@ footer {
 }
 
 @keyframes crown-float {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-8px); }
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-8px);
+  }
 }
 
 .champion-name {
@@ -1296,7 +1332,8 @@ footer {
   gap: 12px;
 }
 
-.sword-left, .sword-right {
+.sword-left,
+.sword-right {
   font-size: 1.2rem;
   opacity: 0.7;
 }
@@ -1409,22 +1446,22 @@ footer {
   .champion-showcase {
     padding: 32px 20px;
   }
-  
+
   .champion-avatar-container {
     width: 120px;
     height: 120px;
   }
-  
+
   .champion-name {
     font-size: 1.5rem;
   }
-  
+
   .defeated-avatar,
   .defeated-avatar-placeholder {
     width: 50px;
     height: 50px;
   }
-  
+
   .champion-stats {
     gap: 24px;
   }

@@ -71,7 +71,11 @@ export default function ChampionShowcase() {
                         />
                     ) : (
                         <div className="champion-avatar-placeholder">
-                            <span>🏛️</span>
+                            <span>
+                                {(champion.champion_colosseum_name || champion.champion_name || '??')
+                                    .substring(0, 2)
+                                    .toUpperCase()}
+                            </span>
                         </div>
                     )}
                     <div className="champion-crown">👑</div>
