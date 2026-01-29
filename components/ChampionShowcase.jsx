@@ -71,16 +71,14 @@ export default function ChampionShowcase() {
                         />
                     ) : (
                         <div className="champion-avatar-placeholder">
-                            <span>⚔️</span>
+                            <span>🏛️</span>
                         </div>
                     )}
                     <div className="champion-crown">👑</div>
                 </div>
 
                 <h2 className="champion-name">
-                    <span className="sword-left">⚔️</span>
                     {champion.champion_colosseum_name || champion.champion_name}
-                    <span className="sword-right">⚔️</span>
                 </h2>
 
                 {champion.champion_project_name && champion.champion_project_name !== 'TBD' && (
@@ -117,21 +115,17 @@ export default function ChampionShowcase() {
                 </div>
             )}
 
-            {/* Stats */}
-            <div className="champion-stats">
-                <div className="stat">
-                    <span className="stat-value">{champion.total_gladiators || 1}</span>
-                    <span className="stat-label">Gladiators</span>
-                </div>
-                {champion.prize_pool && (
+            {/* Stats - only show if there's a prize pool */}
+            {champion.prize_pool && (
+                <div className="champion-stats">
                     <div className="stat">
                         <span className="stat-value">
                             ${champion.prize_pool} {champion.prize_currency || 'CAD'}
                         </span>
                         <span className="stat-label">Prize Pool</span>
                     </div>
-                )}
-            </div>
+                </div>
+            )}
         </div>
     );
 }
