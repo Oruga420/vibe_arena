@@ -1,0 +1,449 @@
+/* Container - follows section pattern, NO max-width restriction */
+.container {
+    width: 100%;
+}
+
+/* Header matches section-header pattern */
+.header {
+    margin-bottom: 60px;
+}
+
+.header p {
+    color: var(--primary-green);
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+}
+
+.header h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--deep-green);
+}
+
+/* Loading State */
+.loadingState {
+    display: flex;
+    justify-content: center;
+    padding: 48px;
+}
+
+.pulse {
+    animation: pulse 1.5s ease-in-out infinite;
+    color: var(--text-muted);
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Drop Status - matches status-card pattern */
+.dropStatus {
+    margin-bottom: 32px;
+}
+
+.activeDrop {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 24px;
+    background: var(--surface);
+    border: 1px solid var(--primary-green);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+.liveIndicator {
+    color: var(--primary-green);
+    animation: blink 1s ease-in-out infinite;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.activeDrop h3 {
+    color: var(--deep-green);
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.planningDrop {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+.settingUpBadge {
+    background: #f59e0b;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.planningDrop h3 {
+    margin: 0;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Valentine's Special Card */
+.valentineCard {
+    position: relative;
+    overflow: hidden;
+    padding: 32px;
+    margin-bottom: 40px;
+    border-radius: 16px;
+    background: linear-gradient(135deg,
+            rgba(255, 105, 180, 0.12),
+            rgba(255, 20, 147, 0.08),
+            rgba(219, 112, 147, 0.06));
+    border: 1px solid rgba(255, 105, 180, 0.35);
+    box-shadow:
+        0 0 20px rgba(255, 105, 180, 0.1),
+        var(--shadow);
+}
+
+.valentineHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.valentineHeader h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ff69b4;
+}
+
+.heartIcon {
+    font-size: 1.6rem;
+    animation: heartbeat 1.2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    14% {
+        transform: scale(1.15);
+    }
+
+    28% {
+        transform: scale(1);
+    }
+
+    42% {
+        transform: scale(1.15);
+    }
+
+    70% {
+        transform: scale(1);
+    }
+}
+
+.valentineDate {
+    text-align: center;
+    margin-top: 12px;
+    color: #ffb6c1;
+    font-weight: 700;
+    font-size: 1.1rem;
+    font-family: var(--font-mono);
+}
+
+.valentineGlow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center,
+            rgba(255, 105, 180, 0.08) 0%,
+            transparent 50%);
+    animation: rotateGlow 10s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rotateGlow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Info Grid - 3 equal columns on desktop */
+.infoGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+/* Info Card - matches card-link pattern */
+.infoCard {
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.infoCard:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 196, 106, 0.35);
+}
+
+.infoLabel {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--primary-green);
+    margin-bottom: 16px;
+    font-family: var(--font-mono);
+}
+
+.infoValue {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--deep-green);
+}
+
+/* Format Split */
+.formatSplit {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.formatItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: var(--surface-alt);
+    border-radius: 8px;
+}
+
+.formatIcon {
+    font-size: 1.3rem;
+}
+
+.formatItem span:last-child {
+    color: var(--deep-green);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Duration Breakdown */
+.durationBreakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.durationItem {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 14px;
+    background: var(--surface-alt);
+    border-left: 3px solid var(--primary-green);
+    border-radius: 0 6px 6px 0;
+}
+
+.durationTime {
+    font-weight: 700;
+    font-family: var(--font-mono);
+    color: var(--primary-green);
+    min-width: 60px;
+    font-size: 0.95rem;
+}
+
+.durationDesc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Stack / Vibe Tools */
+.stackIntro {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    margin-top: 0;
+}
+
+.toolsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+
+.toolBadge {
+    padding: 6px 10px;
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    font-size: 0.7rem;
+    font-family: var(--font-mono);
+    color: var(--deep-green);
+    transition: all 0.2s ease;
+}
+
+.toolBadge:hover {
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+}
+
+.stackTagline {
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+/* Season Note - matches rules-note pattern */
+.seasonNote {
+    padding: 16px 20px;
+    background: var(--surface);
+    border-left: 3px solid var(--accent-red);
+    margin-bottom: 40px;
+}
+
+.seasonNote span {
+    color: var(--accent-red);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* CTAs - matches hero-ctas pattern */
+.ctaSection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.ctaPrimary,
+.ctaSecondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 18px 32px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.ctaPrimary {
+    background: var(--primary-green);
+    color: white;
+    border: none;
+}
+
+.ctaPrimary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 196, 106, 0.3);
+}
+
+.ctaSecondary {
+    background: transparent;
+    color: var(--deep-green);
+    border: 1px solid var(--border);
+}
+
+.ctaSecondary:hover {
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+}
+
+.ctaIcon {
+    font-size: 1.2rem;
+}
+
+/* Responsive - based on responsive guide.md */
+@media (max-width: 1024px) {
+    .infoGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .infoGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .header {
+        margin-bottom: 40px;
+    }
+
+    .valentineCard {
+        padding: 24px;
+    }
+
+    .valentineHeader h3 {
+        font-size: 1.2rem;
+    }
+
+    .infoCard {
+        padding: 20px;
+    }
+
+    .ctaSection {
+        flex-direction: column;
+    }
+
+    .ctaPrimary,
+    .ctaSecondary {
+        width: 100%;
+        padding: 16px 24px;
+    }
+}
