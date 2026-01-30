@@ -75,7 +75,7 @@ const translations = {
             hero: {
                 tag: "Vibe Coding Colosseum",
                 title: "Ten\u00e9s 1 hora. Shippe\u00e1 algo o sal\u00ed del ring.",
-                body: "Any role. Same shot. Season 0. Los primeros gladiadores. Cupos limitados. No es hackathon: es un drop. Entr\u00e1s, shippe\u00e1s, te votan.",
+                body: "Beta Gladiators are accepted now. Feb Beta Drop is coming - Feb 14 is the date. Any role. Same shot. Not a hackathon: it's a drop. You enter, you ship, the crowd votes.",
                 primary: "Entrar al ring",
                 secondary: "Las reglas del ring"
             },
@@ -750,7 +750,7 @@ const translations = {
             hero: {
                 tag: "Vibe Coding Colosseum",
                 title: "You have 1 hour. Ship or step out.",
-                body: "Any role. Same shot. Season 0. First gladiators. Limited spots. Not a hackathon: it's a drop. You enter, you ship, the crowd votes.",
+                body: "Beta Gladiators are accepted now. Feb Beta Drop is coming - Feb 14 is the date. Any role. Same shot. Not a hackathon: it's a drop. You enter, you ship, the crowd votes.",
                 primary: "Enter the ring",
                 secondary: "Ring rules"
             },
