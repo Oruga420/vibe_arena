@@ -123,11 +123,6 @@ export default function NextDropCard() {
                         </div>
                     </div>
 
-                    {/* Season Note */}
-                    <div className={styles.seasonNote}>
-                        <span>{t("nextDrop.seasonNote")}</span>
-                    </div>
-
                     {/* CTAs */}
                     <div className={styles.ctaSection}>
                         <Link href="/gladiators" className={styles.ctaSecondary}>
