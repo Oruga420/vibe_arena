@@ -181,6 +181,25 @@ const translations = {
                 secondary: "Ver el plan"
             }
         },
+        nextDrop: {
+            label: "ESTADO DEL ARENA",
+            title: "Próximo Drop",
+            planning: "Estamos planeando el próximo drop...",
+            valentineTitle: "Sesh With Friends Beta",
+            format: "Formato",
+            formatGlobal: "Global Online",
+            formatToronto: "Meetup opcional en Toronto",
+            duration: "Duración",
+            housekeeping: "Housekeeping",
+            devTime: "Tiempo de Dev",
+            closing: "Ceremonia de Cierre",
+            stack: "Tus Armas",
+            vibeIntro: "Podés vibe codear con:",
+            vibeTagline: "Vibeá como quieras. Vibe codeá como un Gladiador en el Coliseo. Vos elegís tus armas (tu vibe tech stack)!",
+            seasonNote: "Te avisamos primero si estás en Season 0",
+            spectatorCta: "¿Ver a los gladiadores como espectador?",
+            registerCta: "¡Registrate como gladiador y empezá a ganar guita!!"
+        },
         sponsor: {
             label: "Patrocinios",
             title: "Patrocina el drop y dale poder real a la comunidad.",
@@ -836,6 +855,25 @@ const translations = {
                 secondary: "See the plan"
             }
         },
+        nextDrop: {
+            label: "ARENA STATUS",
+            title: "Next Drop",
+            planning: "We're planning the next drop...",
+            valentineTitle: "Sesh With Friends Beta",
+            format: "Format",
+            formatGlobal: "Global Online",
+            formatToronto: "Optional Toronto Meetup",
+            duration: "Duration",
+            housekeeping: "Housekeeping",
+            devTime: "Dev Time",
+            closing: "Closing Ceremony",
+            stack: "Your Weapons",
+            vibeIntro: "You can vibe code with:",
+            vibeTagline: "Vibe however you want. Vibe code like a Gladiator on the Coliseo. You pick your weapons (your vibe tech stack)!",
+            seasonNote: "We ping you first if you are in Season 0",
+            spectatorCta: "See the gladiators as a spectator?",
+            registerCta: "Register as a gladiator and start making cash!!"
+        },
         sponsor: {
             label: "Sponsorships",
             title: "Sponsor a drop and power the community.",
@@ -1317,7 +1355,7 @@ const translations = {
 
 const LanguageContext = createContext({
     language: "en",
-    setLanguage: () => {},
+    setLanguage: () => { },
     t: () => ""
 });
 

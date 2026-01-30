@@ -5,14 +5,13 @@ import AsciiTower from "../components/AsciiTower";
 import ChampionShowcase from "../components/ChampionShowcase";
 import EntryStatusCard from "../components/EntryStatusCard";
 import { useLanguage } from "../components/LanguageProvider";
-import LiveVoteStatus from "../components/LiveVoteStatus";
+import NextDropCard from "../components/NextDropCard";
 import WaitlistModal from "../components/WaitlistModal";
 
 export default function HomePage() {
     const { t } = useLanguage();
     const mapCards = t("home.map.cards");
     const mapLinks = ["/how", "/judging", "/roadmap", "/gladiators", "/voting-guide"];
-    const statusItems = t("home.status.items");
 
     return (
         <main>
@@ -35,28 +34,6 @@ export default function HomePage() {
                         </Link>
                     </div>
                 </div>
-
-                <div className="drop-card">
-                    <div className="mono" style={{ marginBottom: "20px", opacity: 0.5 }}>
-                        {t("home.drop.title")}
-                    </div>
-                    <div className="drop-row">
-                        <span>{t("home.drop.format")}</span>
-                        <span>{t("home.drop.formatValue")}</span>
-                    </div>
-                    <div className="drop-row">
-                        <span>{t("home.drop.duration")}</span>
-                        <span>{t("home.drop.durationValue")}</span>
-                    </div>
-                    <div className="drop-row">
-                        <span>{t("home.drop.stack")}</span>
-                        <span>{t("home.drop.stackValue")}</span>
-                    </div>
-                    <div className="countdown">{t("home.drop.window")}</div>
-                    <div className="mono" style={{ marginTop: "8px", fontSize: "0.6rem", color: "var(--accent-red)" }}>
-                        {t("home.drop.note")}
-                    </div>
-                </div>
             </section>
 
             <section className="section entry-section">
@@ -64,23 +41,7 @@ export default function HomePage() {
             </section>
 
             <section className="section section-muted">
-                <div className="section-header">
-                    <p className="mono">{t("home.status.label")}</p>
-                    <h2>{t("home.status.title")}</h2>
-                </div>
-                <div className="grid-4">
-                    {Array.isArray(statusItems) &&
-                        statusItems.map((item) => (
-                            <div className="card" key={item.title}>
-                                <h3>{item.title}</h3>
-                                <p>{item.body}</p>
-                            </div>
-                        ))}
-                </div>
-            </section>
-
-            <section className="section live-status-section">
-                <LiveVoteStatus />
+                <NextDropCard />
             </section>
 
             <section className="section">
