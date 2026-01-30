@@ -112,16 +112,14 @@ export default function NextDropCard() {
                             </div>
                         </div>
 
-                        {/* Stack Section - Vibe Tools */}
-                        <div className={`${styles.infoCard} ${styles.stackCard}`}>
+                        {/* Stack Section - Vibe Tools (same size as other cards) */}
+                        <div className={styles.infoCard}>
                             <span className={styles.infoLabel}>{t("nextDrop.stack")}</span>
-                            <p className={styles.stackIntro}>{t("nextDrop.vibeIntro")}</p>
                             <div className={styles.toolsGrid}>
                                 {vibeTools.map((tool) => (
                                     <span key={tool} className={styles.toolBadge}>{tool}</span>
                                 ))}
                             </div>
-                            <p className={styles.stackTagline}>{t("nextDrop.vibeTagline")}</p>
                         </div>
                     </div>
 
