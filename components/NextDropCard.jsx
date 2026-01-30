@@ -58,8 +58,8 @@ export default function NextDropCard() {
                             </div>
                         ) : (
                             <div className={styles.planningDrop}>
-                                <span className={styles.planningIcon}>⚙️</span>
-                                <h3>{t("nextDrop.planning")}</h3>
+                                <span className={styles.settingUpBadge}>Setting Up</span>
+                                <h3>{t("nextDrop.settingUp")}</h3>
                             </div>
                         )}
                     </div>
