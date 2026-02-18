@@ -242,6 +242,7 @@ function GladiatorModal({ data, onClose }) {
 
     return (
         <div
+            ref={(el) => { if (el) el.scrollTop = 0; }}
             onClick={onClose}
             style={{
                 position: 'fixed',
@@ -271,10 +272,9 @@ function GladiatorModal({ data, onClose }) {
                 <button
                     onClick={onClose}
                     style={{
-                        position: 'sticky',
+                        position: 'absolute',
                         top: '16px',
-                        float: 'right',
-                        marginRight: '16px',
+                        right: '16px',
                         width: '36px',
                         height: '36px',
                         borderRadius: '50%',
