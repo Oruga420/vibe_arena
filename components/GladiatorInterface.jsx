@@ -129,7 +129,7 @@ function GladiatorCard({ data, onClick }) {
     const losses = data.losses || 0;
     const totalMatches = wins + losses;
     const winRate = totalMatches > 0 ? Math.round((wins / totalMatches) * 100) : 0;
-    const displayName = data.gladiator_name || data.colosseum_name || data.name;
+    const displayName = data.gladiator_name || data.colosseum_name || 'Gladiator';
     const archetype = data.attributes?.archetype;
 
     return (
@@ -230,7 +230,7 @@ function GladiatorModal({ data, onClose }) {
     const losses = data.losses || 0;
     const totalMatches = wins + losses;
     const winRate = totalMatches > 0 ? Math.round((wins / totalMatches) * 100) : 0;
-    const displayName = data.gladiator_name || data.colosseum_name || data.name;
+    const displayName = data.gladiator_name || data.colosseum_name || 'Gladiator';
 
     const attrs = data.attributes || {};
     const title = attrs.title;

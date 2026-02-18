@@ -100,9 +100,8 @@ export async function GET(request) {
             LEFT JOIN competitors comp ON LOWER(TRIM(d.email)) = LOWER(TRIM(comp.email))
             WHERE 
                 ${query ? sql`
-                    LOWER(d.name) LIKE LOWER(${'%' + query + '%'}) 
+                    LOWER(COALESCE(ap.gladiator_name, d.colosseum_name, d.name)) LIKE LOWER(${'%' + query + '%'}) 
                     OR LOWER(COALESCE(d.colosseum_name, '')) LIKE LOWER(${'%' + query + '%'})
-                    OR LOWER(d.email) LIKE LOWER(${'%' + query + '%'})
                 ` : sql`TRUE`}
             ORDER BY 
                 d.updated_at DESC
@@ -131,6 +130,7 @@ export async function GET(request) {
 
         // 3. Merge: gladiator data + stats reales
         //    El Oruga = organizador, sus stats no cuentan (siempre 0-0-0%)
+        //    Strip name & email from response for privacy
         const data = results.map(r => {
             const email = r.email?.toLowerCase()?.trim();
             const isExcluded = EXCLUDED_EMAILS.includes(email);
@@ -138,8 +138,11 @@ export async function GET(request) {
                 ? { wins: 0, losses: 0, dropsPlayed: 0, winRate: 0 }
                 : (statsMap[email] || { wins: 0, losses: 0, dropsPlayed: 0, winRate: 0 });
 
+            // Destructure to remove private fields
+            const { name, email: _email, ...publicData } = r;
+
             return {
-                ...r,
+                ...publicData,
                 wins: stats.wins,
                 losses: stats.losses,
                 drops_played: stats.dropsPlayed,
