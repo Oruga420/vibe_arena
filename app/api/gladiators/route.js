@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import sql from '../../../lib/db.js';
 
+const ADMIN_API_URL = process.env.NEXT_PUBLIC_ADMIN_URL || 'https://vibe-arena-qrvoting.vercel.app';
+
 export async function GET(request) {
     const { searchParams } = new URL(request.url);
     const query = searchParams.get('query');
@@ -15,8 +17,6 @@ export async function GET(request) {
                     qr.colosseum_name,
                     qr.email,
                     qr.stack::text as stack,
-                    COALESCE(qr.wins, 0) as wins,
-                    COALESCE(qr.losses, 0) as losses,
                     qr.avatar_url,
                     qr.created_at,
                     qr.updated_at,
@@ -32,8 +32,6 @@ export async function GET(request) {
                     NULL as colosseum_name,
                     we.email,
                     NULL as stack,
-                    0 as wins,
-                    0 as losses,
                     NULL as avatar_url,
                     we.created_at,
                     we.created_at as updated_at,
@@ -50,8 +48,6 @@ export async function GET(request) {
                     c.colosseum_name,
                     c.email,
                     NULL as stack,
-                    0 as wins,
-                    0 as losses,
                     c.avatar_url,
                     c.created_at,
                     c.updated_at,
@@ -68,8 +64,6 @@ export async function GET(request) {
                     colosseum_name,
                     email,
                     stack,
-                    wins,
-                    losses,
                     avatar_url,
                     created_at,
                     updated_at,
@@ -90,8 +84,6 @@ export async function GET(request) {
                 d.colosseum_name,
                 d.email,
                 d.stack,
-                d.wins,
-                d.losses,
                 COALESCE(ap.avatar_url, d.avatar_url) as avatar_url,
                 d.created_at,
                 d.updated_at,
@@ -113,16 +105,57 @@ export async function GET(request) {
                     OR LOWER(d.email) LIKE LOWER(${'%' + query + '%'})
                 ` : sql`TRUE`}
             ORDER BY 
-                d.wins DESC,
-                (d.wins + d.losses) DESC,
                 d.updated_at DESC
             LIMIT 50;
         `;
 
+        // Fetch real stats from Admin Coliseo API
+        const emails = results.map(g => g.email).filter(Boolean);
+        let statsMap = {};
+
+        if (emails.length > 0) {
+            try {
+                const statsResponse = await fetch(`${ADMIN_API_URL}/api/gladiators/stats/bulk`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ emails }),
+                });
+
+                if (statsResponse.ok) {
+                    const statsData = await statsResponse.json();
+                    statsMap = statsData.stats || {};
+                }
+            } catch (statsError) {
+                console.error('Error fetching stats from Admin API:', statsError);
+                // Non-blocking: continue with zeros
+            }
+        }
+
+        // Merge gladiator data with real stats
+        const enrichedResults = results.map(g => {
+            const emailKey = g.email?.toLowerCase()?.trim();
+            const stats = statsMap[emailKey] || { wins: 0, losses: 0, dropsPlayed: 0, winRate: 0 };
+
+            return {
+                ...g,
+                wins: stats.wins,
+                losses: stats.losses,
+                drops_played: stats.dropsPlayed,
+                win_rate: stats.winRate,
+            };
+        });
+
+        // Sort by wins desc, then drops played, then updated_at
+        enrichedResults.sort((a, b) => {
+            if (b.wins !== a.wins) return b.wins - a.wins;
+            if (b.drops_played !== a.drops_played) return b.drops_played - a.drops_played;
+            return 0;
+        });
+
         return NextResponse.json({
             success: true,
-            count: results.length,
-            data: results
+            count: enrichedResults.length,
+            data: enrichedResults
         });
 
     } catch (error) {
