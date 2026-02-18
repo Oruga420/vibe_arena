@@ -1494,3 +1494,14 @@ footer {
     gap: 24px;
   }
 }
+/* Gladiator Card & Modal */
+.gladiator-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 196, 106, 0.15);
+  border-color: var(--primary-green);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

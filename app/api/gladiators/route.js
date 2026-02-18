@@ -85,10 +85,27 @@ export async function GET(request) {
                     updated_at DESC
             )
             SELECT 
-                d.*,
-                COALESCE(d.avatar_url, at.avatar_url) as avatar_url
+                d.id,
+                d.name,
+                d.colosseum_name,
+                d.email,
+                d.stack,
+                d.wins,
+                d.losses,
+                COALESCE(ap.avatar_url, d.avatar_url) as avatar_url,
+                d.created_at,
+                d.updated_at,
+                d.source,
+                -- Avatar profile enrichment
+                ap.attributes,
+                ap.power_ups,
+                ap.generated_images,
+                ap.reference_image_url,
+                COALESCE(ap.gladiator_name, d.colosseum_name, d.name) as gladiator_name,
+                comp.competitor_story
             FROM deduplicated d
-            LEFT JOIN avatar_tokens at ON LOWER(d.email) = LOWER(at.email)
+            LEFT JOIN avatar_profiles ap ON LOWER(TRIM(d.email)) = LOWER(TRIM(ap.email))
+            LEFT JOIN competitors comp ON LOWER(TRIM(d.email)) = LOWER(TRIM(comp.email))
             WHERE 
                 ${query ? sql`
                     LOWER(d.name) LIKE LOWER(${'%' + query + '%'}) 
