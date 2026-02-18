@@ -58,10 +58,10 @@ export async function GET(request) {
                     'competitor' as source
                 FROM competitors c
             ),
-            -- Deduplicate by email first, then by name as fallback for NULL emails
+            -- Deduplicate: by email when available, by name when email is NULL
             deduplicated AS (
                 SELECT DISTINCT ON (
-                    COALESCE(LOWER(TRIM(email)), '') || '::' || LOWER(TRIM(name))
+                    COALESCE(LOWER(TRIM(email)), 'no-email::' || LOWER(TRIM(name)))
                 )
                     id,
                     name,
@@ -76,7 +76,7 @@ export async function GET(request) {
                     source
                 FROM all_gladiators
                 ORDER BY 
-                    COALESCE(LOWER(TRIM(email)), '') || '::' || LOWER(TRIM(name)),
+                    COALESCE(LOWER(TRIM(email)), 'no-email::' || LOWER(TRIM(name))),
                     CASE source 
                         WHEN 'registration' THEN 1 
                         WHEN 'competitor' THEN 2 
