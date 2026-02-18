@@ -87,8 +87,8 @@ const translations = {
                 durationValue: "60 minutos",
                 stack: "Stack",
                 stackValue: "Libre",
-                window: "Ventana Enero-Feb",
-                note: "Te avisamos primero si entr\u00e1s a Season 0"
+                window: "Domingo Feb 22",
+                note: "Te avisamos primero si entrás a Season 0"
             },
             status: {
                 label: "Arena status",
@@ -103,8 +103,8 @@ const translations = {
                         body: "15 Feb (tentativo)"
                     },
                     {
-                        title: "Drop p\u00fablico",
-                        body: "Ventana Enero-Feb"
+                        title: "Beta drop",
+                        body: "Domingo Feb 22"
                     },
                     {
                         title: "\u00daltimo update",
@@ -478,10 +478,10 @@ const translations = {
                 title: "Patch notes + pr\u00f3ximo drop",
                 body: "Qu\u00e9 ya est\u00e1 shippeado, qu\u00e9 viene, y cu\u00e1ndo abre la votaci\u00f3n.",
                 items: [
-                    { label: "Entrada", value: "{fee}" },
-                    { label: "M\u00ednimo / Cupo", value: "Min {min} / Cupo {max}" },
-                    { label: "Premio", value: "Ganador {prizePct}% del pozo" },
-                    { label: "Pr\u00f3ximo drop", value: "Ventana Enero-Feb" }
+                    { label: "Entrada", value: "GRATIS (Beta)" },
+                    { label: "Mínimo / Cupo", value: "Min {min} / Cupo {max}" },
+                    { label: "Premio", value: "$100 CAD Cash" },
+                    { label: "Próximo drop", value: "Domingo Feb 22" }
                 ],
                 cta: "Entrar al ring"
             },
@@ -762,7 +762,7 @@ const translations = {
                 durationValue: "60 minutes",
                 stack: "Stack",
                 stackValue: "Open stack",
-                window: "Jan-Feb window",
+                window: "Sunday Feb 22",
                 note: "We ping you first if you are in Season 0"
             },
             status: {
@@ -778,8 +778,8 @@ const translations = {
                         body: "Feb 15 (tentative)"
                     },
                     {
-                        title: "Public drop",
-                        body: "Jan-Feb window"
+                        title: "Beta drop",
+                        body: "Sunday Feb 22"
                     },
                     {
                         title: "Last update",
@@ -1153,10 +1153,10 @@ const translations = {
                 title: "Patch notes + next drop",
                 body: "What is shipped, what is next, and when voting opens.",
                 items: [
-                    { label: "Entry", value: "{fee}" },
+                    { label: "Entry", value: "FREE (Beta)" },
                     { label: "Min / Cap", value: "Min {min} / Cap {max}" },
-                    { label: "Prize", value: "Winner takes {prizePct}% of the Prize Pool" },
-                    { label: "Next drop", value: "Jan-Feb window" }
+                    { label: "Prize", value: "$100 CAD Cash" },
+                    { label: "Next drop", value: "Sunday Feb 22" }
                 ],
                 cta: "Enter the ring"
             },
