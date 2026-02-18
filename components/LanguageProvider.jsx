@@ -21,7 +21,7 @@ const translations = {
             link: "Ver el plan"
         },
         footer: {
-            copy: "(c) 2025 TORONTO TECH MINIMAL",
+            copy: "(c) 2026 TORONTO TECH MINIMAL",
             twitter: "Twitter/X",
             discord: "Discord"
         },
@@ -75,7 +75,7 @@ const translations = {
             hero: {
                 tag: "Vibe Coding Colosseum",
                 title: "Ten\u00e9s 1 hora. Shippe\u00e1 algo o sal\u00ed del ring.",
-                body: "Beta Gladiators are accepted now. Feb Beta Drop is coming - Feb 14 is the date. Any role. Same shot. Not a hackathon: it's a drop. You enter, you ship, the crowd votes.",
+                body: "Próximo drop: Domingo 22 de Febrero. Entrada gratis. Premio: $100 CAD cash. No es un hackathon: es un drop. Entrás, shippeás, la gente vota.",
                 primary: "Entrar al ring",
                 secondary: "Las reglas del ring"
             },
@@ -186,7 +186,7 @@ const translations = {
             title: "Próximo Drop",
             planning: "Estamos planeando el próximo drop...",
             settingUp: "Setting Up the Colisseum we let you know when its ready",
-            valentineTitle: "Sesh With Friends Beta Drop",
+            valentineTitle: "Sunday Drop — Free Entry",
             format: "Formato",
             formatGlobal: "Global Online",
             formatToronto: "Meetup opcional en Toronto",
@@ -696,7 +696,7 @@ const translations = {
             link: "See the plan"
         },
         footer: {
-            copy: "(c) 2025 TORONTO TECH MINIMAL",
+            copy: "(c) 2026 TORONTO TECH MINIMAL",
             twitter: "Twitter/X",
             discord: "Discord"
         },
@@ -750,7 +750,7 @@ const translations = {
             hero: {
                 tag: "Vibe Coding Colosseum",
                 title: "You have 1 hour. Ship or step out.",
-                body: "Beta Gladiators are accepted now. Feb Beta Drop is coming - Feb 14 is the date. Any role. Same shot. Not a hackathon: it's a drop. You enter, you ship, the crowd votes.",
+                body: "Next drop: Sunday Feb 22. Free entry. Prize: $100 CAD cash. Not a hackathon: it's a drop. You enter, you ship, the crowd votes.",
                 primary: "Enter the ring",
                 secondary: "Ring rules"
             },
@@ -861,7 +861,7 @@ const translations = {
             title: "Next Drop",
             planning: "We're planning the next drop...",
             settingUp: "Setting Up the Colisseum we let you know when its ready",
-            valentineTitle: "Sesh With Friends Beta Drop",
+            valentineTitle: "Sunday Drop — Free Entry",
             format: "Format",
             formatGlobal: "Global Online",
             formatToronto: "Optional Toronto Meetup",
