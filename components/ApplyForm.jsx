@@ -12,7 +12,6 @@ export default function ApplyForm() {
     const { data } = useDropStatus("slow");
     const stackOptions = t("apply.form.fields.stack.options");
     const timezoneOptions = t("apply.form.fields.timezone.options");
-    const demoOptions = t("apply.form.fields.demo.options");
     const maxGladiators = data?.maxGladiators ?? 15;
     const paidCount = data?.paidCount ?? 0;
     const isSoldOut = paidCount >= maxGladiators;
@@ -47,10 +46,10 @@ export default function ApplyForm() {
 
         try {
             const formData = new FormData(form);
-            
+
             // Get browser language for email localization
             const browserLang = navigator.language || navigator.userLanguage || 'es';
-            
+
             const body = {
                 name: formData.get("name"),
                 colosseum_name: formData.get("colosseum_name"),
@@ -60,7 +59,6 @@ export default function ApplyForm() {
                 github: formData.get("github"),
                 x: formData.get("x"),
                 linkedin: formData.get("linkedin"),
-                demo: formData.get("demo"),
                 fairplay: formData.get("fairplay") === "on",
                 language: browserLang.startsWith('es') ? 'es' : 'en'
             };
@@ -74,10 +72,10 @@ export default function ApplyForm() {
             const result = await response.json();
 
             if (!response.ok) {
-                const errorMessage = result.errors 
-                    ? result.errors.map(e => e.message).join(", ") 
+                const errorMessage = result.errors
+                    ? result.errors.map(e => e.message).join(", ")
                     : result.message || "Ocurrió un error inesperado.";
-                
+
                 setStatus({
                     type: "error",
                     message: errorMessage
@@ -162,16 +160,6 @@ export default function ApplyForm() {
             <div className="field">
                 <label htmlFor="linkedin">{t("apply.form.fields.linkedin.label")}</label>
                 <input id="linkedin" name="linkedin" type="url" placeholder={t("apply.form.fields.linkedin.placeholder")} />
-            </div>
-            <div className="field">
-                <label htmlFor="demo">
-                    {t("apply.form.fields.demo.label")} <span className="field-required">*</span>
-                </label>
-                <select id="demo" name="demo" required>
-                    <option value="">{t("apply.form.fields.demo.placeholder")}</option>
-                    <option value="yes">{demoOptions?.yes}</option>
-                    <option value="no">{demoOptions?.no}</option>
-                </select>
             </div>
             <div className="field checkbox-field">
                 <label className="checkbox-item">

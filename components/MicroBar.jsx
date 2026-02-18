@@ -11,7 +11,7 @@ export default function MicroBar() {
             <span className="badge-red">LIVE</span>
             <span className="mono">
                 {t("micro.text")}{" "}
-                <Link href="/roadmap">{t("micro.link")}</Link>
+                <Link href="/apply">{t("micro.link")}</Link>
             </span>
         </div>
     );
