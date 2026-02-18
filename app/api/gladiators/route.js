@@ -1,16 +1,20 @@
 import { NextResponse } from 'next/server';
 import sql from '../../../lib/db.js';
 
-const ADMIN_API_URL = process.env.NEXT_PUBLIC_ADMIN_URL || 'https://vibe-arena-qrvoting.vercel.app';
+// Admin Coliseo API - tiene los stats reales de competiciones
+const ADMIN_API_URL = 'https://vibe-arena-qrvoting.vercel.app';
+
+// El Oruga es el organizador, no un gladiador. Excluir siempre.
+const EXCLUDED_EMAILS = ['chuckbassdelamora@gmail.com'];
 
 export async function GET(request) {
     const { searchParams } = new URL(request.url);
     const query = searchParams.get('query');
 
     try {
+        // 1. Fetch gladiators from DB (sin los wins/losses de la tabla)
         const results = await sql`
             WITH all_gladiators AS (
-                -- Source 1: quickdrop_registrations (most complete data)
                 SELECT 
                     qr.id,
                     qr.name,
@@ -25,7 +29,6 @@ export async function GET(request) {
                 
                 UNION ALL
                 
-                -- Source 2: waitlist_entries with role = 'arena'
                 SELECT 
                     we.id,
                     we.name,
@@ -41,7 +44,6 @@ export async function GET(request) {
                 
                 UNION ALL
                 
-                -- Source 3: competitors (historical)
                 SELECT 
                     c.id,
                     c.name,
@@ -54,7 +56,6 @@ export async function GET(request) {
                     'competitor' as source
                 FROM competitors c
             ),
-            -- Deduplicate: by email when available, by name when email is NULL
             deduplicated AS (
                 SELECT DISTINCT ON (
                     COALESCE(LOWER(TRIM(email)), 'no-email::' || LOWER(TRIM(name)))
@@ -88,7 +89,6 @@ export async function GET(request) {
                 d.created_at,
                 d.updated_at,
                 d.source,
-                -- Avatar profile enrichment
                 ap.attributes,
                 ap.power_ups,
                 ap.generated_images,
@@ -109,35 +109,39 @@ export async function GET(request) {
             LIMIT 50;
         `;
 
-        // Fetch real stats from Admin Coliseo API
-        const emails = results.map(g => g.email).filter(Boolean);
+        // 2. Filtrar emails excluidos (El Oruga = organizador, no gladiador)
+        const filteredResults = results.filter(
+            r => !EXCLUDED_EMAILS.includes(r.email?.toLowerCase()?.trim())
+        );
+
+        // 3. Fetch stats reales del Admin Coliseo API
+        const emails = filteredResults
+            .map(r => r.email)
+            .filter(Boolean);
+
         let statsMap = {};
-
-        if (emails.length > 0) {
-            try {
-                const statsResponse = await fetch(`${ADMIN_API_URL}/api/gladiators/stats/bulk`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ emails }),
-                });
-
-                if (statsResponse.ok) {
-                    const statsData = await statsResponse.json();
-                    statsMap = statsData.stats || {};
-                }
-            } catch (statsError) {
-                console.error('Error fetching stats from Admin API:', statsError);
-                // Non-blocking: continue with zeros
+        try {
+            const statsRes = await fetch(`${ADMIN_API_URL}/api/gladiators/stats/bulk`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ emails }),
+            });
+            if (statsRes.ok) {
+                const statsData = await statsRes.json();
+                statsMap = statsData.stats || {};
             }
+        } catch (err) {
+            console.error('Stats API error (non-blocking):', err.message);
+            // Si falla, seguimos con wins/losses en 0
         }
 
-        // Merge gladiator data with real stats
-        const enrichedResults = results.map(g => {
-            const emailKey = g.email?.toLowerCase()?.trim();
-            const stats = statsMap[emailKey] || { wins: 0, losses: 0, dropsPlayed: 0, winRate: 0 };
+        // 4. Merge: gladiator data + stats reales
+        const data = filteredResults.map(r => {
+            const email = r.email?.toLowerCase()?.trim();
+            const stats = statsMap[email] || { wins: 0, losses: 0, dropsPlayed: 0, winRate: 0 };
 
             return {
-                ...g,
+                ...r,
                 wins: stats.wins,
                 losses: stats.losses,
                 drops_played: stats.dropsPlayed,
@@ -145,17 +149,16 @@ export async function GET(request) {
             };
         });
 
-        // Sort by wins desc, then drops played, then updated_at
-        enrichedResults.sort((a, b) => {
+        // Ordenar: más wins primero, luego por total de drops
+        data.sort((a, b) => {
             if (b.wins !== a.wins) return b.wins - a.wins;
-            if (b.drops_played !== a.drops_played) return b.drops_played - a.drops_played;
-            return 0;
+            return (b.wins + b.losses) - (a.wins + a.losses);
         });
 
         return NextResponse.json({
             success: true,
-            count: enrichedResults.length,
-            data: enrichedResults
+            count: data.length,
+            data,
         });
 
     } catch (error) {
