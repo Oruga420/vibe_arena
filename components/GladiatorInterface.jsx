@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import { useLanguage } from './LanguageProvider';
 
 export default function GladiatorInterface() {
@@ -240,17 +241,22 @@ function GladiatorModal({ data, onClose }) {
     const story = data.competitor_story;
     const gallery = data.generated_images || [];
 
-    return (
+    return createPortal(
         <div
-            ref={(el) => { if (el) el.scrollTop = 0; }}
             onClick={onClose}
             style={{
                 position: 'fixed',
-                inset: 0,
-                zIndex: 9999,
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                zIndex: 99999,
                 background: 'rgba(0,0,0,0.75)',
                 backdropFilter: 'blur(8px)',
                 overflowY: 'auto',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'flex-start',
                 padding: '40px 20px',
                 animation: 'fadeIn 0.2s ease'
             }}
@@ -469,7 +475,8 @@ function GladiatorModal({ data, onClose }) {
 
                 </div>
             </div>
-        </div>
+        </div>,
+        document.body
     );
 }
 
