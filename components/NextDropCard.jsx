@@ -64,14 +64,14 @@ export default function NextDropCard() {
                         )}
                     </div>
 
-                    {/* Valentine's Special Event */}
+                    {/* Next Drop Event */}
                     <div className={styles.valentineCard}>
                         <div className={styles.valentineHeader}>
-                            <span className={styles.heartIcon}>💖</span>
+                            <span className={styles.heartIcon}>⚔️</span>
                             <h3>{t("nextDrop.valentineTitle")}</h3>
-                            <span className={styles.heartIcon}>💖</span>
+                            <span className={styles.heartIcon}>⚔️</span>
                         </div>
-                        <p className={styles.valentineDate}>Feb 14, 2026</p>
+                        <p className={styles.valentineDate}>Feb 22, 2026 — Free Entry — $100 CAD Prize</p>
                         <div className={styles.valentineGlow}></div>
                     </div>
 
