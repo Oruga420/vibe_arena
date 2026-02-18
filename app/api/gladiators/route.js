@@ -6,7 +6,6 @@ export async function GET(request) {
     const query = searchParams.get('query');
 
     try {
-        // Combine data from all 3 sources with avatar_url
         const results = await sql`
             WITH all_gladiators AS (
                 -- Source 1: quickdrop_registrations (most complete data)
@@ -24,7 +23,7 @@ export async function GET(request) {
                     'registration' as source
                 FROM quickdrop_registrations qr
                 
-                UNION
+                UNION ALL
                 
                 -- Source 2: waitlist_entries with role = 'arena'
                 SELECT 
@@ -42,7 +41,7 @@ export async function GET(request) {
                 FROM waitlist_entries we
                 WHERE we.role = 'arena'
                 
-                UNION
+                UNION ALL
                 
                 -- Source 3: competitors (historical)
                 SELECT 
@@ -59,9 +58,11 @@ export async function GET(request) {
                     'competitor' as source
                 FROM competitors c
             ),
-            -- Deduplicate by email, preferring the most complete record
+            -- Deduplicate by email first, then by name as fallback for NULL emails
             deduplicated AS (
-                SELECT DISTINCT ON (LOWER(email))
+                SELECT DISTINCT ON (
+                    COALESCE(LOWER(TRIM(email)), '') || '::' || LOWER(TRIM(name))
+                )
                     id,
                     name,
                     colosseum_name,
@@ -74,7 +75,8 @@ export async function GET(request) {
                     updated_at,
                     source
                 FROM all_gladiators
-                ORDER BY LOWER(email), 
+                ORDER BY 
+                    COALESCE(LOWER(TRIM(email)), '') || '::' || LOWER(TRIM(name)),
                     CASE source 
                         WHEN 'registration' THEN 1 
                         WHEN 'competitor' THEN 2 
@@ -84,7 +86,6 @@ export async function GET(request) {
             )
             SELECT 
                 d.*,
-                -- Also check avatar_tokens for avatar_url as fallback
                 COALESCE(d.avatar_url, at.avatar_url) as avatar_url
             FROM deduplicated d
             LEFT JOIN avatar_tokens at ON LOWER(d.email) = LOWER(at.email)
@@ -109,10 +110,10 @@ export async function GET(request) {
 
     } catch (error) {
         console.error('Gladiators API error:', error);
-        return NextResponse.json({ 
-            success: false, 
+        return NextResponse.json({
+            success: false,
             message: 'Database error',
-            error: error.message 
+            error: error.message
         }, { status: 500 });
     }
 }
