@@ -30,21 +30,6 @@ export async function GET(request) {
                 UNION ALL
                 
                 SELECT 
-                    we.id,
-                    we.name,
-                    NULL as colosseum_name,
-                    we.email,
-                    NULL as stack,
-                    NULL as avatar_url,
-                    we.created_at,
-                    we.created_at as updated_at,
-                    'waitlist' as source
-                FROM waitlist_entries we
-                WHERE we.role = 'arena'
-                
-                UNION ALL
-                
-                SELECT 
                     c.id,
                     c.name,
                     c.colosseum_name,
@@ -93,15 +78,14 @@ export async function GET(request) {
                 ap.power_ups,
                 ap.generated_images,
                 ap.reference_image_url,
-                COALESCE(d.colosseum_name, ap.gladiator_name) as gladiator_name,
+                COALESCE(ap.gladiator_name, d.colosseum_name, comp.colosseum_name) as gladiator_name,
                 comp.competitor_story
             FROM deduplicated d
             LEFT JOIN avatar_profiles ap ON LOWER(TRIM(d.email)) = LOWER(TRIM(ap.email))
             LEFT JOIN competitors comp ON LOWER(TRIM(d.email)) = LOWER(TRIM(comp.email))
             WHERE 
                 ${query ? sql`
-                    LOWER(COALESCE(d.colosseum_name, ap.gladiator_name, '')) LIKE LOWER(${'%' + query + '%'}) 
-                    OR LOWER(COALESCE(d.colosseum_name, '')) LIKE LOWER(${'%' + query + '%'})
+                    LOWER(COALESCE(ap.gladiator_name, d.colosseum_name, comp.colosseum_name, '')) LIKE LOWER(${'%' + query + '%'})
                 ` : sql`TRUE`}
             ORDER BY 
                 d.updated_at DESC
