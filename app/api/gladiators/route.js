@@ -109,13 +109,8 @@ export async function GET(request) {
             LIMIT 50;
         `;
 
-        // 2. Filtrar emails excluidos (El Oruga = organizador, no gladiador)
-        const filteredResults = results.filter(
-            r => !EXCLUDED_EMAILS.includes(r.email?.toLowerCase()?.trim())
-        );
-
-        // 3. Fetch stats reales del Admin Coliseo API
-        const emails = filteredResults
+        // 2. Fetch stats reales del Admin Coliseo API
+        const emails = results
             .map(r => r.email)
             .filter(Boolean);
 
@@ -132,13 +127,16 @@ export async function GET(request) {
             }
         } catch (err) {
             console.error('Stats API error (non-blocking):', err.message);
-            // Si falla, seguimos con wins/losses en 0
         }
 
-        // 4. Merge: gladiator data + stats reales
-        const data = filteredResults.map(r => {
+        // 3. Merge: gladiator data + stats reales
+        //    El Oruga = organizador, sus stats no cuentan (siempre 0-0-0%)
+        const data = results.map(r => {
             const email = r.email?.toLowerCase()?.trim();
-            const stats = statsMap[email] || { wins: 0, losses: 0, dropsPlayed: 0, winRate: 0 };
+            const isExcluded = EXCLUDED_EMAILS.includes(email);
+            const stats = isExcluded
+                ? { wins: 0, losses: 0, dropsPlayed: 0, winRate: 0 }
+                : (statsMap[email] || { wins: 0, losses: 0, dropsPlayed: 0, winRate: 0 });
 
             return {
                 ...r,
