@@ -7,27 +7,28 @@ export const formatCurrency = (value, currency) => {
 };
 
 export const buildDropTokens = (data) => {
-    const entryFee = data?.entryFee ?? 100;
+    const entryFee = data?.entryFee ?? 0;
     const currency = data?.currency ?? "CAD";
-    const min = data?.minGladiators ?? 10;
+    const min = data?.minGladiators ?? 6;
     const max = data?.maxGladiators ?? 15;
-    const prizePctValue = Math.round((data?.prizePct ?? 0.6) * 100);
-    const housePctValue = Math.round((data?.housePct ?? 0.4) * 100);
-    const pot = data?.pot ?? Math.round(entryFee * (data?.paidCount ?? 0));
-    const winnerPayout = data?.winnerPayout ?? Math.round(pot * (data?.prizePct ?? 0.6));
-    const houseCut = data?.houseCut ?? Math.round(pot * (data?.housePct ?? 0.4));
-    const feeValue = `$${Number(entryFee).toLocaleString("en-CA")}`;
+    const prizePctValue = Math.round((data?.prizePct ?? 1) * 100);
+    const housePctValue = Math.round((data?.housePct ?? 0) * 100);
+    const pot = data?.pot ?? 100;
+    const winnerPayout = data?.winnerPayout ?? 100;
+    const houseCut = data?.houseCut ?? 0;
+    const feeValue = entryFee === 0 ? "FREE" : `$${Number(entryFee).toLocaleString("en-CA")}`;
 
     return {
-        fee: `${feeValue} ${currency}`,
+        fee: entryFee === 0 ? "FREE" : `${feeValue} ${currency}`,
         feeValue,
+        originalFee: "$100 CAD",
         currency,
         min,
         max,
         prizePct: prizePctValue,
         housePct: housePctValue,
-        pot: formatCurrency(pot, currency),
-        winnerPayout: formatCurrency(winnerPayout, currency),
+        pot: "$100 CAD",
+        winnerPayout: "$100 CAD",
         houseCut: formatCurrency(houseCut, currency)
     };
 };
