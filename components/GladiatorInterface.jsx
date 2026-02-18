@@ -466,14 +466,7 @@ function GladiatorModal({ data, onClose }) {
                         </DossierSection>
                     )}
 
-                    {/* Email */}
-                    {data.email && (
-                        <div style={{ marginTop: '16px' }}>
-                            <p className="mono" style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>
-                                REGISTERED: {data.email}
-                            </p>
-                        </div>
-                    )}
+
                 </div>
             </div>
         </div>
