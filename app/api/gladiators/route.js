@@ -93,14 +93,14 @@ export async function GET(request) {
                 ap.power_ups,
                 ap.generated_images,
                 ap.reference_image_url,
-                COALESCE(ap.gladiator_name, d.colosseum_name, d.name) as gladiator_name,
+                COALESCE(d.colosseum_name, ap.gladiator_name) as gladiator_name,
                 comp.competitor_story
             FROM deduplicated d
             LEFT JOIN avatar_profiles ap ON LOWER(TRIM(d.email)) = LOWER(TRIM(ap.email))
             LEFT JOIN competitors comp ON LOWER(TRIM(d.email)) = LOWER(TRIM(comp.email))
             WHERE 
                 ${query ? sql`
-                    LOWER(COALESCE(ap.gladiator_name, d.colosseum_name, d.name)) LIKE LOWER(${'%' + query + '%'}) 
+                    LOWER(COALESCE(d.colosseum_name, ap.gladiator_name, '')) LIKE LOWER(${'%' + query + '%'}) 
                     OR LOWER(COALESCE(d.colosseum_name, '')) LIKE LOWER(${'%' + query + '%'})
                 ` : sql`TRUE`}
             ORDER BY 
