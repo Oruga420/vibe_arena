@@ -249,10 +249,8 @@ function GladiatorModal({ data, onClose }) {
                 zIndex: 9999,
                 background: 'rgba(0,0,0,0.75)',
                 backdropFilter: 'blur(8px)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: '20px',
+                overflowY: 'auto',
+                padding: '40px 20px',
                 animation: 'fadeIn 0.2s ease'
             }}
         >
@@ -264,8 +262,7 @@ function GladiatorModal({ data, onClose }) {
                     borderRadius: '16px',
                     maxWidth: '680px',
                     width: '100%',
-                    maxHeight: '90vh',
-                    overflowY: 'auto',
+                    margin: '0 auto',
                     boxShadow: '0 32px 64px rgba(0,0,0,0.4)',
                     position: 'relative'
                 }}
