@@ -5,7 +5,7 @@ import sql from '../../../lib/db.js';
 const ADMIN_API_URL = 'https://vibe-arena-qrvoting.vercel.app';
 
 // El Oruga es el organizador, no un gladiador. Excluir siempre.
-const EXCLUDED_EMAILS = ['chuckbassdelamora@gmail.com'];
+const EXCLUDED_EMAILS = ['chuckbassdelamora@gmail.com', 'alex@seshwithfriends.org'];
 
 export async function GET(request) {
     const { searchParams } = new URL(request.url);
