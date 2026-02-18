@@ -17,7 +17,7 @@ const translations = {
             languageLabel: "Idioma"
         },
         micro: {
-            text: "Season 0 en construcci\u00f3n - Primer drop Enero-Febrero -",
+            text: "First Beta Drop - Este Domingo Feb 22 - Entrada Gratis -",
             link: "Ver el plan"
         },
         footer: {
@@ -692,7 +692,7 @@ const translations = {
             languageLabel: "Language"
         },
         micro: {
-            text: "Season 0 in progress - First drop Jan-Feb -",
+            text: "First Beta Drop - This Sunday Feb 22 - Free Entry -",
             link: "See the plan"
         },
         footer: {
