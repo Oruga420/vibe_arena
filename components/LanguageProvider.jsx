@@ -42,8 +42,8 @@ const translations = {
                 winner: "Premio del ganador (si arranca)"
             },
             values: {
-                payout: "El ganador se lleva {prizePct}% del pozo",
-                house: "{housePct}% para operar la arena"
+                payout: "$100 CAD Cash (Beta gratis — después tendrá costo de entrada)",
+                house: "Beta: sin comisión de arena"
             }
         },
         waitlist: {
@@ -113,7 +113,7 @@ const translations = {
                 ]
             },
             entry: {
-                note: "El link de pago se habilita al llegar a {min} participantes. Antes solo confirmamos tu lugar para el pr\u00f3ximo QuickDrop."
+                note: "Beta Drop: entrada gratis. Después de la beta, la entrada tendrá costo. Reservá tu lugar para el domingo."
             },
             liveVote: {
                 label: "Live vote status",
@@ -374,13 +374,13 @@ const translations = {
             },
             entry: {
                 label: "REGLAS DE ENTRADA",
-                title: "Entrada {fee}",
+                title: "Entrada GRATIS (Beta)",
                 items: [
-                    "M\u00ednimo {min} participantes para arrancar.",
-                    "Cupo m\u00e1ximo {max} gladiadores.",
-                    "El ganador se lleva {prizePct}% del pozo."
+                    "Mínimo {min} participantes para arrancar.",
+                    "Cupo máximo {max} gladiadores.",
+                    "Premio: $100 CAD cash al ganador."
                 ],
-                note: "El link de pago se habilita al llegar a {min} participantes. Antes solo confirmamos tu lugar para el pr\u00f3ximo QuickDrop."
+                note: "La beta es gratis. Después de la beta, la entrada tendrá un costo. Aprovechá ahora."
             },
             weights: {
                 label: "C\u00d3MO SE GANA",
@@ -532,8 +532,8 @@ const translations = {
                         answer: "Solo durante demos. El voto abre en vivo y se cierra r\u00e1pido."
                     },
                     {
-                        question: "\u00bfCu\u00e1nto cuesta entrar?",
-                        answer: "{fee}. M\u00ednimo {min} participantes para arrancar. Cupo {max}. Confirmamos tu lugar para el pr\u00f3ximo QuickDrop y el link de pago se libera al llegar a {min}."
+                        question: "¿Cuánto cuesta entrar?",
+                        answer: "La beta es gratis. Después de la beta, la entrada tendrá costo. Mínimo {min} participantes para arrancar. Cupo {max}. Premio: $100 CAD cash."
                     },
                     {
                         question: "\u00bfPuedo usar IA y librer\u00edas?",
@@ -570,7 +570,7 @@ const translations = {
                 body: "Esto es Season 0. No prometemos suave. Si entr\u00e1s, shipe\u00e1s. Si no, mir\u00e1s desde la tribuna."
             },
             entry: {
-                note: "El link de pago se habilita al llegar a {min} participantes. Antes solo confirmamos tu lugar para el pr\u00f3ximo QuickDrop."
+                note: "Beta Drop: entrada gratis. Después de la beta, la entrada tendrá costo. Reservá tu lugar para el domingo."
             },
             form: {
                 label: "Entrada al ring",
@@ -640,8 +640,8 @@ const translations = {
                 consent: "Te vamos a escribir sobre el evento.",
                 submit: "Reservar lugar",
                 soldOut: "Cupos completos",
-                helper: "Te confirmamos lugar para el pr\u00f3ximo QuickDrop. El link de pago se desbloquea cuando hay {min} gladiadores listos.",
-                success: "Listo. Tu lugar para el pr\u00f3ximo QuickDrop est\u00e1 confirmado. El link de pago se desbloquea cuando lleguemos a {min} gladiadores.",
+                helper: "Beta: entrada gratis. Te confirmamos lugar para el domingo. Después de la beta, la entrada tendrá costo.",
+                success: "Listo. Tu lugar para el Beta Drop del domingo está confirmado. Entrada gratis. Premio: $100 CAD.",
                 error: "Completa los campos obligatorios."
             }
         },
@@ -717,8 +717,8 @@ const translations = {
                 winner: "Grand Prize (if started)"
             },
             values: {
-                payout: "Winner takes {prizePct}% of the Prize Pool",
-                house: "{housePct}% runs the arena"
+                payout: "$100 CAD Cash (Beta is free — entry will be paid after beta)",
+                house: "Beta: no arena fee"
             }
         },
         waitlist: {
@@ -788,7 +788,7 @@ const translations = {
                 ]
             },
             entry: {
-                note: "The payment link unlocks at {min} participants. Until then we only confirm your spot for the next QuickDrop."
+                note: "Beta Drop: free entry. Entry will be paid after the beta. Reserve your spot for Sunday."
             },
             liveVote: {
                 label: "Live vote status",
@@ -1049,13 +1049,13 @@ const translations = {
             },
             entry: {
                 label: "ENTRY RULES",
-                title: "Entry is {fee}",
+                title: "Entry is FREE (Beta)",
                 items: [
                     "Min {min} participants to start.",
                     "Cap {max} gladiators.",
-                    "Winner takes {prizePct}% of the Prize Pool."
+                    "Prize: $100 CAD cash to the winner."
                 ],
-                note: "The payment link unlocks at {min} participants. Until then we only confirm your spot for the next QuickDrop."
+                note: "The beta is free. Entry will be paid after the beta. Get in now."
             },
             weights: {
                 label: "HOW WINNING WORKS",
@@ -1208,7 +1208,7 @@ const translations = {
                     },
                     {
                         question: "Entry fee?",
-                        answer: "{fee}. Min {min} participants to start. Cap {max}. We confirm your spot for the next QuickDrop and send the payment link at {min}."
+                        answer: "The beta is free. Entry will be paid after the beta. Min {min} participants to start. Cap {max}. Prize: $100 CAD cash."
                     },
                     {
                         question: "Can I use AI and libraries?",
@@ -1245,7 +1245,7 @@ const translations = {
                 body: "This is Season 0. No soft promises. If you get in, you ship. If not, you watch from the stands."
             },
             entry: {
-                note: "The payment link unlocks at {min} participants. Until then we only confirm your spot for the next QuickDrop."
+                note: "Beta Drop: free entry. Entry will be paid after the beta. Reserve your spot for Sunday."
             },
             form: {
                 label: "Ring entry",
@@ -1315,8 +1315,8 @@ const translations = {
                 consent: "We will email you about the event.",
                 submit: "Reserve a spot",
                 soldOut: "Sold out",
-                helper: "We confirm your spot for the next QuickDrop. Payment link unlocks when {min} gladiators are ready.",
-                success: "All set. Your spot for the next QuickDrop is confirmed. Payment link unlocks when we reach {min} gladiators.",
+                helper: "Beta: free entry. We'll confirm your spot for Sunday. Entry will be paid after beta.",
+                success: "All set. Your spot for the Sunday Beta Drop is confirmed. Free entry. Prize: $100 CAD.",
                 error: "Fill the required fields."
             }
         },
