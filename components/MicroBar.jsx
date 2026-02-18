@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useLanguage } from "./LanguageProvider";
 
 export default function MicroBar() {
@@ -10,8 +9,7 @@ export default function MicroBar() {
         <div className="micro-bar">
             <span className="badge-red">LIVE</span>
             <span className="mono">
-                {t("micro.text")}{" "}
-                <Link href="/roadmap">{t("micro.link")}</Link>
+                {t("micro.text")}
             </span>
         </div>
     );

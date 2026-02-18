@@ -79,7 +79,6 @@ export default function Footer() {
                 VIBE CODING COLOSSEUM
             </div>
             <div className="footer-links">
-                <Link href="/roadmap">{t("nav.roadmap")}</Link>
                 <Link href="/faq">{t("nav.faq")}</Link>
                 <Link href="/sponsor">{t("nav.sponsor")}</Link>
             </div>

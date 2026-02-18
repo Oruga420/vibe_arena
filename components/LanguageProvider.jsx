@@ -21,9 +21,7 @@ const translations = {
             link: "Ver el plan"
         },
         footer: {
-            copy: "(c) 2026 TORONTO TECH MINIMAL",
-            twitter: "Twitter/X",
-            discord: "Discord"
+            copy: "(c) 2026 TORONTO TECH MINIMAL"
         },
         theme: {
             label: "Tema",
@@ -338,7 +336,7 @@ const translations = {
                     {
                         num: "04",
                         title: "Voto en vivo",
-                        body: "Demos rel\u00e1mpago, luego vota la gente. Top 5 finalistas. Voto final elige ganador. Votaci\u00f3n abierta durante demos; un voto por persona."
+                        body: "Es un battle royale: todos hacen demo en vivo y el público vota. Traé a tus amigos para que voten por vos — cada voto cuenta. Un voto por persona."
                     }
                 ]
             },
@@ -418,14 +416,14 @@ const translations = {
             barsLabel: "QU\u00c9 CONSIGUE VOTOS",
             format: {
                 label: "FORMATO",
-                title: "C\u00f3mo sale el Top 5",
+                title: "Cómo funciona el Battle Royale",
                 items: [
-                    "Ronda 1: demos rel\u00e1mpago (60-90s cada una).",
-                    "Voto 1: la gente elige el Top 5.",
-                    "Ronda 2: demos rel\u00e1mpago del Top 5.",
-                    "Voto 2: el ganador se lleva el drop."
+                    "Todos hacen demo en vivo (60-90s cada uno).",
+                    "El público vota en tiempo real por su favorito.",
+                    "El que más votos tenga, gana el drop.",
+                    "Traé a tus amigos — cada voto cuenta."
                 ],
-                note: "Si te perd\u00e9s la ventana de voto, te lo perd\u00e9s. Sin drama."
+                note: "Si te perdés la ventana de voto, te lo perdés. Sin drama."
             },
             checklist: {
                 label: "Checklist",
@@ -470,8 +468,7 @@ const translations = {
                 tag: "BUILDING IN PUBLIC",
                 title: "Season 0 Patch Notes",
                 body: "Estamos armando la arena a la vista. Cada update es real.",
-                primary: "Aplic\u00e1 para Season 0",
-                secondary: "Unirme al Discord"
+                primary: "Aplicá para Season 0"
             },
             status: {
                 label: "STATUS",
@@ -498,17 +495,16 @@ const translations = {
                 cta: "Ayudar a shippear"
             },
             ways: {
-                label: "WAYS TO JOIN",
-                title: "Sumate al ring",
+                label: "CÓMO PARTICIPAR",
+                title: "Elegí tu rol",
                 items: [
-                    { title: "Competir", body: "Aplic\u00e1 y shipe\u00e1." },
-                    { title: "Votar", body: "Solo durante la ventana en vivo." },
-                    { title: "Construir", body: "Ayudanos a shippear Season 0." }
+                    { title: "⚔️ Competir", body: "Aplicá, entrá al drop del domingo, construí tu app en 60 min y ganá $100 CAD cash. Entrada gratis en la beta." },
+                    { title: "🗳️ Votar", body: "Mirá las demos en vivo por Twitch y votá por tu favorito. El QR aparece en pantalla durante las demos." },
+                    { title: "📣 Seguinos", body: "Seguinos en redes para enterarte de los drops, resultados y novedades de Season 0." }
                 ],
-                primary: "Aplicar",
-                secondary: "Avisame para votar",
-                tertiary: "Unirme al Discord",
-                sponsor: "Quer\u00e9s sponsorear un premio? Hablemos."
+                primary: "Aplicar al drop",
+                secondary: "Ir a la home",
+                sponsor: "Querés sponsorear un premio? Hablemos."
             }
         },
         faq: {
@@ -548,8 +544,8 @@ const translations = {
                         answer: "URL viva + repo + README + demo de 2 minutos. Si la URL no carga, no existe."
                     },
                     {
-                        question: "\u00bfC\u00f3mo sale el Top 5?",
-                        answer: "Voto en dos pasos. Voto 1 elige Top 5, demo de nuevo, Voto 2 elige ganador."
+                        question: "¿Cómo se elige al ganador?",
+                        answer: "Battle royale: todos hacen demo, el público vota, el que más votos tenga gana. Traé a tus amigos para que voten por vos."
                     },
                     {
                         question: "\u00bfAlguna trampa?",
@@ -696,9 +692,7 @@ const translations = {
             link: "See the plan"
         },
         footer: {
-            copy: "(c) 2026 TORONTO TECH MINIMAL",
-            twitter: "Twitter/X",
-            discord: "Discord"
+            copy: "(c) 2026 TORONTO TECH MINIMAL"
         },
         theme: {
             label: "Theme",
@@ -1013,7 +1007,7 @@ const translations = {
                     {
                         num: "04",
                         title: "Live vote",
-                        body: "Lightning demos, then the crowd votes. Top 5 finalists. Final vote picks the winner. Voting opens during demos. One vote per person."
+                        body: "It's a battle royale: everyone demos live and the crowd votes. Bring your friends to vote for you — every vote counts. One vote per person."
                     }
                 ]
             },
@@ -1093,12 +1087,12 @@ const translations = {
             barsLabel: "WHAT GETS VOTES",
             format: {
                 label: "FORMAT",
-                title: "How the Top 5 happens",
+                title: "How the Battle Royale works",
                 items: [
-                    "Round 1: lightning demos (60-90s each).",
-                    "Vote 1: the crowd picks the Top 5.",
-                    "Round 2: Top 5 lightning demos.",
-                    "Vote 2: winner takes the drop."
+                    "Everyone demos live (60-90s each).",
+                    "The crowd votes in real time for their favorite.",
+                    "Most votes wins the drop.",
+                    "Bring your friends — every vote counts."
                 ],
                 note: "If you miss the vote window, you miss the vote. No drama."
             },
@@ -1145,8 +1139,7 @@ const translations = {
                 tag: "BUILDING IN PUBLIC",
                 title: "Season 0 Patch Notes",
                 body: "We are building the arena in public. Every update is real.",
-                primary: "Apply for Season 0",
-                secondary: "Join the Discord"
+                primary: "Apply for Season 0"
             },
             status: {
                 label: "STATUS",
@@ -1173,16 +1166,15 @@ const translations = {
                 cta: "Help ship this"
             },
             ways: {
-                label: "WAYS TO JOIN",
-                title: "Ways to join",
+                label: "HOW TO PARTICIPATE",
+                title: "Pick your role",
                 items: [
-                    { title: "Compete", body: "Apply and ship." },
-                    { title: "Vote", body: "Live window only." },
-                    { title: "Build", body: "Help us ship Season 0." }
+                    { title: "⚔️ Compete", body: "Apply, join the Sunday drop, build your app in 60 min and win $100 CAD cash. Free entry during beta." },
+                    { title: "🗳️ Vote", body: "Watch live demos on Twitch and vote for your favorite. The QR code appears on screen during demos." },
+                    { title: "📣 Follow us", body: "Follow us on social media to stay updated on drops, results, and Season 0 news." }
                 ],
-                primary: "Compete",
-                secondary: "Notify me",
-                tertiary: "Join the Discord",
+                primary: "Apply to drop",
+                secondary: "Go to home",
                 sponsor: "Want to sponsor a prize? Talk."
             }
         },
@@ -1223,8 +1215,8 @@ const translations = {
                         answer: "Working URL + repo + README + 2-minute demo. If the URL does not load, it does not exist."
                     },
                     {
-                        question: "How does Top 5 happen?",
-                        answer: "Two-step vote. Vote 1 picks Top 5, Top 5 demo again, Vote 2 picks the winner."
+                        question: "How is the winner chosen?",
+                        answer: "Battle royale: everyone demos, the crowd votes, most votes wins. Bring your friends to vote for you."
                     },
                     {
                         question: "Any gotchas?",
