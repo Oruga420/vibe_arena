@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
-import { 
-    getAvatarToken, 
-    validateAndUseToken, 
+import {
+    getAvatarToken,
+    validateAndUseToken,
     createAvatarToken,
-    regenerateExpiredTokens 
+    regenerateExpiredTokens
 } from '../../../lib/avatarTokens.js';
 
 /**
@@ -20,15 +20,10 @@ export async function GET(request) {
 
     try {
         const token = await getAvatarToken(email);
-        
+
         if (!token) {
             return NextResponse.json({ success: false, message: 'No token found' }, { status: 404 });
         }
-
-        // Check if token is expired (24 hours)
-        const tokenAge = Date.now() - new Date(token.token_generated_at).getTime();
-        const twentyFourHours = 24 * 60 * 60 * 1000;
-        const isExpired = tokenAge > twentyFourHours;
 
         return NextResponse.json({
             success: true,
@@ -37,8 +32,7 @@ export async function GET(request) {
                 current_token: token.current_token,
                 token_used: token.token_used,
                 generation_enabled: token.generation_enabled,
-                is_expired: isExpired,
-                hours_until_expiry: isExpired ? 0 : Math.floor((twentyFourHours - tokenAge) / (60 * 60 * 1000)),
+                is_expired: false,
                 generated_at: token.token_generated_at
             }
         });
@@ -69,7 +63,7 @@ export async function POST(request) {
             }
 
             const isValid = await validateAndUseToken(email, token);
-            
+
             return NextResponse.json({
                 success: isValid,
                 message: isValid ? 'Token validated and consumed' : 'Invalid or expired token'
@@ -78,7 +72,7 @@ export async function POST(request) {
 
         if (action === 'regenerate') {
             const newToken = await createAvatarToken(email);
-            
+
             return NextResponse.json({
                 success: true,
                 message: 'Token regenerated',
