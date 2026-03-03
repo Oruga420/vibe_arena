@@ -91,7 +91,7 @@ export default function EntryStatusCard({ note }) {
                         {language === "es" ? "Próximo drop" : "Next drop"}
                     </span>
                     <span className="entry-value">
-                        {language === "es" ? "Domingo Feb 22" : "Sunday Feb 22"}
+                        {language === "es" ? "Sábado Marzo 22" : "Saturday March 22"}
                     </span>
                 </div>
                 <div className="entry-row">
