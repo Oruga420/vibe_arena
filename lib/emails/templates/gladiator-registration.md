@@ -1,42 +1,42 @@
-# ⚔️ ¡Tu Aplicación ha sido Recibida, {{name}}!
+# ⚔️ Your Application Has Been Received, {{name}}!
 
-<Esto es un template pero no dogma - donde veas estos <> siéntete libre de reescribir con la temática del Coliseo y gladiadores enfocados en vibecoding>
-
----
-
-## <¡Gladiador, tu aplicación está en revisión!>
-
-<Hemos recibido tu solicitud para unirte a **Vibe Coding Colosseum**. Nuestro equipo revisará tu perfil y te notificaremos cuando seas aprobado para la arena.>
+<This is a template but not a dogma — wherever you see these <> feel free to rewrite with the Colosseum and gladiator theme focused on vibe coding>
 
 ---
 
-## Tus Datos de Registro
+## <Gladiator, your application is under review!>
 
-- **Nombre:** {{name}}
-- **Nombre de Coliseo:** {{colosseum_name}}
+<We've received your request to join **Vibe Coding Colosseum**. Our team will review your profile and notify you when you're approved for the arena.>
+
+---
+
+## Your Registration Details
+
+- **Name:** {{name}}
+- **Colosseum Name:** {{colosseum_name}}
 - **Stack:** {{stack}}
 - **GitHub:** {{github_url}}
 
 ---
 
-## <¿Qué sigue?>
+## <What's Next?>
 
-1. <Recibirás un correo de confirmación cuando tu aplicación sea aprobada.>
-2. <Una vez aprobado, podrás generar tu **Avatar de Gladiador** único.>
-3. <Prepárate para demostrar tus habilidades en la arena.>
-
----
-
-## Próximo Drop: {{dropName}}
-
-**Estado:** {{dropStatus}}
-**Fecha:** {{dropDate}}
+1. <You'll receive a confirmation email once your application is approved.>
+2. <Once approved, you'll be able to generate your unique **Gladiator Avatar**.>
+3. <Get ready to prove your skills in the arena.>
 
 ---
 
-<La arena espera a los valientes. Prepárate para la gloria.>
+## Next Drop: {{dropName}}
 
-_"No es solo código, es un espectáculo."_
+**Status:** {{dropStatus}}
+**Date:** {{dropDate}}
+
+---
+
+<The arena awaits the brave. Prepare for glory.>
+
+_"It's not just code, it's a spectacle."_
 
 ---
 

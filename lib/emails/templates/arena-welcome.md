@@ -1,26 +1,26 @@
-este es un template pero no por eso un dogma donde veas estos <> sientete libre de reescribir siempre pensando en una tematica de coliseo y gladiadores enfocados en vibecoding
+This is a template but not a dogma — wherever you see these <> feel free to rewrite, always with a colosseum and gladiator theme focused on vibe coding.
 
-# ¡Bienvenido a la Arena, {{name}}! ⚔️
+# Welcome to the Arena, {{name}}! ⚔️
 
-<¡Tu registro ha sido confirmado!> Estamos emocionados de tenerte en **Vibe Coding Colosseum**, <donde el código se encuentra con la gloria.>
+<Your registration is confirmed!> We're excited to have you at **Vibe Coding Colosseum**, <where code meets glory.>
 
-## Próximo Drop: {{dropName}}
+## Next Drop: {{dropName}}
 
-📅 **Fecha:** {{dropDate}}
+📅 **Date:** {{dropDate}}
 🔥 **Status:** {{dropStatus}}
 
-### Tu Rol: {{role}} (Gladiador)
+### Your Role: {{role}} (Gladiator)
 
-<Estás en la lista de espera para demostrar tus habilidades. La arena no perdona, pero la gloria es eterna.>
+<You're on the roster to prove your skills. The arena shows no mercy, but glory is eternal.>
 
-### ¿Qué sigue?
+### What's Next?
 
-1. Mantente atento a tu email para confirmación de slot.
-2. <Prepara tu setup y únete al Discord (link abajo).>
-3. Practica tus habilidades.
+1. Keep an eye on your email for slot confirmation.
+2. <Set up your environment and join the Discord (link below).>
+3. Sharpen your skills.
 
-_"No es solo código, es un espectáculo."_
+_"It's not just code, it's a spectacle."_
 
 ---
 
-[Discord] | [Reglas] | [Ver Arena]
+[Discord] | [Rules] | [View Arena]

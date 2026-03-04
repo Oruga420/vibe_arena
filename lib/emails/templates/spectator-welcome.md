@@ -1,26 +1,26 @@
-Esto es un template pero no por eso un dogma donde veas estos <> sientete libre de reescribir siempre pensando en una tematica de coliseo y gladiadores enfocados en vibecoding
+This is a template but not a dogma — wherever you see these <> feel free to rewrite, always with a colosseum and gladiator theme focused on vibe coding.
 
-# ¡Bienvenido a las Gradas, {{name}}! 🍿
+# Welcome to the Stands, {{name}}! 🍿
 
-<Gracias por unirte a **Vibe Coding Colosseum**. Prepárate para presenciar batallas de código épicas en tiempo real.>
+<Thanks for joining **Vibe Coding Colosseum**. Get ready to witness epic code battles in real time.>
 
-## Próximo Evento: {{dropName}}
+## Next Event: {{dropName}}
 
-📅 **Fecha:** {{dropDate}}
+📅 **Date:** {{dropDate}}
 🔥 **Status:** {{dropStatus}}
 
-### Tu Rol: {{role}} (Espectador)
+### Your Role: {{role}} (Spectator)
 
-<Como espectador, tu voz cuenta. Podrás ver el código en vivo, votar por tus gladiadores favoritos e influir en el destino de la arena.>
+<As a spectator, your voice matters. You'll watch code live, vote for your favorite gladiators, and influence the fate of the arena.>
 
-### ¿Qué puedes hacer?
+### What Can You Do?
 
-- **Ver en vivo:** Conéctate el día del evento.
-- **Votar:** Apoya a los mejores gladiadores.
-- **Interactuar:** Usa el chat y las reacciones en vivo.
+- **Watch live:** Tune in on event day.
+- **Vote:** Support the best gladiators.
+- **Interact:** Use chat and live reactions.
 
-<¡Nos vemos en el evento!>
+<See you at the event!>
 
 ---
 
-[Ver Calendario] | [Discord]
+[View Calendar] | [Discord]
