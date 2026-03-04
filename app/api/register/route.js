@@ -70,24 +70,20 @@ export async function POST(request) {
             errors.push({ field: 'email', message: 'Invalid email format.' });
         }
 
-        if (!timezone || !VALID_TIMEZONES.includes(timezone)) {
-            errors.push({ field: 'timezone', message: 'Valid timezone is required' });
+        if (timezone && !VALID_TIMEZONES.includes(timezone)) {
+            errors.push({ field: 'timezone', message: 'Invalid timezone' });
         }
 
-        if (!stack || !VALID_STACKS.includes(stack)) {
-            errors.push({ field: 'stack', message: 'Valid tech stack is required' });
+        if (stack && !VALID_STACKS.includes(stack)) {
+            errors.push({ field: 'stack', message: 'Invalid tech stack' });
         }
 
-        if (!github || !validateGitHub(github)) {
-            errors.push({ field: 'github', message: 'Valid GitHub URL is required' });
+        if (github && !validateGitHub(github)) {
+            errors.push({ field: 'github', message: 'Invalid GitHub URL format' });
         }
 
-        if (!demo || !VALID_DEMO.includes(demo)) {
-            errors.push({ field: 'demo', message: 'Demo preference is required' });
-        }
-
-        if (fairplay !== true) {
-            errors.push({ field: 'fairplay', message: 'You must agree to the fair play rules' });
+        if (demo && !VALID_DEMO.includes(demo)) {
+            errors.push({ field: 'demo', message: 'Invalid demo preference' });
         }
 
         // Optional field validations
@@ -111,8 +107,8 @@ export async function POST(request) {
         const emailExists = await isEmailRegistered(email);
         if (emailExists) {
             return NextResponse.json(
-                { 
-                    success: false, 
+                {
+                    success: false,
                     errors: [{ field: 'email', message: 'This email is already registered' }]
                 },
                 { status: 409 }
@@ -129,8 +125,8 @@ export async function POST(request) {
             email: email.toLowerCase().trim(),
             timezone,
             stack,
-            github_url: github.trim(),
-            demo_interest: demo,
+            github_url: github?.trim() || null,
+            demo_interest: demo || null,
             fairplay_agreed: true,
             x_url: x?.trim() || null,
             linkedin_url: linkedin?.trim() || null,
@@ -148,7 +144,7 @@ export async function POST(request) {
                 github_url: registration.github_url,
                 language: language || 'es'
             }, dropInfo);
-            
+
             if (!emailResult.success) {
                 console.warn('[Register] Email failed but registration succeeded:', emailResult.error);
             }
@@ -174,8 +170,8 @@ export async function POST(request) {
         // Handle specific database errors
         if (error.code === '23505') { // Unique violation
             return NextResponse.json(
-                { 
-                    success: false, 
+                {
+                    success: false,
                     errors: [{ field: 'email', message: 'This email is already registered' }]
                 },
                 { status: 409 }
@@ -183,9 +179,9 @@ export async function POST(request) {
         }
 
         return NextResponse.json(
-            { 
-                success: false, 
-                message: 'An error occurred while processing your registration. Please try again.' 
+            {
+                success: false,
+                message: 'An error occurred while processing your registration. Please try again.'
             },
             { status: 500 }
         );
@@ -194,8 +190,8 @@ export async function POST(request) {
 
 // Health check endpoint
 export async function GET() {
-    return NextResponse.json({ 
-        status: 'ok', 
+    return NextResponse.json({
+        status: 'ok',
         endpoint: '/api/register',
         method: 'POST',
         description: 'Quick Drop registration endpoint'
