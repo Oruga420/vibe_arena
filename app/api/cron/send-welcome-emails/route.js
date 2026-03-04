@@ -27,7 +27,7 @@ export async function GET(request) {
             ORDER BY created_at ASC 
             LIMIT 50
         `;
-        
+
         if (!pendingUsers || pendingUsers.length === 0) {
             return NextResponse.json({ success: true, message: 'No pending emails' });
         }
@@ -43,9 +43,9 @@ export async function GET(request) {
             try {
                 // Generate content with Groq
                 const emailHtml = await generateEmailContent(user, nextDrop);
-                const subject = user.role === 'arena' 
-                    ? '⚔️ Bienvenido a la Arena - Registro Confirmado' 
-                    : '🍿 Bienvenido a Vibe Arena - Tu Lugar en las Gradas';
+                const subject = user.role === 'arena'
+                    ? '⚔️ Welcome to the Arena — Registration Confirmed'
+                    : '🍿 Welcome to Vibe Arena — Your Seat in the Stands';
 
                 // Send with Resend
                 const sendResult = await sendWelcomeEmail(user.email, subject, emailHtml);
@@ -69,10 +69,10 @@ export async function GET(request) {
             }
         }
 
-        return NextResponse.json({ 
-            success: true, 
+        return NextResponse.json({
+            success: true,
             processed: pendingUsers.length,
-            results 
+            results
         });
 
     } catch (error) {

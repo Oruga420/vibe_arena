@@ -74,7 +74,7 @@ export default function ApplyForm() {
             if (!response.ok) {
                 const errorMessage = result.errors
                     ? result.errors.map(e => e.message).join(", ")
-                    : result.message || "Ocurrió un error inesperado.";
+                    : result.message || "An unexpected error occurred.";
 
                 setStatus({
                     type: "error",
