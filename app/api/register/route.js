@@ -70,20 +70,20 @@ export async function POST(request) {
             errors.push({ field: 'email', message: 'Invalid email format.' });
         }
 
-        if (timezone && !VALID_TIMEZONES.includes(timezone)) {
-            errors.push({ field: 'timezone', message: 'Invalid timezone' });
+        if (!timezone || !VALID_TIMEZONES.includes(timezone)) {
+            errors.push({ field: 'timezone', message: 'Valid timezone is required' });
         }
 
-        if (stack && !VALID_STACKS.includes(stack)) {
-            errors.push({ field: 'stack', message: 'Invalid tech stack' });
+        if (!stack || !VALID_STACKS.includes(stack)) {
+            errors.push({ field: 'stack', message: 'Valid tech stack is required' });
         }
 
-        if (github && !validateGitHub(github)) {
-            errors.push({ field: 'github', message: 'Invalid GitHub URL format' });
+        if (!github || !validateGitHub(github)) {
+            errors.push({ field: 'github', message: 'Valid GitHub URL is required' });
         }
 
-        if (demo && !VALID_DEMO.includes(demo)) {
-            errors.push({ field: 'demo', message: 'Invalid demo preference' });
+        if (fairplay !== true) {
+            errors.push({ field: 'fairplay', message: 'You must agree to the fair play rules' });
         }
 
         // Optional field validations
@@ -123,10 +123,10 @@ export async function POST(request) {
             name: name.trim(),
             colosseum_name: colosseum_name?.trim() || null,
             email: email.toLowerCase().trim(),
-            timezone: timezone || null,
-            stack: stack || null,
-            github_url: github?.trim() || null,
-            demo_interest: demo || null,
+            timezone,
+            stack,
+            github_url: github.trim(),
+            demo_interest: demo || 'yes',
             fairplay_agreed: true,
             x_url: x?.trim() || null,
             linkedin_url: linkedin?.trim() || null,

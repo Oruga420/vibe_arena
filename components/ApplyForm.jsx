@@ -120,9 +120,9 @@ export default function ApplyForm() {
             </div>
             <div className="field">
                 <label htmlFor="timezone">
-                    {t("apply.form.fields.timezone.label")}
+                    {t("apply.form.fields.timezone.label")} <span className="field-required">*</span>
                 </label>
-                <select id="timezone" name="timezone">
+                <select id="timezone" name="timezone" required>
                     <option value="">{t("apply.form.fields.timezone.placeholder")}</option>
                     <option value="et">{timezoneOptions?.et}</option>
                     <option value="ct">{timezoneOptions?.ct}</option>
@@ -135,9 +135,9 @@ export default function ApplyForm() {
             </div>
             <div className="field">
                 <label htmlFor="stack">
-                    {t("apply.form.fields.stack.label")}
+                    {t("apply.form.fields.stack.label")} <span className="field-required">*</span>
                 </label>
-                <select id="stack" name="stack">
+                <select id="stack" name="stack" required>
                     <option value="">{t("apply.form.fields.stack.placeholder")}</option>
                     <option value="fullstack">{stackOptions?.fullstack}</option>
                     <option value="frontend">{stackOptions?.frontend}</option>
@@ -149,9 +149,9 @@ export default function ApplyForm() {
             </div>
             <div className="field">
                 <label htmlFor="github">
-                    {t("apply.form.fields.github.label")}
+                    {t("apply.form.fields.github.label")} <span className="field-required">*</span>
                 </label>
-                <input id="github" name="github" type="url" placeholder={t("apply.form.fields.github.placeholder")} />
+                <input id="github" name="github" type="url" placeholder={t("apply.form.fields.github.placeholder")} required />
             </div>
             <div className="field">
                 <label htmlFor="x">{t("apply.form.fields.x.label")}</label>
@@ -163,7 +163,7 @@ export default function ApplyForm() {
             </div>
             <div className="field checkbox-field">
                 <label className="checkbox-item">
-                    <input id="fairplay" name="fairplay" type="checkbox" />
+                    <input id="fairplay" name="fairplay" type="checkbox" required />
                     <span>
                         {t("apply.form.fields.fairplay.label")}{" "}
                         <Link href="/judging">({t("nav.judging")})</Link>
