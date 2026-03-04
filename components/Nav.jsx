@@ -16,7 +16,6 @@ export default function Nav() {
     const navItems = useMemo(
         () => [
             { label: t("nav.home"), href: "/" },
-            { label: t("nav.how"), href: "/how" },
             { label: t("nav.judging"), href: "/judging" },
             { label: t("nav.voteGuide"), href: "/voting-guide" },
             { label: "Dex", href: "/gladiators" }

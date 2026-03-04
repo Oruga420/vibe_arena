@@ -189,9 +189,9 @@ const translations = {
             formatGlobal: "Global Online",
             formatToronto: "Meetup opcional en Toronto",
             duration: "Duración",
-            housekeeping: "Housekeeping",
-            devTime: "Tiempo de Dev",
-            closing: "Ceremonia de Cierre",
+            housekeeping: "Colosseum Rules",
+            devTime: "Build Time",
+            closing: "Crowning the Champion",
             stack: "Tus Armas",
             vibeIntro: "Podés vibe codear con:",
             vibeTagline: "Vibeá como quieras. Vibe codeá como un Gladiador en el Coliseo. Vos elegís tus armas (tu vibe tech stack)!",
@@ -320,8 +320,8 @@ const translations = {
                 items: [
                     {
                         num: "01",
-                        title: "Cae el tema",
-                        body: "Kickoff 18:00 ET (Toronto). Tema + open build + twist opcional. Sin boilerplates. No traigas una app ya hecha."
+                        title: "The Announcer Drops the Theme",
+                        body: "The Announcer reveals the theme live. You build your app from scratch based on that theme — no pre-built apps, no templates. Everything is created on the spot."
                     },
                     {
                         num: "02",
@@ -860,9 +860,9 @@ const translations = {
             formatGlobal: "Global Online",
             formatToronto: "Optional Toronto Meetup",
             duration: "Duration",
-            housekeeping: "Housekeeping",
-            devTime: "Dev Time",
-            closing: "Closing Ceremony",
+            housekeeping: "Colosseum Rules",
+            devTime: "Build Time",
+            closing: "Crowning the Champion",
             stack: "Your Weapons",
             vibeIntro: "You can vibe code with:",
             vibeTagline: "Vibe however you want. Vibe code like a Gladiator on the Coliseo. You pick your weapons (your vibe tech stack)!",
@@ -991,8 +991,8 @@ const translations = {
                 items: [
                     {
                         num: "01",
-                        title: "Theme drops",
-                        body: "Kickoff 18:00 ET (Toronto). Theme + open build + optional twist. No boilerplates. Start from scratch."
+                        title: "The Announcer Drops the Theme",
+                        body: "The Announcer reveals the theme live. You build your app from scratch based on that theme — no pre-built apps, no templates. Everything is created on the spot."
                     },
                     {
                         num: "02",
