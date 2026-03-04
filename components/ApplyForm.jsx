@@ -167,6 +167,7 @@ export default function ApplyForm() {
                     <span>
                         {t("apply.form.fields.fairplay.label")}{" "}
                         <Link href="/judging">({t("nav.judging")})</Link>
+                        <span className="field-required"> *</span>
                     </span>
                 </label>
             </div>
