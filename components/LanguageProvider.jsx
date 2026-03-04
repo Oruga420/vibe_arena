@@ -189,7 +189,7 @@ const translations = {
             formatGlobal: "Global Online",
             formatToronto: "Meetup opcional en Toronto",
             duration: "Duración",
-            housekeeping: "Colisseum Keeping",
+            housekeeping: "Colosseum Rules",
             devTime: "Build Time",
             closing: "Crowning the Champion",
             stack: "Tus Armas",
@@ -320,8 +320,8 @@ const translations = {
                 items: [
                     {
                         num: "01",
-                        title: "Cae el tema",
-                        body: "Kickoff 18:00 ET (Toronto). Tema + open build + twist opcional. Sin boilerplates. No traigas una app ya hecha."
+                        title: "The Announcer Drops the Theme",
+                        body: "The Announcer reveals the theme live. You build your app from scratch based on that theme — no pre-built apps, no templates. Everything is created on the spot."
                     },
                     {
                         num: "02",
@@ -860,7 +860,7 @@ const translations = {
             formatGlobal: "Global Online",
             formatToronto: "Optional Toronto Meetup",
             duration: "Duration",
-            housekeeping: "Colisseum Keeping",
+            housekeeping: "Colosseum Rules",
             devTime: "Build Time",
             closing: "Crowning the Champion",
             stack: "Your Weapons",
@@ -991,8 +991,8 @@ const translations = {
                 items: [
                     {
                         num: "01",
-                        title: "Theme drops",
-                        body: "Kickoff 18:00 ET (Toronto). Theme + open build + optional twist. No boilerplates. Start from scratch."
+                        title: "The Announcer Drops the Theme",
+                        body: "The Announcer reveals the theme live. You build your app from scratch based on that theme — no pre-built apps, no templates. Everything is created on the spot."
                     },
                     {
                         num: "02",
