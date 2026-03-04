@@ -70,16 +70,17 @@ export async function POST(request) {
             errors.push({ field: 'email', message: 'Invalid email format.' });
         }
 
-        if (!timezone || !VALID_TIMEZONES.includes(timezone)) {
-            errors.push({ field: 'timezone', message: 'Valid timezone is required' });
+        // Optional field validations (only reject if provided and invalid)
+        if (timezone && !VALID_TIMEZONES.includes(timezone)) {
+            errors.push({ field: 'timezone', message: 'Invalid timezone' });
         }
 
-        if (!stack || !VALID_STACKS.includes(stack)) {
-            errors.push({ field: 'stack', message: 'Valid tech stack is required' });
+        if (stack && !VALID_STACKS.includes(stack)) {
+            errors.push({ field: 'stack', message: 'Invalid tech stack' });
         }
 
-        if (!github || !validateGitHub(github)) {
-            errors.push({ field: 'github', message: 'Valid GitHub URL is required' });
+        if (github && !validateGitHub(github)) {
+            errors.push({ field: 'github', message: 'Invalid GitHub URL format' });
         }
 
         if (fairplay !== true) {
@@ -123,9 +124,9 @@ export async function POST(request) {
             name: name.trim(),
             colosseum_name: colosseum_name?.trim() || null,
             email: email.toLowerCase().trim(),
-            timezone,
-            stack,
-            github_url: github.trim(),
+            timezone: timezone || null,
+            stack: stack || null,
+            github_url: github?.trim() || null,
             demo_interest: demo || 'yes',
             fairplay_agreed: true,
             x_url: x?.trim() || null,
