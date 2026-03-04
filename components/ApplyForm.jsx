@@ -42,7 +42,7 @@ export default function ApplyForm() {
             return;
         }
 
-        setStatus({ type: "loading", message: "Enviando registro..." });
+        setStatus({ type: "loading", message: "Sending registration..." });
 
         try {
             const formData = new FormData(form);
@@ -93,7 +93,7 @@ export default function ApplyForm() {
             console.error("Form submission error:", error);
             setStatus({
                 type: "error",
-                message: "Error de red. Por favor intenta de nuevo."
+                message: "Network error. Please try again."
             });
         }
     };
