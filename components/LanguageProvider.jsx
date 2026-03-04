@@ -17,7 +17,7 @@ const translations = {
             languageLabel: "Idioma"
         },
         micro: {
-            text: "First Beta Drop - Este Domingo Feb 22 - Entrada Gratis -",
+            text: "Next Beta Drop - Este Sábado Marzo 22 - Entrada Gratis -",
             link: "Ver el plan"
         },
         footer: {
@@ -73,7 +73,7 @@ const translations = {
             hero: {
                 tag: "Vibe Coding Colosseum",
                 title: "Ten\u00e9s 1 hora. Shippe\u00e1 algo o sal\u00ed del ring.",
-                body: "Próximo drop: Domingo 22 de Febrero. Entrada gratis. Premio: $100 CAD cash. No es un hackathon: es un drop. Entrás, shippeás, la gente vota.",
+                body: "Próximo drop: Sábado 22 de Marzo. Entrada gratis. Premio: $100 CAD cash. No es un hackathon: es un drop. Entrás, shippeás, la gente vota.",
                 primary: "Entrar al ring",
                 secondary: "Las reglas del ring"
             },
@@ -85,7 +85,7 @@ const translations = {
                 durationValue: "60 minutos",
                 stack: "Stack",
                 stackValue: "Libre",
-                window: "Domingo Feb 22",
+                window: "Sábado Marzo 22",
                 note: "Te avisamos primero si entrás a Season 0"
             },
             status: {
@@ -102,7 +102,7 @@ const translations = {
                     },
                     {
                         title: "Beta drop",
-                        body: "Domingo Feb 22"
+                        body: "Sábado Marzo 22"
                     },
                     {
                         title: "\u00daltimo update",
@@ -111,7 +111,7 @@ const translations = {
                 ]
             },
             entry: {
-                note: "Beta Drop: entrada gratis. Después de la beta, la entrada tendrá costo. Reservá tu lugar para el domingo."
+                note: "Beta Drop: entrada gratis. Después de la beta, la entrada tendrá costo. Reservá tu lugar para el sábado."
             },
             liveVote: {
                 label: "Live vote status",
@@ -184,7 +184,7 @@ const translations = {
             title: "Próximo Drop",
             planning: "Estamos planeando el próximo drop...",
             settingUp: "Setting Up the Colisseum we let you know when its ready",
-            valentineTitle: "Sunday Drop — Free Entry",
+            valentineTitle: "Saturday Drop — Free Entry",
             format: "Formato",
             formatGlobal: "Global Online",
             formatToronto: "Meetup opcional en Toronto",
@@ -478,7 +478,7 @@ const translations = {
                     { label: "Entrada", value: "GRATIS (Beta)" },
                     { label: "Mínimo / Cupo", value: "Min {min} / Cupo {max}" },
                     { label: "Premio", value: "$100 CAD Cash" },
-                    { label: "Próximo drop", value: "Domingo Feb 22" }
+                    { label: "Próximo drop", value: "Sábado Marzo 22" }
                 ],
                 cta: "Entrar al ring"
             },
@@ -498,7 +498,7 @@ const translations = {
                 label: "CÓMO PARTICIPAR",
                 title: "Elegí tu rol",
                 items: [
-                    { title: "⚔️ Competir", body: "Aplicá, entrá al drop del domingo, construí tu app en 60 min y ganá $100 CAD cash. Entrada gratis en la beta." },
+                    { title: "⚔️ Competir", body: "Aplicá, entrá al drop del sábado, construí tu app en 60 min y ganá $100 CAD cash. Entrada gratis en la beta." },
                     { title: "🗳️ Votar", body: "Mirá las demos en vivo por Twitch y votá por tu favorito. El QR aparece en pantalla durante las demos." },
                     { title: "📣 Seguinos", body: "Seguinos en redes para enterarte de los drops, resultados y novedades de Season 0." }
                 ],
@@ -566,7 +566,7 @@ const translations = {
                 body: "Esto es Season 0. No prometemos suave. Si entr\u00e1s, shipe\u00e1s. Si no, mir\u00e1s desde la tribuna."
             },
             entry: {
-                note: "Beta Drop: entrada gratis. Después de la beta, la entrada tendrá costo. Reservá tu lugar para el domingo."
+                note: "Beta Drop: entrada gratis. Después de la beta, la entrada tendrá costo. Reservá tu lugar para el sábado."
             },
             form: {
                 label: "Entrada al ring",
@@ -636,8 +636,8 @@ const translations = {
                 consent: "Te vamos a escribir sobre el evento.",
                 submit: "Reservar lugar",
                 soldOut: "Cupos completos",
-                helper: "Beta: entrada gratis. Te confirmamos lugar para el domingo. Después de la beta, la entrada tendrá costo.",
-                success: "Listo. Tu lugar para el Beta Drop del domingo está confirmado. Entrada gratis. Premio: $100 CAD.",
+                helper: "Beta: entrada gratis. Te confirmamos lugar para el sábado. Después de la beta, la entrada tendrá costo.",
+                success: "Listo. Tu lugar para el Beta Drop del sábado está confirmado. Entrada gratis. Premio: $100 CAD.",
                 error: "Completa los campos obligatorios."
             }
         },
@@ -688,7 +688,7 @@ const translations = {
             languageLabel: "Language"
         },
         micro: {
-            text: "First Beta Drop - This Sunday Feb 22 - Free Entry -",
+            text: "Next Beta Drop - This Saturday March 22 - Free Entry -",
             link: "See the plan"
         },
         footer: {
@@ -744,7 +744,7 @@ const translations = {
             hero: {
                 tag: "Vibe Coding Colosseum",
                 title: "You have 1 hour. Ship or step out.",
-                body: "Next drop: Sunday Feb 22. Free entry. Prize: $100 CAD cash. Not a hackathon: it's a drop. You enter, you ship, the crowd votes.",
+                body: "Next drop: Saturday March 22. Free entry. Prize: $100 CAD cash. Not a hackathon: it's a drop. You enter, you ship, the crowd votes.",
                 primary: "Enter the ring",
                 secondary: "Ring rules"
             },
@@ -756,7 +756,7 @@ const translations = {
                 durationValue: "60 minutes",
                 stack: "Stack",
                 stackValue: "Open stack",
-                window: "Sunday Feb 22",
+                window: "Saturday March 22",
                 note: "We ping you first if you are in Season 0"
             },
             status: {
@@ -773,7 +773,7 @@ const translations = {
                     },
                     {
                         title: "Beta drop",
-                        body: "Sunday Feb 22"
+                        body: "Saturday March 22"
                     },
                     {
                         title: "Last update",
@@ -782,7 +782,7 @@ const translations = {
                 ]
             },
             entry: {
-                note: "Beta Drop: free entry. Entry will be paid after the beta. Reserve your spot for Sunday."
+                note: "Beta Drop: free entry. Entry will be paid after the beta. Reserve your spot for Saturday."
             },
             liveVote: {
                 label: "Live vote status",
@@ -855,7 +855,7 @@ const translations = {
             title: "Next Drop",
             planning: "We're planning the next drop...",
             settingUp: "Setting Up the Colisseum we let you know when its ready",
-            valentineTitle: "Sunday Drop — Free Entry",
+            valentineTitle: "Saturday Drop — Free Entry",
             format: "Format",
             formatGlobal: "Global Online",
             formatToronto: "Optional Toronto Meetup",
@@ -1149,7 +1149,7 @@ const translations = {
                     { label: "Entry", value: "FREE (Beta)" },
                     { label: "Min / Cap", value: "Min {min} / Cap {max}" },
                     { label: "Prize", value: "$100 CAD Cash" },
-                    { label: "Next drop", value: "Sunday Feb 22" }
+                    { label: "Next drop", value: "Saturday March 22" }
                 ],
                 cta: "Enter the ring"
             },
@@ -1169,7 +1169,7 @@ const translations = {
                 label: "HOW TO PARTICIPATE",
                 title: "Pick your role",
                 items: [
-                    { title: "⚔️ Compete", body: "Apply, join the Sunday drop, build your app in 60 min and win $100 CAD cash. Free entry during beta." },
+                    { title: "⚔️ Compete", body: "Apply, join the Saturday drop, build your app in 60 min and win $100 CAD cash. Free entry during beta." },
                     { title: "🗳️ Vote", body: "Watch live demos on Twitch and vote for your favorite. The QR code appears on screen during demos." },
                     { title: "📣 Follow us", body: "Follow us on social media to stay updated on drops, results, and Season 0 news." }
                 ],
@@ -1237,7 +1237,7 @@ const translations = {
                 body: "This is Season 0. No soft promises. If you get in, you ship. If not, you watch from the stands."
             },
             entry: {
-                note: "Beta Drop: free entry. Entry will be paid after the beta. Reserve your spot for Sunday."
+                note: "Beta Drop: free entry. Entry will be paid after the beta. Reserve your spot for Saturday."
             },
             form: {
                 label: "Ring entry",
@@ -1307,8 +1307,8 @@ const translations = {
                 consent: "We will email you about the event.",
                 submit: "Reserve a spot",
                 soldOut: "Sold out",
-                helper: "Beta: free entry. We'll confirm your spot for Sunday. Entry will be paid after beta.",
-                success: "All set. Your spot for the Sunday Beta Drop is confirmed. Free entry. Prize: $100 CAD.",
+                helper: "Beta: free entry. We'll confirm your spot for Saturday. Entry will be paid after beta.",
+                success: "All set. Your spot for the Saturday Beta Drop is confirmed. Free entry. Prize: $100 CAD.",
                 error: "Fill the required fields."
             }
         },
