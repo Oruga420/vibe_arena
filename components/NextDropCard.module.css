@@ -121,7 +121,7 @@
     font-size: 1rem;
 }
 
-/* Valentine's Special Card */
+/* Drop Special Card */
 .valentineCard {
     position: relative;
     overflow: hidden;
@@ -129,12 +129,12 @@
     margin-bottom: 40px;
     border-radius: 16px;
     background: linear-gradient(135deg,
-            rgba(255, 105, 180, 0.12),
-            rgba(255, 20, 147, 0.08),
-            rgba(219, 112, 147, 0.06));
-    border: 1px solid rgba(255, 105, 180, 0.35);
+            rgba(74, 93, 35, 0.14),
+            rgba(85, 107, 47, 0.10),
+            rgba(60, 80, 30, 0.07));
+    border: 1px solid rgba(74, 93, 35, 0.35);
     box-shadow:
-        0 0 20px rgba(255, 105, 180, 0.1),
+        0 0 20px rgba(74, 93, 35, 0.1),
         var(--shadow);
 }
 
@@ -149,7 +149,7 @@
     margin: 0;
     font-size: 1.5rem;
     font-weight: 800;
-    color: #ff69b4;
+    color: #5c7a2d;
 }
 
 .heartIcon {
@@ -184,7 +184,7 @@
 .valentineDate {
     text-align: center;
     margin-top: 12px;
-    color: #ffb6c1;
+    color: #6b8e3a;
     font-weight: 700;
     font-size: 1.1rem;
     font-family: var(--font-mono);
@@ -197,7 +197,7 @@
     width: 200%;
     height: 200%;
     background: radial-gradient(circle at center,
-            rgba(255, 105, 180, 0.08) 0%,
+            rgba(74, 93, 35, 0.08) 0%,
             transparent 50%);
     animation: rotateGlow 10s linear infinite;
     pointer-events: none;
