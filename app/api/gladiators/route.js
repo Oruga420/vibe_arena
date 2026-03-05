@@ -115,6 +115,7 @@ export async function GET(request) {
         // 3. Merge: gladiator data + stats reales
         //    El Oruga = organizador, sus stats no cuentan (siempre 0-0-0%)
         //    Strip name & email from response for privacy
+        //    If no gladiator_name, generate initials from real name
         const data = results.map(r => {
             const email = r.email?.toLowerCase()?.trim();
             const isExcluded = EXCLUDED_EMAILS.includes(email);
@@ -122,11 +123,22 @@ export async function GET(request) {
                 ? { wins: 0, losses: 0, dropsPlayed: 0, winRate: 0 }
                 : (statsMap[email] || { wins: 0, losses: 0, dropsPlayed: 0, winRate: 0 });
 
+            // Generate initials from real name if no gladiator_name exists
+            let displayName = r.gladiator_name;
+            if (!displayName && r.name) {
+                displayName = r.name
+                    .trim()
+                    .split(/\s+/)
+                    .map(w => w[0]?.toUpperCase())
+                    .join('');
+            }
+
             // Destructure to remove private fields
             const { name, email: _email, ...publicData } = r;
 
             return {
                 ...publicData,
+                gladiator_name: displayName || null,
                 wins: stats.wins,
                 losses: stats.losses,
                 drops_played: stats.dropsPlayed,
