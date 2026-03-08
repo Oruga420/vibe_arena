@@ -184,7 +184,7 @@ const translations = {
             title: "Próximo Drop",
             planning: "Estamos planeando el próximo drop...",
             settingUp: "Setting Up the Colisseum we let you know when its ready",
-            valentineTitle: "Saturday Drop — Free Entry",
+            valentineTitle: "Sunday Drop — Free Entry",
             format: "Formato",
             formatGlobal: "Global Online",
             formatToronto: "Meetup opcional en Toronto",
@@ -855,7 +855,7 @@ const translations = {
             title: "Next Drop",
             planning: "We're planning the next drop...",
             settingUp: "Setting Up the Colisseum we let you know when its ready",
-            valentineTitle: "Saturday Drop — Free Entry",
+            valentineTitle: "Sunday Drop — Free Entry",
             format: "Format",
             formatGlobal: "Global Online",
             formatToronto: "Optional Toronto Meetup",
@@ -1169,7 +1169,7 @@ const translations = {
                 label: "HOW TO PARTICIPATE",
                 title: "Pick your role",
                 items: [
-                    { title: "⚔️ Compete", body: "Apply, join the Saturday drop, build your app in 60 min and win $100 CAD cash. Free entry during beta." },
+                    { title: "⚔️ Compete", body: "Apply, join the Sunday drop, build your app in 60 min and win $100 CAD cash. Free entry during beta." },
                     { title: "🗳️ Vote", body: "Watch live demos on Twitch and vote for your favorite. The QR code appears on screen during demos." },
                     { title: "📣 Follow us", body: "Follow us on social media to stay updated on drops, results, and Season 0 news." }
                 ],
