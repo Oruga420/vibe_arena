@@ -6,11 +6,13 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useLanguage } from "./LanguageProvider";
 import LanguageToggle from "./LanguageToggle";
 import ThemeToggle from "./ThemeToggle";
+import CageGatewayModal from "./CageGatewayModal";
 
 export default function Nav() {
     const pathname = usePathname();
     const navRef = useRef(null);
     const [isOpen, setIsOpen] = useState(false);
+    const [cageModalOpen, setCageModalOpen] = useState(false);
     const { t } = useLanguage();
 
     const navItems = useMemo(
@@ -69,12 +71,20 @@ export default function Nav() {
                         </Link>
                     );
                 })}
+                <button
+                    type="button"
+                    onClick={() => setCageModalOpen(true)}
+                    style={{ background: "none", border: "none", cursor: "pointer", font: "inherit", color: "inherit", padding: 0 }}
+                >
+                    {t("nav.cage")}
+                </button>
                 <LanguageToggle />
                 <ThemeToggle />
                 <Link href="/apply" className="btn-apply-sm">
                     {t("nav.apply")}
                 </Link>
             </div>
+            <CageGatewayModal open={cageModalOpen} onClose={() => setCageModalOpen(false)} />
         </nav>
     );
 }

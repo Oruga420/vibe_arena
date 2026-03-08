@@ -1,7 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import AsciiTower from "../components/AsciiTower";
+import CageGatewayModal from "../components/CageGatewayModal";
 import ChampionShowcase from "../components/ChampionShowcase";
 import EntryStatusCard from "../components/EntryStatusCard";
 import { useLanguage } from "../components/LanguageProvider";
@@ -10,6 +12,7 @@ import WaitlistModal from "../components/WaitlistModal";
 
 export default function HomePage() {
     const { t } = useLanguage();
+    const [cageModalOpen, setCageModalOpen] = useState(false);
     const mapCards = t("home.map.cards");
     const mapLinks = ["/how", "/judging", "/roadmap", "/gladiators", "/voting-guide"];
 
@@ -61,7 +64,18 @@ export default function HomePage() {
                                 </Link>
                             );
                         })}
+                    <button
+                        type="button"
+                        className="card-link"
+                        onClick={() => setCageModalOpen(true)}
+                        style={{ textAlign: "left", cursor: "pointer" }}
+                    >
+                        <span>{t("cage.mapCard.tag")}</span>
+                        <h3>{t("cage.mapCard.title")}</h3>
+                        <p>{t("cage.mapCard.body")}</p>
+                    </button>
                 </div>
+                <CageGatewayModal open={cageModalOpen} onClose={() => setCageModalOpen(false)} />
             </section>
 
             <section className="section section-muted">

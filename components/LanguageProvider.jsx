@@ -14,6 +14,7 @@ const translations = {
             sponsor: "Patrocinios",
             apply: "Aplic\u00e1",
             voteGuide: "C\u00f3mo votar",
+            cage: "Cage",
             languageLabel: "Idioma"
         },
         micro: {
@@ -672,6 +673,30 @@ const translations = {
                 title: "\u00bfPor qu\u00e9 QR din\u00e1micos?",
                 body: "Para matar bots. Solo humanos reales viendo en tiempo real pueden generar un token v\u00e1lido."
             }
+        },
+        cage: {
+            label: "GLADIATOR_CAGE",
+            title: "Entra al Cage",
+            body: "Verifica tu email de gladiador para acceder al generador de avatares con IA.",
+            email: "Email registrado",
+            placeholder: "gladiador@email.com",
+            submit: "Entrar al Cage",
+            cancel: "Cancelar",
+            validating: "Validando...",
+            successLabel: "ACCESO_CONCEDIDO",
+            successTitle: "Bienvenido, Gladiador",
+            successRedirecting: "Redirigiendo al Cage...",
+            deniedLabel: "ACCESO_EXCLUSIVO",
+            deniedTitle: "Solo Gladiadores",
+            deniedBody: "El Cage es exclusivo para gladiadores registrados. Quieres unirte a la arena?",
+            deniedApply: "Convertirme en Gladiador",
+            deniedRetry: "Intentar con otro email",
+            error: "Algo salio mal. Intenta de nuevo.",
+            mapCard: {
+                tag: "06 -- AVATAR",
+                title: "Gladiator Cage",
+                body: "Forja tu identidad de guerrero con nuestro generador de avatares con IA."
+            }
         }
     },
     en: {
@@ -685,6 +710,7 @@ const translations = {
             sponsor: "Sponsorships",
             apply: "Apply",
             voteGuide: "How to vote",
+            cage: "Cage",
             languageLabel: "Language"
         },
         micro: {
@@ -1342,6 +1368,30 @@ const translations = {
             security: {
                 title: "Why dynamic QRs?",
                 body: "To kill bots. Only real humans watching in real-time can generate a valid token."
+            }
+        },
+        cage: {
+            label: "GLADIATOR_CAGE",
+            title: "Enter the Cage",
+            body: "Verify your gladiator email to access the AI avatar generator.",
+            email: "Registered Email",
+            placeholder: "gladiator@email.com",
+            submit: "Enter the Cage",
+            cancel: "Cancel",
+            validating: "Validating...",
+            successLabel: "ACCESS_GRANTED",
+            successTitle: "Welcome back, Gladiator",
+            successRedirecting: "Redirecting to the Cage...",
+            deniedLabel: "EXCLUSIVE_ACCESS",
+            deniedTitle: "Gladiators Only",
+            deniedBody: "The Cage is exclusive to registered gladiators. Want to join the arena?",
+            deniedApply: "Become a Gladiator",
+            deniedRetry: "Try Another Email",
+            error: "Something went wrong. Please try again.",
+            mapCard: {
+                tag: "06 -- AVATAR",
+                title: "Gladiator Cage",
+                body: "Forge your warrior identity with our AI-powered avatar generator."
             }
         }
     }
