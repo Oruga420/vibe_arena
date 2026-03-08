@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import { useLanguage } from "./LanguageProvider";
 
@@ -58,9 +59,12 @@ export default function CageGatewayModal({ open, onClose }) {
         setResult(null);
     };
 
-    if (!open) return null;
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => setMounted(true), []);
 
-    return (
+    if (!open || !mounted) return null;
+
+    return createPortal(
         <div
             className="modal-backdrop"
             role="dialog"
@@ -168,6 +172,7 @@ export default function CageGatewayModal({ open, onClose }) {
                     </div>
                 )}
             </div>
-        </div>
+        </div>,
+        document.body
     );
 }
