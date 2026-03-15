@@ -18,7 +18,7 @@ const translations = {
             languageLabel: "Idioma"
         },
         micro: {
-            text: "Next Beta Drop - Este Domingo Marzo 22 - Entrada Gratis -",
+            text: "Next Beta Drop - Este Domingo Marzo 22 — 8 PM EST - Entrada Gratis -",
             link: "Ver el plan"
         },
         footer: {
@@ -74,7 +74,7 @@ const translations = {
             hero: {
                 tag: "Vibe Coding Colosseum",
                 title: "Ten\u00e9s 1 hora. Shippe\u00e1 algo o sal\u00ed del ring.",
-                body: "Próximo drop: Domingo 22 de Marzo. Entrada gratis. Premio: $100 CAD cash. No es un hackathon: es un drop. Entrás, shippeás, la gente vota.",
+                body: "Próximo drop: Domingo 22 de Marzo — 8 PM EST. Entrada gratis. Premio: $100 CAD cash. No es un hackathon: es un drop. Entrás, shippeás, la gente vota.",
                 primary: "Entrar al ring",
                 secondary: "Las reglas del ring"
             },
@@ -86,7 +86,7 @@ const translations = {
                 durationValue: "60 minutos",
                 stack: "Stack",
                 stackValue: "Libre",
-                window: "Domingo Marzo 22",
+                window: "Domingo Marzo 22 — 8 PM EST",
                 note: "Te avisamos primero si entrás a Season 0"
             },
             status: {
@@ -103,7 +103,7 @@ const translations = {
                     },
                     {
                         title: "Beta drop",
-                        body: "Domingo Marzo 22"
+                        body: "Domingo Marzo 22 — 8 PM EST"
                     },
                     {
                         title: "\u00daltimo update",
@@ -479,7 +479,7 @@ const translations = {
                     { label: "Entrada", value: "GRATIS (Beta)" },
                     { label: "Mínimo / Cupo", value: "Min {min} / Cupo {max}" },
                     { label: "Premio", value: "$100 CAD Cash" },
-                    { label: "Próximo drop", value: "Domingo Marzo 22" }
+                    { label: "Próximo drop", value: "Domingo Marzo 22 — 8 PM EST" }
                 ],
                 cta: "Entrar al ring"
             },
@@ -714,7 +714,7 @@ const translations = {
             languageLabel: "Language"
         },
         micro: {
-            text: "Next Beta Drop - This Sunday March 22 - Free Entry -",
+            text: "Next Beta Drop - This Sunday March 22 — 8 PM EST - Free Entry -",
             link: "See the plan"
         },
         footer: {
@@ -770,7 +770,7 @@ const translations = {
             hero: {
                 tag: "Vibe Coding Colosseum",
                 title: "You have 1 hour. Ship or step out.",
-                body: "Next drop: Sunday March 22. Free entry. Prize: $100 CAD cash. Not a hackathon: it's a drop. You enter, you ship, the crowd votes.",
+                body: "Next drop: Sunday March 22 — 8 PM EST. Free entry. Prize: $100 CAD cash. Not a hackathon: it's a drop. You enter, you ship, the crowd votes.",
                 primary: "Enter the ring",
                 secondary: "Ring rules"
             },
@@ -782,7 +782,7 @@ const translations = {
                 durationValue: "60 minutes",
                 stack: "Stack",
                 stackValue: "Open stack",
-                window: "Sunday March 22",
+                window: "Sunday March 22 — 8 PM EST",
                 note: "We ping you first if you are in Season 0"
             },
             status: {
@@ -799,7 +799,7 @@ const translations = {
                     },
                     {
                         title: "Beta drop",
-                        body: "Sunday March 22"
+                        body: "Sunday March 22 — 8 PM EST"
                     },
                     {
                         title: "Last update",
@@ -1175,7 +1175,7 @@ const translations = {
                     { label: "Entry", value: "FREE (Beta)" },
                     { label: "Min / Cap", value: "Min {min} / Cap {max}" },
                     { label: "Prize", value: "$100 CAD Cash" },
-                    { label: "Next drop", value: "Sunday March 22" }
+                    { label: "Next drop", value: "Sunday March 22 — 8 PM EST" }
                 ],
                 cta: "Enter the ring"
             },
