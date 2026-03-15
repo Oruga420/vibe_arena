@@ -2,6 +2,9 @@
 const config = {
   testEnvironment: 'node',
   testMatch: ['**/__tests__/**/*.test.js'],
+  transform: {
+    '\\.js$': ['babel-jest', { presets: [['@babel/preset-env', { targets: { node: 'current' } }]] }],
+  },
   collectCoverageFrom: [
     'lib/dropConfig.js',
   ],
