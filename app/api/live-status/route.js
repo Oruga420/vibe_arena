@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getDropStatus } from "../../../lib/dropConfig";
 
 export async function GET() {
-    const status = getDropStatus();
+    const status = await getDropStatus();
     const payload = {
         status: status.status,
         dropId: status.dropId,
