@@ -71,7 +71,7 @@ export default function NextDropCard() {
                             <h3>{t("nextDrop.valentineTitle")}</h3>
                             <img src="/fire-fist.png" alt="Fire Fist" className={styles.heartIcon} style={{ height: "50px", width: "auto" }} />
                         </div>
-                        <p className={styles.valentineDate}>March 22, 2026 — 8 PM EST — Free Entry — $100 CAD Prize</p>
+                        <p className={styles.valentineDate}>April 19, 2026 — 8 PM EST — Free Entry — $100 CAD Prize</p>
                         <div className={styles.valentineGlow}></div>
                     </div>
 

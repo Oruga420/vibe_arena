@@ -573,6 +573,13 @@ describe('getLiveStatus – status transitions', () => {
     expect(status.winnerHandle).toBe('@champion')
   })
 
+  it('returns CLOSED_ENDED with comma-separated winnerHandle for ties', () => {
+    const cfg = makeConfig({ winnerHandle: '@champion1,@champion2' })
+    const status = dropConfig.getLiveStatus(cfg, 3_000_000)
+    expect(status.status).toBe('CLOSED_ENDED')
+    expect(status.winnerHandle).toBe('@champion1,@champion2')
+  })
+
   it('returns CLOSED_UPCOMING for invalid date strings', () => {
     const cfg = makeConfig({ votingOpensAt: 'not-a-date', votingClosesAt: 'also-bad' })
     const status = dropConfig.getLiveStatus(cfg, 1_500_000)

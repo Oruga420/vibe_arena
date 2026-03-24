@@ -18,7 +18,7 @@ const translations = {
             languageLabel: "Idioma"
         },
         micro: {
-            text: "Next Beta Drop - Este Domingo Marzo 22 — 8 PM EST - Entrada Gratis -",
+            text: "Next Beta Drop - Este Domingo Abril 19 — 8 PM EST - Entrada Gratis -",
             link: "Ver el plan"
         },
         footer: {
@@ -86,7 +86,7 @@ const translations = {
                 durationValue: "60 minutos",
                 stack: "Stack",
                 stackValue: "Libre",
-                window: "Domingo Marzo 22 — 8 PM EST",
+                window: "Domingo Abril 19 — 8 PM EST",
                 note: "Te avisamos primero si entrás a Season 0"
             },
             status: {
@@ -103,7 +103,7 @@ const translations = {
                     },
                     {
                         title: "Beta drop",
-                        body: "Domingo Marzo 22 — 8 PM EST"
+                        body: "Domingo Abril 19 — 8 PM EST"
                     },
                     {
                         title: "\u00daltimo update",
@@ -118,7 +118,7 @@ const translations = {
                 label: "Live vote status",
                 closed: "Voto en vivo: CERRADO. Abre durante demos. Sin jueces.",
                 open: "Voto en vivo: ABIERTO. Cierra en",
-                ended: "Voto en vivo: CERRADO. Gan\u00f3",
+                ended: "Voto en vivo: CERRADO. Ganadores:",
                 endedPending: "Voto en vivo: CERRADO. Resultados en breve.",
                 noDrop: "Season 0 en construcci\u00f3n.",
                 ctaClosed: "Aplicar",
@@ -479,7 +479,7 @@ const translations = {
                     { label: "Entrada", value: "GRATIS (Beta)" },
                     { label: "Mínimo / Cupo", value: "Min {min} / Cupo {max}" },
                     { label: "Premio", value: "$100 CAD Cash" },
-                    { label: "Próximo drop", value: "Domingo Marzo 22 — 8 PM EST" }
+                    { label: "Próximo drop", value: "Domingo Abril 19 — 8 PM EST" }
                 ],
                 cta: "Entrar al ring"
             },
@@ -714,7 +714,7 @@ const translations = {
             languageLabel: "Language"
         },
         micro: {
-            text: "Next Beta Drop - This Sunday March 22 — 8 PM EST - Free Entry -",
+            text: "Next Beta Drop - This Sunday April 19 — 8 PM EST - Free Entry -",
             link: "See the plan"
         },
         footer: {
@@ -770,7 +770,7 @@ const translations = {
             hero: {
                 tag: "Vibe Coding Colosseum",
                 title: "You have 1 hour. Ship or step out.",
-                body: "Next drop: Sunday March 22 — 8 PM EST. Free entry. Prize: $100 CAD cash. Not a hackathon: it's a drop. You enter, you ship, the crowd votes.",
+                body: "Next drop: Sunday April 19 — 8 PM EST. Free entry. Prize: $100 CAD cash. Not a hackathon: it's a drop. You enter, you ship, the crowd votes.",
                 primary: "Enter the ring",
                 secondary: "Ring rules"
             },
@@ -782,7 +782,7 @@ const translations = {
                 durationValue: "60 minutes",
                 stack: "Stack",
                 stackValue: "Open stack",
-                window: "Sunday March 22 — 8 PM EST",
+                window: "Sunday April 19 — 8 PM EST",
                 note: "We ping you first if you are in Season 0"
             },
             status: {
@@ -799,7 +799,7 @@ const translations = {
                     },
                     {
                         title: "Beta drop",
-                        body: "Sunday March 22 — 8 PM EST"
+                        body: "Sunday April 19 — 8 PM EST"
                     },
                     {
                         title: "Last update",
@@ -814,7 +814,7 @@ const translations = {
                 label: "Live vote status",
                 closed: "Live vote: CLOSED. Opens during demos. No judges.",
                 open: "Live vote: OPEN. Closes in",
-                ended: "Live vote: CLOSED. Winner",
+                ended: "Live vote: CLOSED. Winners:",
                 endedPending: "Live vote: CLOSED. Results soon.",
                 noDrop: "Season 0 in construction.",
                 ctaClosed: "Apply for Season 0",
@@ -1175,7 +1175,7 @@ const translations = {
                     { label: "Entry", value: "FREE (Beta)" },
                     { label: "Min / Cap", value: "Min {min} / Cap {max}" },
                     { label: "Prize", value: "$100 CAD Cash" },
-                    { label: "Next drop", value: "Sunday March 22 — 8 PM EST" }
+                    { label: "Next drop", value: "Sunday April 19 — 8 PM EST" }
                 ],
                 cta: "Enter the ring"
             },
