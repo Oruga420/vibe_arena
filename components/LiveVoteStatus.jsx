@@ -72,9 +72,12 @@ export default function LiveVoteStatus() {
         }
 
         if (payload.status === "CLOSED_ENDED") {
-            const winner = payload.winnerHandle ? normalizeHandle(payload.winnerHandle) : "";
+            const winners = payload.winnerHandle
+                ? payload.winnerHandle.split(",").map(h => normalizeHandle(h.trim())).filter(Boolean)
+                : [];
+            const winnerText = winners.length > 0 ? winners.join(" & ") : "";
             return {
-                message: winner ? `${t("home.liveVote.ended")} ${winner}` : t("home.liveVote.endedPending"),
+                message: winnerText ? `${t("home.liveVote.ended")} ${winnerText}` : t("home.liveVote.endedPending"),
                 ctaLabel: t("home.liveVote.ctaEnded"),
                 ctaHref: payload.dropId ? `/results/${payload.dropId}` : "/results",
                 ctaClass: "btn-ghost"
