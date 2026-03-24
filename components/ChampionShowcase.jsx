@@ -51,46 +51,59 @@ export default function ChampionShowcase() {
         );
     }
 
+    const champions = champion.champions || [{
+        name: champion.champion_name,
+        colosseum_name: champion.champion_colosseum_name,
+        avatar_url: champion.champion_avatar_url,
+    }];
+    const isTie = champions.length > 1;
+
     return (
         <div className="champion-showcase">
             {/* Drop Info Header */}
             <div className="champion-header">
                 <div className="trophy-icon animated">🏆</div>
-                <h3 className="drop-name">{champion.drop_name} Champion</h3>
+                <h3 className="drop-name">
+                    {champion.drop_name} {isTie ? 'Co-Champions' : 'Champion'}
+                </h3>
                 <p className="drop-date mono">{formatDate(champion.drop_date)}</p>
             </div>
 
-            {/* Champion Display */}
-            <div className="champion-display">
-                <div className="champion-avatar-container">
-                    {champion.champion_avatar_url ? (
-                        <img
-                            src={champion.champion_avatar_url}
-                            alt={`${champion.champion_name} - Champion`}
-                            className="champion-avatar"
-                        />
-                    ) : (
-                        <div className="champion-avatar-placeholder">
-                            <span>
-                                {(champion.champion_colosseum_name || champion.champion_name || '??')
-                                    .substring(0, 2)
-                                    .toUpperCase()}
-                            </span>
+            {/* Champion Display - side by side for ties */}
+            <div className={`champion-display ${isTie ? 'champion-display-tie' : ''}`}>
+                {champions.map((champ, idx) => (
+                    <div key={idx} className="champion-card">
+                        <div className="champion-avatar-container">
+                            {champ.avatar_url ? (
+                                <img
+                                    src={champ.avatar_url}
+                                    alt={`${champ.colosseum_name || champ.name} - Champion`}
+                                    className="champion-avatar"
+                                />
+                            ) : (
+                                <div className="champion-avatar-placeholder">
+                                    <span>
+                                        {(champ.colosseum_name || champ.name || '??')
+                                            .substring(0, 2)
+                                            .toUpperCase()}
+                                    </span>
+                                </div>
+                            )}
+                            <div className="champion-crown">👑</div>
                         </div>
-                    )}
-                    <div className="champion-crown">👑</div>
-                </div>
 
-                <h2 className="champion-name">
-                    {champion.champion_colosseum_name || champion.champion_name}
-                </h2>
-
-                {champion.champion_project_name && champion.champion_project_name !== 'TBD' && (
-                    <p className="champion-project mono">
-                        Project: {champion.champion_project_name}
-                    </p>
-                )}
+                        <h2 className="champion-name">
+                            {champ.colosseum_name || champ.name}
+                        </h2>
+                    </div>
+                ))}
             </div>
+
+            {champion.champion_project_name && champion.champion_project_name !== 'TBD' && (
+                <p className="champion-project mono">
+                    Project: {champion.champion_project_name}
+                </p>
+            )}
 
             {/* Defeated Gladiators */}
             {defeatedGladiators.length > 0 && (

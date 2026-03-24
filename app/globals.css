@@ -1297,6 +1297,18 @@ footer {
   margin-bottom: 40px;
 }
 
+.champion-display-tie {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.champion-display-tie .champion-card {
+  flex: 0 1 auto;
+  text-align: center;
+}
+
 .champion-avatar-container {
   position: relative;
   width: 150px;
