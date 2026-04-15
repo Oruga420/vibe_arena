@@ -53,21 +53,37 @@ export default function TorontoSiegeModal() {
                     <span className="mono" style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.1em" }}>
                         TORONTO TECH WEEK 2026
                     </span>
-                    <span className="mono" style={{ fontSize: "11px", fontWeight: 700 }}>
-                        MAY 26–29
-                    </span>
+                    <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                        <span className="mono" style={{ fontSize: "11px", fontWeight: 700 }}>
+                            MAY 26–29
+                        </span>
+                        <button
+                            type="button"
+                            onClick={handleClose}
+                            aria-label="Cerrar"
+                            style={{
+                                background: "rgba(0,0,0,0.25)",
+                                border: "none",
+                                color: "#000",
+                                fontWeight: 700,
+                                fontSize: "14px",
+                                width: "22px",
+                                height: "22px",
+                                cursor: "pointer",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                borderRadius: "3px",
+                                lineHeight: 1
+                            }}
+                        >
+                            ×
+                        </button>
+                    </div>
                 </div>
 
                 {/* Body */}
                 <div style={{ padding: "28px 32px 24px" }}>
-                    <button
-                        type="button"
-                        className="modal-close"
-                        onClick={handleClose}
-                        aria-label="Cerrar"
-                    >
-                        ×
-                    </button>
 
                     <p className="mono" style={{ color: "var(--primary-green)", fontSize: "11px", marginBottom: "8px", letterSpacing: "0.08em" }}>
                         DROP ESPECIAL — EN VIVO
