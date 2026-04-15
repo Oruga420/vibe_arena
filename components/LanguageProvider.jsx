@@ -41,7 +41,7 @@ const translations = {
                 winner: "Premio del ganador (si arranca)"
             },
             values: {
-                payout: "$100 CAD Cash (Beta gratis — después tendrá costo de entrada)",
+                payout: "$500 CASH",
                 house: "Beta: sin comisión de arena"
             }
         },
@@ -74,7 +74,7 @@ const translations = {
             hero: {
                 tag: "Vibe Coding Colosseum",
                 title: "Ten\u00e9s 1 hora. Shippe\u00e1 algo o sal\u00ed del ring.",
-                body: "Próximo drop: Domingo 22 de Marzo — 8 PM EST. Entrada gratis. Premio: $100 CAD cash. No es un hackathon: es un drop. Entrás, shippeás, la gente vota.",
+                body: "Próximo drop: The Toronto Siege — Mayo 28 — 7 PM EST. Entrada gratis. Premio: $500 CASH. No es un hackathon: es un drop. Entrás, shippeás, la gente vota.",
                 primary: "Entrar al ring",
                 secondary: "Las reglas del ring"
             },
@@ -86,7 +86,7 @@ const translations = {
                 durationValue: "60 minutos",
                 stack: "Stack",
                 stackValue: "Libre",
-                window: "Domingo Abril 19 — 8 PM EST",
+                window: "Mayo 28 — 7 PM EST — Toronto Tech Week",
                 note: "Te avisamos primero si entrás a Season 0"
             },
             status: {
@@ -103,7 +103,7 @@ const translations = {
                     },
                     {
                         title: "Beta drop",
-                        body: "Domingo Abril 19 — 8 PM EST"
+                        body: "Mayo 28 — 7 PM EST — Toronto Tech Week"
                     },
                     {
                         title: "\u00daltimo update",
@@ -112,7 +112,7 @@ const translations = {
                 ]
             },
             entry: {
-                note: "Beta Drop: entrada gratis. Después de la beta, la entrada tendrá costo. Reservá tu lugar para el domingo."
+                note: "The Toronto Siege — Mayo 28 — 7 PM EST. Entrada gratis. Premio: $500 CASH."
             },
             liveVote: {
                 label: "Live vote status",
@@ -398,7 +398,7 @@ const translations = {
                 items: [
                     "Mínimo {min} participantes para arrancar.",
                     "Cupo máximo {max} gladiadores.",
-                    "Premio: $100 CAD cash al ganador."
+                    "Premio: $500 CASH al ganador."
                 ],
                 note: "La beta es gratis. Después de la beta, la entrada tendrá un costo. Aprovechá ahora."
             },
@@ -499,8 +499,8 @@ const translations = {
                 items: [
                     { label: "Entrada", value: "GRATIS (Beta)" },
                     { label: "Mínimo / Cupo", value: "Min {min} / Cupo {max}" },
-                    { label: "Premio", value: "$100 CAD Cash" },
-                    { label: "Próximo drop", value: "Domingo Abril 19 — 8 PM EST" }
+                    { label: "Premio", value: "$500 CASH" },
+                    { label: "Próximo drop", value: "Mayo 28 — 7 PM EST — Toronto Tech Week" }
                 ],
                 cta: "Entrar al ring"
             },
@@ -520,7 +520,7 @@ const translations = {
                 label: "CÓMO PARTICIPAR",
                 title: "Elegí tu rol",
                 items: [
-                    { title: "⚔️ Competir", body: "Aplicá, entrá al drop del domingo, construí tu app en 60 min y ganá $100 CAD cash. Entrada gratis en la beta." },
+                    { title: "⚔️ Competir", body: "Aplicá, entrá al drop del Mayo 28 en Toronto, construí tu app en 45 min y ganá $500 CASH. Entrada gratis." },
                     { title: "🗳️ Votar", body: "Mirá las demos en vivo por Twitch y votá por tu favorito. El QR aparece en pantalla durante las demos." },
                     { title: "📣 Seguinos", body: "Seguinos en redes para enterarte de los drops, resultados y novedades de Season 0." }
                 ],
@@ -551,7 +551,7 @@ const translations = {
                     },
                     {
                         question: "¿Cuánto cuesta entrar?",
-                        answer: "La beta es gratis. Después de la beta, la entrada tendrá costo. Mínimo {min} participantes para arrancar. Cupo {max}. Premio: $100 CAD cash."
+                        answer: "Entrada gratis. Mínimo {min} participantes para arrancar. Cupo {max}. Premio: $500 CASH."
                     },
                     {
                         question: "\u00bfPuedo usar IA y librer\u00edas?",
@@ -588,7 +588,7 @@ const translations = {
                 body: "Esto es Season 0. No prometemos suave. Si entr\u00e1s, shipe\u00e1s. Si no, mir\u00e1s desde la tribuna."
             },
             entry: {
-                note: "Beta Drop: entrada gratis. Después de la beta, la entrada tendrá costo. Reservá tu lugar para el domingo."
+                note: "The Toronto Siege — Mayo 28 — 7 PM EST. Entrada gratis. Premio: $500 CASH."
             },
             form: {
                 label: "Entrada al ring",
@@ -658,8 +658,8 @@ const translations = {
                 consent: "Te vamos a escribir sobre el evento.",
                 submit: "Reservar lugar",
                 soldOut: "Cupos completos",
-                helper: "Beta: entrada gratis. Te confirmamos lugar para el domingo. Después de la beta, la entrada tendrá costo.",
-                success: "Listo. Tu lugar para el Beta Drop del domingo está confirmado. Entrada gratis. Premio: $100 CAD.",
+                helper: "Entrada gratis. Te confirmamos tu lugar para el drop del Mayo 28 en Toronto.",
+                success: "Listo. Tu lugar para The Toronto Siege está confirmado. Entrada gratis. Premio: $500 CASH.",
                 error: "Completa los campos obligatorios."
             }
         },
@@ -758,7 +758,7 @@ const translations = {
                 winner: "Grand Prize (if started)"
             },
             values: {
-                payout: "$100 CAD Cash (Beta is free — entry will be paid after beta)",
+                payout: "$500 CASH",
                 house: "Beta: no arena fee"
             }
         },
@@ -791,7 +791,7 @@ const translations = {
             hero: {
                 tag: "Vibe Coding Colosseum",
                 title: "You have 1 hour. Ship or step out.",
-                body: "Next drop: Sunday April 19 — 8 PM EST. Free entry. Prize: $100 CAD cash. Not a hackathon: it's a drop. You enter, you ship, the crowd votes.",
+                body: "Next drop: The Toronto Siege — May 28 — 7 PM EST. Free entry. Prize: $500 CASH. Not a hackathon: it's a drop. You enter, you ship, the crowd votes.",
                 primary: "Enter the ring",
                 secondary: "Ring rules"
             },
@@ -803,7 +803,7 @@ const translations = {
                 durationValue: "60 minutes",
                 stack: "Stack",
                 stackValue: "Open stack",
-                window: "Sunday April 19 — 8 PM EST",
+                window: "May 28 — 7 PM EST — Toronto Tech Week",
                 note: "We ping you first if you are in Season 0"
             },
             status: {
@@ -820,7 +820,7 @@ const translations = {
                     },
                     {
                         title: "Beta drop",
-                        body: "Sunday April 19 — 8 PM EST"
+                        body: "May 28 — 7 PM EST — Toronto Tech Week"
                     },
                     {
                         title: "Last update",
@@ -829,7 +829,7 @@ const translations = {
                 ]
             },
             entry: {
-                note: "Beta Drop: free entry. Entry will be paid after the beta. Reserve your spot for Sunday."
+                note: "The Toronto Siege — May 28 — 7 PM EST. Free entry. Prize: $500 CASH."
             },
             liveVote: {
                 label: "Live vote status",
@@ -1115,7 +1115,7 @@ const translations = {
                 items: [
                     "Min {min} participants to start.",
                     "Cap {max} gladiators.",
-                    "Prize: $100 CAD cash to the winner."
+                    "Prize: $500 CASH to the winner."
                 ],
                 note: "The beta is free. Entry will be paid after the beta. Get in now."
             },
@@ -1216,8 +1216,8 @@ const translations = {
                 items: [
                     { label: "Entry", value: "FREE (Beta)" },
                     { label: "Min / Cap", value: "Min {min} / Cap {max}" },
-                    { label: "Prize", value: "$100 CAD Cash" },
-                    { label: "Next drop", value: "Sunday April 19 — 8 PM EST" }
+                    { label: "Prize", value: "$500 CASH" },
+                    { label: "Next drop", value: "May 28 — 7 PM EST — Toronto Tech Week" }
                 ],
                 cta: "Enter the ring"
             },
@@ -1237,7 +1237,7 @@ const translations = {
                 label: "HOW TO PARTICIPATE",
                 title: "Pick your role",
                 items: [
-                    { title: "⚔️ Compete", body: "Apply, join the Sunday drop, build your app in 60 min and win $100 CAD cash. Free entry during beta." },
+                    { title: "⚔️ Compete", body: "Apply, join the May 28 drop in Toronto, build your app in 45 min and win $500 CASH. Free entry." },
                     { title: "🗳️ Vote", body: "Watch live demos on Twitch and vote for your favorite. The QR code appears on screen during demos." },
                     { title: "📣 Follow us", body: "Follow us on social media to stay updated on drops, results, and Season 0 news." }
                 ],
@@ -1268,7 +1268,7 @@ const translations = {
                     },
                     {
                         question: "Entry fee?",
-                        answer: "The beta is free. Entry will be paid after the beta. Min {min} participants to start. Cap {max}. Prize: $100 CAD cash."
+                        answer: "Free entry. Min {min} participants to start. Cap {max}. Prize: $500 CASH."
                     },
                     {
                         question: "Can I use AI and libraries?",
@@ -1305,7 +1305,7 @@ const translations = {
                 body: "This is Season 0. No soft promises. If you get in, you ship. If not, you watch from the stands."
             },
             entry: {
-                note: "Beta Drop: free entry. Entry will be paid after the beta. Reserve your spot for Sunday."
+                note: "The Toronto Siege — May 28 — 7 PM EST. Free entry. Prize: $500 CASH."
             },
             form: {
                 label: "Ring entry",
@@ -1375,8 +1375,8 @@ const translations = {
                 consent: "We will email you about the event.",
                 submit: "Reserve a spot",
                 soldOut: "Sold out",
-                helper: "Beta: free entry. We'll confirm your spot for Sunday. Entry will be paid after beta.",
-                success: "All set. Your spot for the Sunday Beta Drop is confirmed. Free entry. Prize: $100 CAD.",
+                helper: "Free entry. We'll confirm your spot for the May 28 drop in Toronto.",
+                success: "All set. Your spot for The Toronto Siege is confirmed. Free entry. Prize: $500 CASH.",
                 error: "Fill the required fields."
             }
         },
