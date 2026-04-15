@@ -8,7 +8,8 @@ import ChampionShowcase from "../components/ChampionShowcase";
 import EntryStatusCard from "../components/EntryStatusCard";
 import { useLanguage } from "../components/LanguageProvider";
 import NextDropCard from "../components/NextDropCard";
-import WaitlistModal from "../components/WaitlistModal";
+// import WaitlistModal from "../components/WaitlistModal"; // desactivado temporalmente — Toronto Siege activo
+import TorontoSiegeModal from "../components/TorontoSiegeModal";
 
 export default function HomePage() {
     const { t } = useLanguage();
@@ -18,7 +19,8 @@ export default function HomePage() {
 
     return (
         <main>
-            <WaitlistModal />
+            {/* <WaitlistModal /> */}
+            <TorontoSiegeModal />
             <section className="hero">
                 <AsciiTower />
                 <div className="scanline" aria-hidden="true"></div>

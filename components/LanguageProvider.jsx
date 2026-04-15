@@ -18,7 +18,7 @@ const translations = {
             languageLabel: "Idioma"
         },
         micro: {
-            text: "Next Beta Drop - Este Domingo Abril 19 — 8 PM EST - Entrada Gratis -",
+            text: "Toronto Tech Week — The Toronto Siege — Mayo 28 — 7 PM EST — Entrada Gratis — Premio $500 CASH —",
             link: "Ver el plan"
         },
         footer: {
@@ -185,7 +185,12 @@ const translations = {
             title: "Próximo Drop",
             planning: "Estamos planeando el próximo drop...",
             settingUp: "Setting Up the Colisseum we let you know when its ready",
-            valentineTitle: "Sunday Drop — Free Entry",
+            valentineTitle: "The Toronto Siege ⚔️",
+            siegeBadge: "🏙️ Toronto Tech Week 2026",
+            siegeTagline: "El Colosseum llega en persona. Un tema, 45 minutos, el crowd vota en vivo. Un campeón.",
+            siegeDate: "📅 Thursday, May 28, 2026 — 7:00 PM – 9:30 PM EST",
+            siegeDetails: "📍 174 Spadina Ave, Toronto · 🎟️ Entrada Gratis · 💰 $500 CASH al campeón",
+            siegeLumaCta: "🗓️ RSVP en Luma — Confirmá tu lugar",
             format: "Formato",
             formatGlobal: "Global Online",
             formatToronto: "Meetup opcional en Toronto",
@@ -199,6 +204,22 @@ const translations = {
             seasonNote: "Te avisamos primero si estás en Season 0",
             spectatorCta: "¿Ver a los gladiadores como espectador?",
             registerCta: "¡Registrate como gladiador y empezá a ganar guita!!"
+        },
+        torontoSiege: {
+            ttw: "🏙️ Toronto Tech Week 2026",
+            ttwDates: "MAY 26–29",
+            dropLabel: "DROP ESPECIAL — EN VIVO",
+            title: "The Toronto Siege ⚔️",
+            tagline: "El Colosseum llega a Toronto en persona. Sin paneles. Sin pitch decks. Solo gladiadores, armas de IA, y 45 minutos en el reloj.",
+            date: "Thursday, May 28, 2026 — 7:00 PM – 9:30 PM EST",
+            entry: "FREE entry — Premio de $500 CASH al campeón",
+            spots: "20 spots totales — 8–10 gladiadores en el ring.",
+            spotsBold: "Se llena rápido.",
+            location: "174 Spadina Ave, Toronto — On2 · Second Floor →",
+            primaryCta: "⚔️ Entra al Arena — Regístrate en VCC",
+            lumaCta: "🗓️ RSVP en Luma — Toronto Tech Week",
+            disclaimer: "Para entrar al ring debés registrarte en vibecodingcolosseum.com. Sin avatar, sin entrada.",
+            close: "Cerrar"
         },
         sponsor: {
             label: "Patrocinios",
@@ -714,7 +735,7 @@ const translations = {
             languageLabel: "Language"
         },
         micro: {
-            text: "Next Beta Drop - This Sunday April 19 — 8 PM EST - Free Entry -",
+            text: "Toronto Tech Week — The Toronto Siege — May 28 — 7 PM EST — Free Entry — $500 CASH Prize —",
             link: "See the plan"
         },
         footer: {
@@ -881,7 +902,12 @@ const translations = {
             title: "Next Drop",
             planning: "We're planning the next drop...",
             settingUp: "Setting Up the Colisseum we let you know when its ready",
-            valentineTitle: "Sunday Drop — Free Entry",
+            valentineTitle: "The Toronto Siege ⚔️",
+            siegeBadge: "🏙️ Toronto Tech Week 2026",
+            siegeTagline: "The Colosseum goes IRL. One theme, 45 minutes, live crowd vote. One champion.",
+            siegeDate: "📅 Thursday, May 28, 2026 — 7:00 PM – 9:30 PM EST",
+            siegeDetails: "📍 174 Spadina Ave, Toronto · 🎟️ Free Entry · 💰 $500 CASH to the champion",
+            siegeLumaCta: "🗓️ RSVP on Luma — Lock in your spot",
             format: "Format",
             formatGlobal: "Global Online",
             formatToronto: "Optional Toronto Meetup",
@@ -895,6 +921,22 @@ const translations = {
             seasonNote: "We ping you first if you are in Season 0",
             spectatorCta: "See the gladiators as a spectator?",
             registerCta: "Register as a gladiator and start making cash!!"
+        },
+        torontoSiege: {
+            ttw: "🏙️ Toronto Tech Week 2026",
+            ttwDates: "MAY 26–29",
+            dropLabel: "SPECIAL DROP — LIVE",
+            title: "The Toronto Siege ⚔️",
+            tagline: "The Colosseum hits Toronto IRL. No panels. No pitch decks. Just gladiators, AI weapons, and 45 minutes on the clock.",
+            date: "Thursday, May 28, 2026 — 7:00 PM – 9:30 PM EST",
+            entry: "FREE entry — $500 CASH prize for the champion",
+            spots: "20 spots total — 8–10 gladiators in the ring.",
+            spotsBold: "This WILL fill up.",
+            location: "174 Spadina Ave, Toronto — On2 · Second Floor →",
+            primaryCta: "⚔️ Enter the Arena — Register at VCC",
+            lumaCta: "🗓️ RSVP on Luma — Toronto Tech Week",
+            disclaimer: "To enter the ring you must register at vibecodingcolosseum.com. No avatar, no entry.",
+            close: "Close"
         },
         sponsor: {
             label: "Sponsorships",
