@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useLanguage } from "./LanguageProvider";
 
 const LUMA_URL = "https://lu.ma/vibe-toronto-siege"; // TODO: reemplaza con el link real de Luma
 const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=174+Spadina+Ave+Toronto+ON+M5T+2C2";
 
 export default function TorontoSiegeModal() {
+    const { t } = useLanguage();
     const [open, setOpen] = useState(false);
 
     useEffect(() => {
@@ -26,7 +28,7 @@ export default function TorontoSiegeModal() {
             className="modal-backdrop"
             role="dialog"
             aria-modal="true"
-            aria-label="Vibe Coding Colosseum — The Toronto Siege"
+            aria-label={t("torontoSiege.title")}
             onClick={handleClose}
             style={{ background: "rgba(0,0,0,0.75)" }}
         >
@@ -51,16 +53,16 @@ export default function TorontoSiegeModal() {
                     justifyContent: "space-between"
                 }}>
                     <span className="mono" style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.1em" }}>
-                        TORONTO TECH WEEK 2026
+                        {t("torontoSiege.ttw")}
                     </span>
                     <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                         <span className="mono" style={{ fontSize: "11px", fontWeight: 700 }}>
-                            MAY 26–29
+                            {t("torontoSiege.ttwDates")}
                         </span>
                         <button
                             type="button"
                             onClick={handleClose}
-                            aria-label="Cerrar"
+                            aria-label={t("torontoSiege.close")}
                             style={{
                                 background: "rgba(0,0,0,0.25)",
                                 border: "none",
@@ -84,16 +86,15 @@ export default function TorontoSiegeModal() {
 
                 {/* Body */}
                 <div style={{ padding: "28px 32px 24px" }}>
-
                     <p className="mono" style={{ color: "var(--primary-green)", fontSize: "11px", marginBottom: "8px", letterSpacing: "0.08em" }}>
-                        DROP ESPECIAL — EN VIVO
+                        {t("torontoSiege.dropLabel")}
                     </p>
 
                     <h2 style={{ fontSize: "1.5rem", lineHeight: 1.2, marginBottom: "6px" }}>
-                        The Toronto Siege ⚔️
+                        {t("torontoSiege.title")}
                     </h2>
                     <p style={{ color: "var(--text-muted)", marginBottom: "20px", fontSize: "0.9rem" }}>
-                        El Colosseum llega a Toronto en persona. Sin paneles. Sin pitch decks. Solo gladiadores, armas de IA, y 45 minutos en el reloj.
+                        {t("torontoSiege.tagline")}
                     </p>
 
                     {/* Event Details */}
@@ -108,15 +109,17 @@ export default function TorontoSiegeModal() {
                     }}>
                         <div style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
                             <span>📅</span>
-                            <span style={{ fontSize: "0.9rem" }}><strong>Thursday, May 28, 2026</strong> — 7:00 PM – 9:30 PM EST</span>
+                            <span style={{ fontSize: "0.9rem" }}><strong>{t("torontoSiege.date")}</strong></span>
                         </div>
                         <div style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
                             <span>🎟️</span>
-                            <span style={{ fontSize: "0.9rem" }}><strong>FREE entry</strong> — Cash prize for the champion</span>
+                            <span style={{ fontSize: "0.9rem" }}>{t("torontoSiege.entry")}</span>
                         </div>
                         <div style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
                             <span>👥</span>
-                            <span style={{ fontSize: "0.9rem" }}>20 spots total — 8–10 gladiadores en el ring. <strong>Se llena rápido.</strong></span>
+                            <span style={{ fontSize: "0.9rem" }}>
+                                {t("torontoSiege.spots")} <strong>{t("torontoSiege.spotsBold")}</strong>
+                            </span>
                         </div>
                         <div style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
                             <span>📍</span>
@@ -131,7 +134,7 @@ export default function TorontoSiegeModal() {
                                     fontWeight: 600
                                 }}
                             >
-                                174 Spadina Ave, Toronto — On2 · Second Floor →
+                                {t("torontoSiege.location")}
                             </a>
                         </div>
                     </div>
@@ -144,7 +147,7 @@ export default function TorontoSiegeModal() {
                             style={{ textAlign: "center", textDecoration: "none", display: "block" }}
                             onClick={handleClose}
                         >
-                            ⚔️ Entra al Arena — Regístrate en VCC
+                            {t("torontoSiege.primaryCta")}
                         </a>
                         <a
                             href={LUMA_URL}
@@ -153,12 +156,12 @@ export default function TorontoSiegeModal() {
                             className="btn-ghost"
                             style={{ textAlign: "center", textDecoration: "none", display: "block" }}
                         >
-                            🗓️ RSVP en Luma — Toronto Tech Week
+                            {t("torontoSiege.lumaCta")}
                         </a>
                     </div>
 
                     <p style={{ marginTop: "14px", fontSize: "0.75rem", color: "var(--text-muted)", textAlign: "center" }}>
-                        Para entrar al ring debes registrarte en <strong>vibecodingcolosseum.com</strong>. Sin avatar, sin entrada.
+                        {t("torontoSiege.disclaimer")}
                     </p>
 
                     <button
@@ -176,7 +179,7 @@ export default function TorontoSiegeModal() {
                             textAlign: "center"
                         }}
                     >
-                        Cerrar
+                        {t("torontoSiege.close")}
                     </button>
                 </div>
             </div>
