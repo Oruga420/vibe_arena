@@ -64,14 +64,53 @@ export default function NextDropCard() {
                         )}
                     </div>
 
-                    {/* Next Drop Event */}
+                    {/* Next Drop Event — Toronto Siege */}
                     <div className={styles.valentineCard}>
+                        {/* Toronto Tech Week badge */}
+                        <div style={{ display: "flex", justifyContent: "center", marginBottom: "16px" }}>
+                            <span className="mono" style={{
+                                background: "var(--primary-green)",
+                                color: "#000",
+                                fontSize: "10px",
+                                fontWeight: 700,
+                                letterSpacing: "0.12em",
+                                padding: "4px 14px",
+                                textTransform: "uppercase"
+                            }}>
+                                🏙️ Toronto Tech Week 2026
+                            </span>
+                        </div>
+
                         <div className={styles.valentineHeader}>
                             <img src="/fire-fist.png" alt="Fire Fist" className={styles.heartIcon} style={{ height: "50px", width: "auto" }} />
-                            <h3>{t("nextDrop.valentineTitle")}</h3>
+                            <h3>The Toronto Siege ⚔️</h3>
                             <img src="/fire-fist.png" alt="Fire Fist" className={styles.heartIcon} style={{ height: "50px", width: "auto" }} />
                         </div>
-                        <p className={styles.valentineDate}>April 19, 2026 — 8 PM EST — Free Entry — $100 CAD Prize</p>
+
+                        <p style={{ textAlign: "center", color: "var(--text-muted)", margin: "10px 0 16px", fontSize: "0.9rem" }}>
+                            El Colosseum llega en persona. Un tema, 45 minutos, el crowd vota en vivo. Un campeón.
+                        </p>
+
+                        <p className={styles.valentineDate}>
+                            📅 Thursday, May 28, 2026 — 7:00 PM – 9:30 PM EST
+                        </p>
+                        <p className={styles.valentineDate} style={{ fontSize: "0.85rem", fontWeight: 600, marginTop: "4px" }}>
+                            📍 174 Spadina Ave, Toronto &nbsp;·&nbsp; 🎟️ Free Entry &nbsp;·&nbsp; 💰 <span style={{ color: "var(--primary-green)" }}>$500 CASH</span> al campeón
+                        </p>
+
+                        {/* Luma CTA */}
+                        <div style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
+                            <a
+                                href="https://lu.ma/vibe-toronto-siege"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn-primary"
+                                style={{ textDecoration: "none", fontSize: "0.9rem", padding: "12px 28px" }}
+                            >
+                                🗓️ RSVP en Luma — Confirma tu lugar
+                            </a>
+                        </div>
+
                         <div className={styles.valentineGlow}></div>
                     </div>
 
