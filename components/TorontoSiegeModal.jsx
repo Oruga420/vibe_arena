@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useLanguage } from "./LanguageProvider";
 
-const LUMA_URL = "https://lu.ma/vibe-toronto-siege"; // TODO: reemplaza con el link real de Luma
+const LUMA_URL = "https://luma.com/924a9ivf";
 const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=174+Spadina+Ave+Toronto+ON+M5T+2C2";
 
 export default function TorontoSiegeModal() {

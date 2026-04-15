@@ -101,7 +101,7 @@ export default function NextDropCard() {
                         {/* Luma CTA */}
                         <div style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
                             <a
-                                href="https://lu.ma/vibe-toronto-siege"
+                                href="https://luma.com/924a9ivf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn-primary"
