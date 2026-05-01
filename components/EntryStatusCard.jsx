@@ -60,7 +60,7 @@ export default function EntryStatusCard({ note }) {
                     <span className="entry-value">
                         <span className="entry-discount">
                             <span className="entry-original-price">{values.tokens.originalFee}</span>
-                            <span className="entry-free-badge">FREE BETA</span>
+                            <span className="entry-free-badge">{t("entry.values.freeBadge")}</span>
                         </span>
                     </span>
                 </div>
@@ -75,7 +75,7 @@ export default function EntryStatusCard({ note }) {
                 <div className="entry-row">
                     <span className="entry-label">{t("entry.labels.payout")}</span>
                     <span className="entry-value entry-prize-highlight">
-                        $100 CAD Cash
+                        {t("entry.values.payout")}
                     </span>
                 </div>
             </div>
@@ -87,16 +87,12 @@ export default function EntryStatusCard({ note }) {
                     </span>
                 </div>
                 <div className="entry-row">
-                    <span className="entry-label">
-                        {language === "es" ? "Próximo drop" : "Next drop"}
-                    </span>
-                    <span className="entry-value">
-                        {language === "es" ? "Domingo Abril 19 — 8 PM EST" : "Sunday April 19 — 8 PM EST"}
-                    </span>
+                    <span className="entry-label">{t("entry.labels.nextDrop")}</span>
+                    <span className="entry-value">{t("entry.values.nextDrop")}</span>
                 </div>
                 <div className="entry-row">
                     <span className="entry-label">{t("entry.labels.winner")}</span>
-                    <span className="entry-value entry-prize-highlight">$100 CAD</span>
+                    <span className="entry-value entry-prize-highlight">{t("entry.values.payout")}</span>
                 </div>
             </div>
             {note ? <p className="entry-note">{formatTemplate(note, values.tokens)}</p> : null}

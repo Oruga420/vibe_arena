@@ -1098,6 +1098,10 @@ footer {
 
 /* Responsive */
 @media (max-width: 1024px) {
+  .apply-grid {
+    grid-template-columns: 1fr !important;
+  }
+
   .hero {
     grid-template-columns: 1fr;
     padding-top: 60px;

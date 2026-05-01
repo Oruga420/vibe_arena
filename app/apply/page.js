@@ -1,20 +1,15 @@
 "use client";
 
-import { useRef } from "react";
 import ApplyForm from "../../components/ApplyForm";
 import EntryStatusCard from "../../components/EntryStatusCard";
 import { useLanguage } from "../../components/LanguageProvider";
 
 export default function ApplyPage() {
     const { t } = useLanguage();
-    const formRef = useRef(null);
-
-    const scrollToForm = () => {
-        formRef.current?.scrollIntoView({ behavior: "smooth" });
-    };
 
     return (
         <main>
+            {/* Hero */}
             <section className="page-hero">
                 <div>
                     <p className="mono" style={{ color: "var(--primary-green)", marginBottom: "12px" }}>
@@ -25,23 +20,63 @@ export default function ApplyPage() {
                 </div>
             </section>
 
+            {/* Gladiator path — form at the top */}
             <section className="section">
-                <EntryStatusCard note={t("apply.entry.note")} />
-                
-                <div className="scroll-indicator" onClick={scrollToForm}>
-                    <div className="scroll-arrow">↓</div>
-                    <div className="scroll-banner">
-                        SUBSCRIBE BELOW
+                <div style={{
+                    display: "grid",
+                    gridTemplateColumns: "1fr 340px",
+                    gap: "48px",
+                    alignItems: "start"
+                }} className="apply-grid">
+                    {/* LEFT: Form */}
+                    <div>
+                        <p className="mono" style={{ color: "var(--primary-green)", fontSize: "11px", letterSpacing: "0.1em", marginBottom: "8px" }}>
+                            {t("apply.form.label")}
+                        </p>
+                        <h2 style={{ marginBottom: "28px" }}>{t("apply.form.title")}</h2>
+                        <ApplyForm />
+                    </div>
+
+                    {/* RIGHT: Event info card */}
+                    <div style={{ position: "sticky", top: "24px" }}>
+                        <EntryStatusCard note={t("apply.entry.note")} />
                     </div>
                 </div>
             </section>
 
-            <section className="section" ref={formRef}>
-                <div className="section-header">
-                    <p className="mono">{t("apply.form.label")}</p>
-                    <h2>{t("apply.form.title")}</h2>
+            {/* Divider */}
+            <div style={{
+                borderTop: "1px solid var(--border)",
+                margin: "0 auto",
+                maxWidth: "680px"
+            }} />
+
+            {/* Spectator path */}
+            <section className="section">
+                <div style={{ maxWidth: "680px" }}>
+                    <p className="mono" style={{
+                        color: "var(--text-muted)",
+                        fontSize: "11px",
+                        letterSpacing: "0.1em",
+                        textTransform: "uppercase",
+                        marginBottom: "8px"
+                    }}>
+                        {t("apply.spectator.label")}
+                    </p>
+                    <h2 style={{ marginBottom: "12px" }}>{t("apply.spectator.title")}</h2>
+                    <p style={{ color: "var(--text-muted)", marginBottom: "24px" }}>
+                        {t("apply.spectator.body")}
+                    </p>
+                    <a
+                        href="https://luma.com/924a9ivf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-ghost"
+                        style={{ textDecoration: "none", display: "inline-block" }}
+                    >
+                        {t("apply.spectator.cta")}
+                    </a>
                 </div>
-                <ApplyForm />
             </section>
         </main>
     );

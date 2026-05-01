@@ -37,11 +37,14 @@ const translations = {
                 payout: "PREMIO",
                 house: "ARENA",
                 spots: "Cupos reservados",
+                nextDrop: "Próximo drop",
                 pot: "Pozo actual",
                 winner: "Premio del ganador (si arranca)"
             },
             values: {
                 payout: "$500 CASH",
+                freeBadge: "FREE",
+                nextDrop: "Jueves, Mayo 28 — 7 PM EST",
                 house: "Beta: sin comisión de arena"
             }
         },
@@ -661,6 +664,12 @@ const translations = {
                 helper: "Entrada gratis. Te confirmamos tu lugar para el drop del Mayo 28 en Toronto.",
                 success: "Listo. Tu lugar para The Toronto Siege está confirmado. Entrada gratis. Premio: $500 CASH.",
                 error: "Completa los campos obligatorios."
+            },
+            spectator: {
+                label: "Solo quiero mirar",
+                title: "Vení a ver la carnecería. 👁️",
+                body: "Sin competir. Mirás las demos en vivo, votás al ganador, y vivís el Colosseum desde la tribuna. Toronto Tech Week — Mayo 28.",
+                cta: "🗓️ RSVP como espectador en Luma"
             }
         },
         votingGuide: {
@@ -754,11 +763,14 @@ const translations = {
                 payout: "GRAND PRIZE",
                 house: "HOUSE",
                 spots: "Spots reserved",
+                nextDrop: "Next drop",
                 pot: "Current Prize Pool",
                 winner: "Grand Prize (if started)"
             },
             values: {
                 payout: "$500 CASH",
+                freeBadge: "FREE",
+                nextDrop: "Thursday, May 28 — 7 PM EST",
                 house: "Beta: no arena fee"
             }
         },
@@ -1378,6 +1390,12 @@ const translations = {
                 helper: "Free entry. We'll confirm your spot for the May 28 drop in Toronto.",
                 success: "All set. Your spot for The Toronto Siege is confirmed. Free entry. Prize: $500 CASH.",
                 error: "Fill the required fields."
+            },
+            spectator: {
+                label: "Just here to watch",
+                title: "Come witness the carnage. 👁️",
+                body: "No competing. You watch the live demos, vote for the winner, and experience the Colosseum from the stands. Toronto Tech Week — May 28.",
+                cta: "🗓️ RSVP as a spectator on Luma"
             }
         },
         votingGuide: {
