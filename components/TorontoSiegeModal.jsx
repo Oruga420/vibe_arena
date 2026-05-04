@@ -142,7 +142,9 @@ export default function TorontoSiegeModal() {
                     {/* CTAs */}
                     <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                         <a
-                            href="/apply"
+                            href={LUMA_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="btn-primary"
                             style={{ textAlign: "center", textDecoration: "none", display: "block" }}
                             onClick={handleClose}

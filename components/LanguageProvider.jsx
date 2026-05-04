@@ -228,7 +228,7 @@ const translations = {
             spots: "20 spots totales — 8–10 gladiadores en el ring.",
             spotsBold: "Se llena rápido.",
             location: "174 Spadina Ave, Toronto — On2 · Second Floor →",
-            primaryCta: "⚔️ Entra al Arena — Regístrate en VCC",
+            primaryCta: "📋 Únete al Waitlist — Luma",
             lumaCta: "🗓️ RSVP en Luma — Toronto Tech Week",
             disclaimer: "Para entrar al ring debés registrarte en vibecodingcolosseum.com. Sin avatar, sin entrada.",
             close: "Cerrar"
@@ -963,7 +963,7 @@ const translations = {
             spots: "20 spots total — 8–10 gladiators in the ring.",
             spotsBold: "This WILL fill up.",
             location: "174 Spadina Ave, Toronto — On2 · Second Floor →",
-            primaryCta: "⚔️ Enter the Arena — Register at VCC",
+            primaryCta: "📋 Join the Waitlist — Luma",
             lumaCta: "🗓️ RSVP on Luma — Toronto Tech Week",
             disclaimer: "To enter the ring you must register at vibecodingcolosseum.com. No avatar, no entry.",
             close: "Close"
