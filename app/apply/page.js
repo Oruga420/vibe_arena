@@ -2,6 +2,7 @@
 
 import ApplyForm from "../../components/ApplyForm";
 import EntryStatusCard from "../../components/EntryStatusCard";
+import WaitlistSection from "../../components/WaitlistSection";
 import { useLanguage } from "../../components/LanguageProvider";
 
 export default function ApplyPage() {
@@ -20,8 +21,16 @@ export default function ApplyPage() {
                 </div>
             </section>
 
-            {/* Gladiator path — form at the top */}
-            <section className="section">
+            {/* Waitlist — drop is full */}
+            <section className="section" style={{ paddingBottom: "0" }}>
+                <WaitlistSection />
+            </section>
+
+            {/* Divider */}
+            <div style={{ borderTop: "1px solid var(--border)", margin: "48px auto", maxWidth: "680px" }} />
+
+            {/* Gladiator path — form */}
+            <section className="section" style={{ paddingTop: "0" }}>
                 <div style={{
                     display: "grid",
                     gridTemplateColumns: "1fr 340px",

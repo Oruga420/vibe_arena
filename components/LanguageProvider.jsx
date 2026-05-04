@@ -73,6 +73,15 @@ const translations = {
             error: "Completa nombre, email y opcion.",
             close: "Cerrar modal"
         },
+        waitlistSection: {
+            label: "CUPOS AGOTADOS — WAITLIST",
+            title: "El drop está lleno. Anotate igual.",
+            body: "Los 10 spots del ring están tomados. Dejanos tu info y te avisamos del próximo drop — o entrá como espectador al evento del Mayo 28 en Toronto Tech Week.",
+            submit: "Anotarme en la waitlist",
+            helper: "Te escribimos cuando abra el próximo drop.",
+            success: "¡Listo! Estás en la lista. Mientras tanto, RSVP en Luma para el evento:",
+            lumaAfterSuccess: "🗓️ Ver el evento en Luma →"
+        },
         home: {
             hero: {
                 tag: "Vibe Coding Colosseum",
@@ -798,6 +807,15 @@ const translations = {
             success: "Done. We will reach out first.",
             error: "Fill name, email, and option.",
             close: "Close modal"
+        },
+        waitlistSection: {
+            label: "SOLD OUT — WAITLIST",
+            title: "Drop is full. Get on the list.",
+            body: "All 10 ring spots are taken. Leave your info and we'll hit you up for the next drop — or come as a spectator to the May 28 event at Toronto Tech Week.",
+            submit: "Join the waitlist",
+            helper: "We'll reach out when the next drop opens.",
+            success: "You're on the list! In the meantime, RSVP on Luma for the event:",
+            lumaAfterSuccess: "🗓️ See the event on Luma →"
         },
         home: {
             hero: {
