@@ -9,26 +9,26 @@ export const formatCurrency = (value, currency) => {
 export const buildDropTokens = (data) => {
     const entryFee = data?.entryFee ?? 0;
     const currency = data?.currency ?? "CAD";
-    const min = data?.minGladiators ?? 6;
-    const max = data?.maxGladiators ?? 15;
+    const min = data?.minGladiators ?? 8;
+    const max = data?.maxGladiators ?? 10;
     const prizePctValue = Math.round((data?.prizePct ?? 1) * 100);
     const housePctValue = Math.round((data?.housePct ?? 0) * 100);
-    const pot = data?.pot ?? 100;
-    const winnerPayout = data?.winnerPayout ?? 100;
+    const potValue = data?.pot ?? 0;
+    const winnerPayoutValue = data?.winnerPayout ?? 0;
     const houseCut = data?.houseCut ?? 0;
     const feeValue = entryFee === 0 ? "FREE" : `$${Number(entryFee).toLocaleString("en-CA")}`;
 
     return {
         fee: entryFee === 0 ? "FREE" : `${feeValue} ${currency}`,
         feeValue,
-        originalFee: "$100 CAD",
+        originalFee: entryFee === 0 ? null : formatCurrency(entryFee, currency),
         currency,
         min,
         max,
         prizePct: prizePctValue,
         housePct: housePctValue,
-        pot: "$100 CAD",
-        winnerPayout: "$100 CAD",
+        pot: potValue === 0 ? "FREE" : formatCurrency(potValue, currency),
+        winnerPayout: winnerPayoutValue === 0 ? "$500 CASH" : formatCurrency(winnerPayoutValue, currency),
         houseCut: formatCurrency(houseCut, currency)
     };
 };

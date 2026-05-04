@@ -225,12 +225,12 @@ const translations = {
             tagline: "El Colosseum llega a Toronto en persona. Sin paneles. Sin pitch decks. Solo gladiadores, armas de IA, y 45 minutos en el reloj.",
             date: "Thursday, May 28, 2026 — 7:00 PM – 9:30 PM EST",
             entry: "FREE entry — Premio de $500 CASH al campeón",
-            spots: "20 spots totales — 8–10 gladiadores en el ring.",
-            spotsBold: "Se llena rápido.",
+            spots: "10 spots — el drop está lleno.",
+            spotsBold: "Unite a la lista de espera.",
             location: "174 Spadina Ave, Toronto — On2 · Second Floor →",
             primaryCta: "📋 Únete al Waitlist — Luma",
             lumaCta: "🗓️ RSVP en Luma — Toronto Tech Week",
-            disclaimer: "Para entrar al ring debés registrarte en vibecodingcolosseum.com. Sin avatar, sin entrada.",
+            disclaimer: "Cupos agotados. Anotate en la waitlist de Luma para el próximo drop.",
             close: "Cerrar"
         },
         sponsor: {
@@ -960,12 +960,12 @@ const translations = {
             tagline: "The Colosseum hits Toronto IRL. No panels. No pitch decks. Just gladiators, AI weapons, and 45 minutes on the clock.",
             date: "Thursday, May 28, 2026 — 7:00 PM – 9:30 PM EST",
             entry: "FREE entry — $500 CASH prize for the champion",
-            spots: "20 spots total — 8–10 gladiators in the ring.",
-            spotsBold: "This WILL fill up.",
+            spots: "10 spots — drop is FULL.",
+            spotsBold: "Join the waitlist.",
             location: "174 Spadina Ave, Toronto — On2 · Second Floor →",
             primaryCta: "📋 Join the Waitlist — Luma",
             lumaCta: "🗓️ RSVP on Luma — Toronto Tech Week",
-            disclaimer: "To enter the ring you must register at vibecodingcolosseum.com. No avatar, no entry.",
+            disclaimer: "Spots are taken. Join the Luma waitlist to get notified for the next drop.",
             close: "Close"
         },
         sponsor: {

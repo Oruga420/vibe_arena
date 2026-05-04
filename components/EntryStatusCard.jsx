@@ -59,7 +59,9 @@ export default function EntryStatusCard({ note }) {
                     <span className="entry-label">{t("entry.labels.entry")}</span>
                     <span className="entry-value">
                         <span className="entry-discount">
-                            <span className="entry-original-price">{values.tokens.originalFee}</span>
+                            {values.tokens.originalFee && (
+                                <span className="entry-original-price">{values.tokens.originalFee}</span>
+                            )}
                             <span className="entry-free-badge">{t("entry.values.freeBadge")}</span>
                         </span>
                     </span>
